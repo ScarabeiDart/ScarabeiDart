@@ -1,5 +1,5 @@
-import 'package:scarabei_api/ComponentInstaller.dart';
-import 'package:scarabei_api/lang/NO_ARG.dart';
+import 'package:scarabei_api/component_installer.dart';
+import 'package:scarabei_api/lang/lang.dart';
 
 
 class L {

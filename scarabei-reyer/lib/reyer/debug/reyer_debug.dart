@@ -1,5 +1,5 @@
-import 'package:scarabei_api/debug/Debug.dart';
-import 'package:scarabei_api/error/Err.dart';
+import 'package:scarabei_api/debug/debug.dart';
+import 'package:scarabei_api/error/err.dart';
 
 class ReyerDebug extends DebugComponent {
   @override

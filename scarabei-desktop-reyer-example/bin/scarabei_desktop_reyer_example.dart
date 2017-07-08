@@ -1,12 +1,12 @@
 // Copyright (c) 2017, JCode. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-import 'package:scarabei_api/debug/Debug.dart';
-import 'package:scarabei_api/error/Err.dart';
-import 'package:scarabei_api/log/Logger.dart';
-import 'package:scarabei_reyer/reyer/debug/ReyerDebug.dart';
-import 'package:scarabei_reyer/reyer/error/ReyerError.dart';
-import 'package:scarabei_reyer/reyer/log/ReyerLogger.dart';
+import 'package:scarabei_api/debug/debug.dart';
+import 'package:scarabei_api/error/err.dart';
+import 'package:scarabei_api/log/logger.dart';
+import 'package:scarabei_reyer/reyer/debug/reyer_debug.dart';
+import 'package:scarabei_reyer/reyer/error/reyer_error.dart';
+import 'package:scarabei_reyer/reyer/log/reyer_logger.dart';
 
 main() {
   L.installComponent(new ReyerLogger());

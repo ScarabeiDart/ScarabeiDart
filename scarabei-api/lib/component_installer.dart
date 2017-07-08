@@ -1,44 +1,45 @@
-import 'package:scarabei_api/error/Err.dart';
+import 'package:scarabei_api/error/err.dart';
 
- class ComponentInstaller<T> {
+class ComponentInstaller<T> {
 
-   T _component;
-    String _name;
+  T _component;
+  String _name;
 
-   ComponentInstaller ( String component_name) {
+  ComponentInstaller(String component_name) {
     this._name = component_name;
   }
 
-   void installComponent ( T component) {
+  void installComponent(T component) {
     if (this._component != null) {
-      Err.reportError("Component " + this._name + " is already installed: $component");
+      Err.reportError(
+          "Component " + this._name + " is already installed: $component");
     }
     this._component = component;
     if (this._component == null) {
-      Err.reportError("Component " + this._name + " is not installed. Argument is null.");
+      Err.reportError(
+          "Component " + this._name + " is not installed. Argument is null.");
     }
   }
 
-   T invokeComponent () {
+  T invokeComponent() {
     if (this._component == null) {
       Err.reportError("Component " + this._name + " is not installed.");
     }
     return this._component;
   }
 
-   T getComponent () {
+  T getComponent() {
     return this._component;
   }
 
-   T deInstallComponent () {
+  T deInstallComponent() {
     if (this._component == null) {
       Err.reportError("Component " + this._name + " is not installed.");
     }
-     T c = this._component;
+    T c = this._component;
     this._component = null;
     return c;
   }
-
 
 
 }

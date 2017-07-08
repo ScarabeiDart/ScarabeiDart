@@ -1,5 +1,5 @@
-import 'package:scarabei_api/lang/NO_ARG.dart';
-import 'package:scarabei_api/log/Logger.dart';
+import 'package:scarabei_api/lang/lang.dart';
+import 'package:scarabei_api/log/logger.dart';
 
 
 class ReyerLogger extends LoggerComponent {

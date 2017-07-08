@@ -1,4 +1,4 @@
-import 'package:scarabei_api/error/Err.dart';
+import 'package:scarabei_api/error/err.dart';
 
 class ReyerError extends ErrorComponent {
 

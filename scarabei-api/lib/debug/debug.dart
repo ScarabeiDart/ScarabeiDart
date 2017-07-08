@@ -1,4 +1,4 @@
-import 'package:scarabei_api/ComponentInstaller.dart';
+import 'package:scarabei_api/component_installer.dart';
 
 class Debug {
 
