@@ -2,36 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aab33d55-71bb-4e3a-812f-eed18bfc5dc0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/libraries/Dart_Packages.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/libraries/Dart_SDK.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/scarabei-desktop-reyer-example.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-reyer/LICENSE" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scarabei-desktop-api/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scarabei-desktop-api/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scarabei-desktop-reyer/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scarabei-desktop-reyer/README.md" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ScarabeiDart.iml" afterPath="$PROJECT_DIR$/.idea/ScarabeiDart.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-reyer/lib/reyer/log/AndroidReyerLogger.dart" afterPath="$PROJECT_DIR$/scarabei-android-reyer/lib/reyer/log/AndroidReyerLogger.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-api/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-api/pubspec.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-api/LICENSE" afterPath="$PROJECT_DIR$/scarabei-desktop-api/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-api/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-api/pubspec.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-reyer/LICENSE" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-reyer/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer/pubspec.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-reyer/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-reyer/pubspec.yaml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-api/lib/ComponentInstaller.dart" afterPath="$PROJECT_DIR$/scarabei-api/lib/component_installer.dart" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-api/lib/debug/Debug.dart" afterPath="$PROJECT_DIR$/scarabei-api/lib/debug/debug.dart" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-api/lib/error/Err.dart" afterPath="$PROJECT_DIR$/scarabei-api/lib/error/err.dart" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-api/lib/lang/NO_ARG.dart" afterPath="$PROJECT_DIR$/scarabei-api/lib/lang/lang.dart" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-api/lib/log/Logger.dart" afterPath="$PROJECT_DIR$/scarabei-api/lib/log/logger.dart" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-desktop-reyer/example/scarabei_desktop_reyer_example.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/bin/scarabei_desktop_reyer_example.dart" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-reyer/lib/reyer/debug/ReyerDebug.dart" afterPath="$PROJECT_DIR$/scarabei-reyer/lib/reyer/debug/reyer_debug.dart" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-reyer/lib/reyer/error/ReyerError.dart" afterPath="$PROJECT_DIR$/scarabei-reyer/lib/reyer/error/reyer_error.dart" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-reyer/lib/reyer/log/ReyerLogger.dart" afterPath="$PROJECT_DIR$/scarabei-reyer/lib/reyer/log/reyer_logger.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/libraries/Dart_Packages.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/workspace.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-reyer-example/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-reyer-example/pubspec.yaml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/scarabei-desktop-reyer-example/bin/scarabei_desktop_reyer_example.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#153#200#0" expanded="true" />
               </folding>
@@ -78,8 +54,8 @@
       <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scarabei-desktop-reyer-example/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/scarabei-desktop-reyer/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+              <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -154,8 +130,8 @@
         <option value="$PROJECT_DIR$/scarabei-api/pubspec.yaml" />
         <option value="$PROJECT_DIR$/scarabei-reyer/pubspec.yaml" />
         <option value="$PROJECT_DIR$/scarabei-desktop-api/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/scarabei-desktop-reyer-example/pubspec.yaml" />
         <option value="$PROJECT_DIR$/scarabei-desktop-reyer/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-desktop-reyer-example/pubspec.yaml" />
       </list>
     </option>
   </component>
@@ -208,20 +184,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scarabei-reyer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScarabeiDart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScarabeiDart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="scarabei-desktop-reyer-example" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -236,35 +198,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scarabei-desktop-reyer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScarabeiDart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScarabeiDart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="scarabei-desktop-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScarabeiDart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScarabeiDart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scarabei-api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -528,6 +462,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -728,7 +663,7 @@
     <entry file="file://$PROJECT_DIR$/scarabei-desktop-reyer-example/bin/scarabei_desktop_reyer_example.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#153#200#0" expanded="true" />
           </folding>
@@ -759,18 +694,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-desktop-reyer-example/pubspec.yaml">
+    <entry file="file://$PROJECT_DIR$/scarabei-desktop-reyer/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-desktop-reyer/pubspec.yaml">
+    <entry file="file://$PROJECT_DIR$/scarabei-desktop-reyer-example/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
