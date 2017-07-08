@@ -2,7 +2,7 @@ import 'package:scarabei_api/lang/NO_ARG.dart';
 import 'package:scarabei_api/log/Logger.dart';
 
 
-abstract class ReyerLogger extends LoggerComponent {
+class ReyerLogger extends LoggerComponent {
 
 
   @override

@@ -30,6 +30,10 @@ class Debug {
   static void checkNull(Object obj, [String name]) {
     invoke().checkNull(obj, name);
   }
+
+  static void checkTrue(Object obj, [String name]) {
+    invoke().checkTrue(obj, name);
+  }
 }
 
 

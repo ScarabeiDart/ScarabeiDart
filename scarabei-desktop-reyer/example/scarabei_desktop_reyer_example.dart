@@ -4,12 +4,12 @@
 import 'package:scarabei_api/debug/Debug.dart';
 import 'package:scarabei_api/error/Err.dart';
 import 'package:scarabei_api/log/Logger.dart';
-import 'package:scarabei_desktop_reyer/reyer/log/DesktopReyerLogger.dart';
 import 'package:scarabei_reyer/reyer/debug/ReyerDebug.dart';
 import 'package:scarabei_reyer/reyer/error/ReyerError.dart';
+import 'package:scarabei_reyer/reyer/log/ReyerLogger.dart';
 
 main() {
-  L.installComponent(new DesktopReyerLogger());
+  L.installComponent(new ReyerLogger());
   Err.installComponent(new ReyerError());
   Debug.installComponent(new ReyerDebug());
 
@@ -18,5 +18,7 @@ main() {
   L.d("Hello", "fuck you");
 
   Debug.checkNull("ssss");
-  Debug.checkNull(null);
+//  Debug.checkNull(null, "x");
+
+  Debug.checkTrue(false, "b");
 }
