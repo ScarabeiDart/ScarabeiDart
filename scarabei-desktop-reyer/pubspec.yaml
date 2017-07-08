@@ -8,12 +8,12 @@ environment:
   sdk: '>=1.20.1 <2.0.0'
 
 dependencies:
-   scarabei_desktop_api: "^0.0.2"
-   scarabei_reyer: "^0.0.2"
-#  scarabei_desktop_api:
-#    path: ../scarabei-desktop-api
-#  scarabei_reyer:
-#    path: ../scarabei-reyer
+#   scarabei_desktop_api: "^0.0.2"
+#   scarabei_reyer: "^0.0.2"
+  scarabei_desktop_api:
+    path: ../scarabei-desktop-api
+  scarabei_reyer:
+    path: ../scarabei-reyer
 
 
 dev_dependencies:
