@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-api/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-api/build" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-api/example/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-api/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-api/test/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-reyer/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-reyer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-reyer/example/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-reyer/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-android-reyer/test/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-api/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-api/build" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-api/example/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-api/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-api/test/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-api/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-api/build" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-api/example/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-api/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-api/test/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer/example/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-reyer/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-reyer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-reyer/example/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-reyer/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-reyer/test/packages" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>

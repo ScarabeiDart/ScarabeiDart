@@ -1,6 +1,5 @@
 import 'package:scarabei_api/ComponentInstaller.dart';
 
-
 class Err {
 
   static ComponentInstaller<
@@ -35,9 +34,7 @@ class Err {
 
   static void reportError(String message, [Error e]) {
     if (component() == null) {
-      print(message);
-      print(e);
-      return;
+      throw new StateError(message + " $e");
     }
     invoke().reportError(message, e);
   }
