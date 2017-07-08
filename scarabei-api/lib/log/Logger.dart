@@ -1,4 +1,5 @@
 import 'package:scarabei_api/ComponentInstaller.dart';
+import 'package:scarabei_api/lang/NO_ARG.dart';
 
 
 class L {
@@ -24,11 +25,11 @@ class L {
     return _componentInstaller.getComponent();
   }
 
-  static d(Object tag, [Object msg]) {
+  static d(Object tag, [Object msg = NO_ARGUMENT]) {
     invoke().d(tag, msg);
   }
 
-  static e(Object tag, [Object msg]) {
+  static e(Object tag, [Object msg = NO_ARGUMENT]) {
     invoke().e(tag, msg);
   }
 
@@ -36,8 +37,8 @@ class L {
 
 abstract class LoggerComponent {
 
-  d(Object tag, [Object msg]); //debug
+  d(Object tag, [Object msg = NO_ARGUMENT]); //debug
 
-  e(Object tag, [Object msg]); //error
+  e(Object tag, [Object msg = NO_ARGUMENT]); //error
 
 }

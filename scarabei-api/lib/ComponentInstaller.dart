@@ -1,4 +1,4 @@
-import 'package:scarabei_api/debug/Error.dart';
+import 'package:scarabei_api/error/Err.dart';
 
  class ComponentInstaller<T> {
 

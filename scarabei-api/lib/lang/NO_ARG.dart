@@ -1,0 +1,1 @@
+class NO_ARGUMENT {}

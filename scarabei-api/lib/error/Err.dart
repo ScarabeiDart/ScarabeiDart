@@ -31,10 +31,9 @@ class Err {
     invoke().reportNotImplementedYet();
   }
 
-
   static void reportError(String message, [Error e]) {
     if (component() == null) {
-      throw new StateError(message + " $e");
+      throw new StateError(message + " error: $e");
     }
     invoke().reportError(message, e);
   }
