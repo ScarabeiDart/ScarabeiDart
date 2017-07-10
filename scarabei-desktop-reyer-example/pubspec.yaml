@@ -10,7 +10,12 @@ environment:
 dependencies:
 #  path: ^1.4.1
 #   scarabei_api: "^0.0.2"
-   scarabei_desktop_reyer: "^0.0.2"
+#   scarabei_desktop_reyer: "^0.0.2"
+  scarabei_api:
+    path: ../scarabei-api
+  scarabei_desktop_reyer:
+    path: ../scarabei-desktop-reyer
+
 
 dev_dependencies:
   test: ^0.12.0

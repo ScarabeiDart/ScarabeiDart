@@ -2,9 +2,7 @@ import 'package:scarabei_api/component_installer.dart';
 
 class Err {
 
-  static ComponentInstaller<
-      ErrorComponent> _componentInstaller = new ComponentInstaller<
-      ErrorComponent>("Error");
+  static ComponentInstaller<ErrorComponent> _componentInstaller = new ComponentInstaller<ErrorComponent>("Error");
 
   static void installComponent(ErrorComponent component_to_install) {
     _componentInstaller.installComponent(component_to_install);
