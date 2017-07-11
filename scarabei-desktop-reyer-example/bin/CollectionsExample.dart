@@ -25,6 +25,11 @@ main() {
   map.addAll({"C": "3"});
 
   L.d("map", map);
+
+//  var context = new path.Context(style: Style.posix);
+//  context.join("directory", "file.txt");
+//  context.
+//  L.d("map", map);
 //  list.print("list");
 }
 

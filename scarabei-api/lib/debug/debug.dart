@@ -1,4 +1,5 @@
 import 'package:scarabei_api/component_installer.dart';
+import 'package:scarabei_api/debug/state_switcher.dart';
 
 class Debug {
 
@@ -34,6 +35,10 @@ class Debug {
   static void checkTrue(Object obj, [String name]) {
     invoke().checkTrue(obj, name);
   }
+
+  static StateSwitcher<T> newStateSwitcher<T>(T default_state) {
+    return invoke().newStateSwitcher(default_state);
+  }
 }
 
 
@@ -42,5 +47,7 @@ abstract class DebugComponent {
   void checkNull(Object obj, [String name]);
 
   void checkTrue(bool value, [String name]);
+
+  StateSwitcher<T> newStateSwitcher<T>(T default_state);
 
 }
