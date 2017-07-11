@@ -1,5 +1,3 @@
-import 'package:scarabei_api/collections/list.dart';
-import 'package:scarabei_api/collections/map.dart';
 import 'package:scarabei_api/component_installer.dart';
 
 class Collections {
@@ -26,18 +24,18 @@ class Collections {
   }
 
   // ignore: conflicting_dart_import
-  static SList<T> newList<T>() {
+  static List<T> newList<T>() {
     return invoke().newList();
   }
 
   // ignore: conflicting_dart_import
-  static SMap<K, V> newMap<K, V>() {
+  static Map<K, V> newMap<K, V>() {
     return invoke().newMap();
   }
 }
 
 abstract class CollectionsComponent {
-  SList<T> newList<T>();
+  List<T> newList<T>();
 
-  SMap<K, V> newMap<K, V>();
+  Map<K, V> newMap<K, V>();
 }

@@ -1,5 +1,4 @@
 import 'package:scarabei_api/collections/collections.dart';
-import 'package:scarabei_api/collections/list.dart';
 import 'package:scarabei_api/debug/debug.dart';
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/log/logger.dart';
@@ -14,10 +13,18 @@ main() {
   Debug.installComponent(new ReyerDebug());
   Collections.installComponent(new ReyerCollections());
 
-  SList<String> list = Collections.newList();
+  List<String> list = Collections.newList();
   list.add("A");
   list.add("B");
   list.add("C");
+  L.d("list", list);
+
+  Map<String, String> map = Collections.newMap();
+  map.addAll({"A": "1"});
+  map.addAll({"B": "2"});
+  map.addAll({"C": "3"});
+
+  L.d("map", map);
 //  list.print("list");
 }
 

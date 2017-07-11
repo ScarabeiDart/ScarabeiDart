@@ -4,9 +4,9 @@
 import 'package:scarabei_api/debug/debug.dart';
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/log/logger.dart';
-import 'package:scarabei_reyer/reyer/debug/reyer_debug.dart';
-import 'package:scarabei_reyer/reyer/error/reyer_error.dart';
-import 'package:scarabei_reyer/reyer/log/reyer_logger.dart';
+import 'package:scarabei_reyer/debug/reyer_debug.dart';
+import 'package:scarabei_reyer/error/reyer_error.dart';
+import 'package:scarabei_reyer/log/reyer_logger.dart';
 
 main() {
   L.installComponent(new ReyerLogger());

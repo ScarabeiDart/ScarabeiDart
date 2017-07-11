@@ -42,3 +42,12 @@ abstract class LoggerComponent {
   e(Object tag, [Object msg = NO_ARGUMENT]); //error
 
 }
+
+abstract class ConsoleOut {
+  void out(OUT_MODE, String msg) {}
+}
+
+enum OUT_MODE {
+  DEBUG,
+  ERROR
+}
