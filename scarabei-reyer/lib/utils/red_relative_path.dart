@@ -12,14 +12,14 @@ class RedRelativePath extends RelativePath {
 
   RedRelativePath({Iterable<String> path_steps, String relative_path_string}) {
     if (path_steps != null) {
-      this._path_steps.addAll(path_steps);
+      this._path_steps.addAll(path_steps.where((x) => (x) != "").toList());
       this._string = pathToString(this._path_steps);
     } else if (relative_path_string != null || true) {
       if (relative_path_string == null) {
         relative_path_string = "";
       };
       Debug.checkNull("relative_path_string", relative_path_string);
-      List<String> parts_array = relative_path_string.split(RelativePath.SEPARATOR);
+      List<String> parts_array = relative_path_string.split(RelativePath.SEPARATOR).where((x) => (x) != "").toList();
       List<String> parts_list = (parts_array);
       while (parts_list.contains(E)) {
         parts_list.remove(E);

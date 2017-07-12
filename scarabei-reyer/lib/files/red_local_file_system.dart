@@ -9,6 +9,7 @@ import 'package:scarabei_api/files/local_file_system.dart';
 import 'package:scarabei_api/log/logger.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/relative_path.dart';
+import 'package:scarabei_api/strings/strings.dart';
 import 'package:scarabei_api/utils/jutils.dart';
 import 'package:scarabei_reyer/files/abstract_file_system.dart';
 import 'package:scarabei_reyer/files/local_red_file.dart';
@@ -50,23 +51,44 @@ class RedLocalFileSystem extends AbstractFileSystem
     return new LocalRedFile(file_path, this);
   }
 
-  File newLocalFile({dart.File dartFile, String dart_file_path}) {
-    if (dartFile != null) {
-      dart_file_path = dartFile.absolute.path;
+  File newLocalFile(dart.File dartFile) {
+    Debug.checkNull(dartFile, "dartFile");
+
+    if (!dartFile.isAbsolute) {
+      dartFile = dartFile.absolute;
     }
-    Debug.checkNull("dart_file_path", dart_file_path);
-//    String splitRegex = Pattern.quote(System.getProperty("file.separator"));
+//
+//    String rootPrefix = path.rootPrefix(application_home_path_string);
+//    if (dart_file_path.startsWith(rootPrefix)) {
+//      dart_file_path = dart_file_path.substring(dart_file_path.length);
+//    }
+
     Pattern splitRegex = path.separator;
-    RelativePath splittedFileName = Utils.newRelativePath(path_steps: (dart_file_path.split(splitRegex)));
+    RelativePath splittedFileName = Utils.newRelativePath(path_steps: (dartFile.path.split(splitRegex)));
     File file = this.ROOT().proceed(splittedFileName);
     return file;
   }
 
-
-  File ApplicationHome() {
-    path.basename("");
-    return this.newLocalFile(dart_file_path: application_home_path_string);
+  String dartFilePath(AbsolutePath<FileSystem> absolute_path) {
+//    if (absolute_path.isRoot()) {
+//      String dartPath = path.rootPrefix(application_home_path_string);
+//      return new dart.File(dartPath).absolute.path;
+//    }
+    RelativePath relative = absolute_path.getRelativePath();
+    Pattern splitRegex = path.separator;
+    String dartPath = Strings.wrapSequence(relative.steps(), "", "", splitRegex.toString());
+//    L.d("dartPath", dartPath);
+//    Sys.exit();
+    var result = new dart.File(dartPath).path;
+    return result;
   }
 
-  final String application_home_path_string = new dart.File("").absolute.path;
+
+  File ApplicationHome() {
+    return this.newLocalFile(new dart.File("").absolute);
+  }
+
+//  final String application_home_path_string = new dart.File("").absolute.path;
+
+
 }

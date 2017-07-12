@@ -12,7 +12,7 @@ abstract class AbstractFileSystem implements FileSystem {
   File _ROOT;
 
   File ROOT() {
-    if (this.ROOT == null) {
+    if (this._ROOT == null) {
       this._ROOT = this.newFile(Utils.newAbsolutePath(this));
     }
     return this._ROOT;
@@ -29,6 +29,9 @@ abstract class AbstractFileSystem implements FileSystem {
     return MD5.hashBytes(bytes: data);
   }
 
+  AbstractFileSystem() {
+    this.ROOT();
+  }
 
   void copyFileToFolder(File file_to_copy, File to_folder, {bool overwrite(File fileToCopy, File existing)}) {
     Debug.checkTrue(file_to_copy.exists(), "The file or folder does not exist: " + file_to_copy.toString());

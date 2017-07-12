@@ -44,8 +44,8 @@ class LocalFileSystem {
     return invoke().ApplicationHome();
   }
 
-  static File newLocalFile({dart.File dartFile, String dart_file_path}) {
-    return invoke().newLocalFile(dartFile: dartFile, dart_file_path: dart_file_path);
+  static File newLocalFile(dart.File dartFile) {
+    return invoke().newLocalFile(dartFile);
   }
 
   static void copyFilesTo(Iterable<File> children_list, File to_folder) {
@@ -80,7 +80,7 @@ class LocalFileSystem {
 
 abstract class LocalFileSystemComponent implements FileSystem {
 
-  File newLocalFile({dart.File dartFile, String dart_file_path});
+  File newLocalFile(dart.File dartFile);
 
   File ApplicationHome();
 }

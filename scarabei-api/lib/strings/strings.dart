@@ -1,4 +1,3 @@
-import 'package:scarabei_api/collections/sequence.dart';
 import 'package:scarabei_api/component_installer.dart';
 
 class Strings {
@@ -34,8 +33,8 @@ class Strings {
   }
 
 
-  static String wrapSequence(Sequence<String> seq, int size, String bracketLeft, String bracketRight, String separator) {
-    return invoke().wrapSequence(seq, size, bracketLeft, bracketRight, separator);
+  static String wrapSequence(Iterable<String> seq, String bracketLeft, String bracketRight, String separator) {
+    return invoke().wrapSequence(seq, bracketLeft, bracketRight, separator);
   }
 
   static List<int> toBytes(String string_data) {
@@ -52,7 +51,7 @@ abstract class StringsComponent {
 
   String replaceAll(String input, Map<String, String> termsMapping);
 
-  String wrapSequence(Sequence<String> seq, int size, String bracketLeft, String bracketRight, String separator);
+  String wrapSequence(Iterable<String> seq, String bracketLeft, String bracketRight, String separator);
 
   List<int> toBytes(String string_data) {}
 }

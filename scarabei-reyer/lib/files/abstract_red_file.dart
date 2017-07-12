@@ -244,4 +244,15 @@ abstract class AbstractRedFile extends File {
   }
 
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is AbstractRedFile &&
+              runtimeType == other.runtimeType &&
+              this.getAbsoluteFilePath() == other.getAbsoluteFilePath();
+
+  @override
+  int get hashCode => getAbsoluteFilePath().hashCode;
+
+
 }

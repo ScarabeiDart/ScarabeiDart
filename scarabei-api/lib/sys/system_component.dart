@@ -10,7 +10,6 @@ abstract class SystemComponent {
 
   void exit();
 
-  bool sleep(int period);
 
   bool isWindows();
 
@@ -20,9 +19,6 @@ abstract class SystemComponent {
 
   SystemInfo getSystemInfo();
 
-  void yeld();
-
-  void wait(Object lock);
 
   void addOnExitListener(OnExitListener listener);
 
