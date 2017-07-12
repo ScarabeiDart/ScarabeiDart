@@ -29,4 +29,6 @@ abstract class RelativePath {
   RelativePath removeStep(int index);
 
   String getStep(int index);
+
+//  bool equals(RelativePath other);
 }

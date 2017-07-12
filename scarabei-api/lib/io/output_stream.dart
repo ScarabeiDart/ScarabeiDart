@@ -12,4 +12,8 @@ abstract class OutputStream {
   void write({ByteArray array, List<int> bytes});
 
   Stream toDartOutputStream();
+
+  void open();
+
+  void close();
 }

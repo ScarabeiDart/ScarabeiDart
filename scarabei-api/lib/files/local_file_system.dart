@@ -1,5 +1,3 @@
-library com.jfixby.scarabei.api.file;
-
 import "dart:io" as dart;
 
 import 'package:scarabei_api/component_installer.dart';
@@ -82,7 +80,7 @@ class LocalFileSystem {
   }
 }
 
-abstract class LocalFileSystemComponent extends FileSystem {
+abstract class LocalFileSystemComponent implements FileSystem {
 
   File newLocalFile({dart.File dartFile, String dart_file_path});
 

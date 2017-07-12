@@ -18,4 +18,8 @@ abstract class InputStream {
   String readAllToString({String encoding});
 
   Stream toDartInputStream();
+
+  void open();
+
+  void close();
 }

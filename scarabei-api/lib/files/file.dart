@@ -1,6 +1,5 @@
 import "dart:io" as dart;
 
-import 'package:scarabei_api/files/file_filter.dart';
 import 'package:scarabei_api/files/file_hash.dart';
 import 'package:scarabei_api/files/file_input_stream.dart';
 import 'package:scarabei_api/files/file_output_stream.dart';
@@ -26,9 +25,9 @@ abstract class File {
 
   FileHash calculateHash();
 
-  FilesList listDirectChildren([FileFilter filter]);
+  FilesList listDirectChildren({bool fileFilter(File file)});
 
-  FilesList listAllChildren([FileFilter pdfFileFilter]);
+  FilesList listAllChildren({bool fileFilter(File file)});
 
   File child(String child_name);
 

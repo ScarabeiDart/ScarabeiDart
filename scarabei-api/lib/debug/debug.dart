@@ -28,9 +28,14 @@ class Debug {
   }
 
 
-  static void checkNull(Object obj, [String name]) {
-    invoke().checkNull(obj, name);
+  static T checkNull<T>(T obj, [String name]) {
+    return invoke().checkNull(obj, name);
   }
+
+  static void checkEmpty(String string, [String name]) {
+    invoke().checkEmpty(string, name);
+  }
+
 
   static void checkTrue(Object obj, [String name]) {
     invoke().checkTrue(obj, name);
@@ -44,9 +49,11 @@ class Debug {
 
 abstract class DebugComponent {
 
-  void checkNull(Object obj, [String name]);
+  T checkNull<T>(T obj, [String name]);
 
   void checkTrue(bool value, [String name]);
+
+  void checkEmpty(String string, [String name]);
 
   StateSwitcher<T> newStateSwitcher<T>(T default_state);
 

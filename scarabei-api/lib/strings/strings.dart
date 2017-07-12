@@ -25,7 +25,7 @@ class Strings {
     return _componentInstaller.getComponent();
   }
 
-  static String newString({List<int> bytes, ByteArray byteArray, String encoding}) {
+  static String newString({List<int> bytes, ByteArray byteArray, String encoding = "utf8"}) {
     return invoke().newString(bytes: bytes, byteArray: byteArray, encoding: encoding);
   }
 
@@ -39,6 +39,10 @@ class Strings {
     return invoke().wrapSequence(seq, size, bracketLeft, bracketRight, separator);
   }
 
+  static List<int> toBytes(String string_data) {
+    return invoke().toBytes(string_data);
+  }
+
 
 }
 
@@ -50,4 +54,6 @@ abstract class StringsComponent {
   String replaceAll(String input, Map<String, String> termsMapping);
 
   String wrapSequence(Sequence<String> seq, int size, String bracketLeft, String bracketRight, String separator);
+
+  List<int> toBytes(String string_data) {}
 }

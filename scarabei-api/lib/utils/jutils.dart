@@ -1,5 +1,3 @@
-library com.jfixby.scarabei.api.util;
-
 import 'package:scarabei_api/component_installer.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/mount_point.dart';
@@ -76,7 +74,7 @@ abstract class UtilsComponent {
 
   ByteArray newByteArray({List<int> bytes, int size});
 
-  bool beginsWith(Iterable listA, Iterable listB) {}
+  bool beginsWith(Iterable listA, Iterable listB);
 
 
 }

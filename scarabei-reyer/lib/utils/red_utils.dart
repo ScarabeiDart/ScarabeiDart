@@ -55,6 +55,20 @@ class RedUtils extends UtilsComponent {
   }
 
 
+  @override
+  bool beginsWith(Iterable listA, Iterable listB) {
+    if (listB.length > listA.length) {
+      return false;
+    }
+    for (int i = 0; i < listB.length; i++) {
+      var a = listA.elementAt(i);
+      var b = listB.elementAt(i);
+      if (!Utils.equalObjects(a, b)) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 
 
