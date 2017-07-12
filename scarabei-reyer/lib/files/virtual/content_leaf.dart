@@ -1,8 +1,7 @@
-library com.jfixby.scarabei.red.filesystem.virtual;
-
+import 'package:scarabei_api/sys/sys.dart';
 
 class ContentLeaf {
-  int last_edit = new DateTime.now().millisecondsSinceEpoch;
+  int last_edit = Sys.currentTime();
 
   List<int> data;
 
@@ -12,10 +11,12 @@ class ContentLeaf {
 
   void setData(List<int> data) {
     this.data = data;
-    last_edit = new DateTime.now().millisecondsSinceEpoch;
+    last_edit = Sys.currentTime();
   }
 
   int lastModified() {
     return last_edit;
   }
+
+  int size() => data.length;
 }

@@ -27,4 +27,6 @@ abstract class SystemComponent {
   void addOnExitListener(OnExitListener listener);
 
   bool isIOS();
+
+  int currentTime();
 }

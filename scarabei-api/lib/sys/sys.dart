@@ -76,4 +76,8 @@ class Sys {
   static bool isIOS() {
     return invoke().isIOS();
   }
+
+  static int currentTime() {
+    return invoke().currentTime();
+  }
 }

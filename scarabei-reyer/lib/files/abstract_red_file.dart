@@ -91,40 +91,49 @@ abstract class AbstractRedFile extends File {
 
 
   String readToString({String encoding}) {
-    return Strings.newString(byteArray: this.readBytes(), encoding: encoding);
+    return Strings.newString(bytes: this.readBytes(), encoding: encoding);
   }
 
-  ByteArray readBytes() {
-    FileInputStream is_ = this.getFileSystem().newFileInputStream(this);
-    ByteArray bytes;
-    is_.open();
-    try {
-      bytes = is_.readAll();
-      return bytes;
-    } on IOException catch (e) {
-      throw e;
-    } finally {
-      is_.close();
+//  List<int> readBytes() {
+//    FileInputStream is_ = this.getFileSystem().newFileInputStream(this);
+//    ByteArray bytes;
+//    is_.open();
+//    try {
+//      bytes = is_.readAll();
+//      return bytes;
+//    } on IOException catch (e) {
+//      throw e;
+//    } finally {
+//      is_.close();
+//    }
+//  }
+//
+//
+//  void writeBytes({List<int> bytes, bool append}) {
+//    FileOutputStream os = this.getFileSystem().newFileOutputStream(this, append: append);
+//    os.open();
+//    try {
+//      if (array != null) {
+//        os.write(array: array);
+//      } else {
+//        os.write(bytes: bytes);
+//      }
+//    } on IOException catch (e) {
+//      throw e;
+//    } finally {
+//      os.close();
+//    }
+//  }
+
+
+  String nameWithoutExtension() {
+    String name = this.getName();
+    int dotIndex = name.lastIndexOf('.');
+    if (dotIndex == (-1)) {
+      return name;
     }
+    return name.substring(0, dotIndex);
   }
-
-
-  void writeBytes({List<int> bytes, bool append}) {
-    FileOutputStream os = this.getFileSystem().newFileOutputStream(this, append: append);
-    os.open();
-    try {
-      if (array != null) {
-        os.write(array: array);
-      } else {
-        os.write(bytes: bytes);
-      }
-    } on IOException catch (e) {
-      throw e;
-    } finally {
-      os.close();
-    }
-  }
-
 
   void writeString(String string, {bool append}) {
     this.writeBytes(bytes: Strings.toBytes(string), append: append);
@@ -147,21 +156,21 @@ abstract class AbstractRedFile extends File {
     return this.getFileSystem();
   }
 
-  FileInputStream newInputStream() {
-    return this.getFileSystem().newFileInputStream(this);
-  }
-
-
-  FileOutputStream newOutputStream({bool append}) {
-    return this.getFileSystem().newFileOutputStream(this, append: append);
-  }
+//  FileInputStream newInputStream() {
+//    return this.getFileSystem().newFileInputStream(this);
+//  }
+//
+//
+//  FileOutputStream newOutputStream({bool append}) {
+//    return this.getFileSystem().newFileOutputStream(this, append: append);
+//  }
 
   String getExtension() {
     if (this.isFolder()) {
       return "";
     }
     String name = this.getName().toLowerCase();
-    int index = name.lastIndexOf('.'.codeUnitAt(0));
+    int index = name.lastIndexOf('.');
     if (index < 0) {
       return "";
     }
@@ -176,11 +185,11 @@ abstract class AbstractRedFile extends File {
   }
 
   Iterable<File> listDirectChildren({bool fileFilter(File file)}) {
-    return this.listDirectChildren().filter(fileFilter);
+    return this.listDirectChildren().where(fileFilter).toList();
   }
 
   Iterable<File> listAllChildren({bool fileFilter(File file)}) {
-    return this.listAllChildren().filter(fileFilter);
+    return this.listAllChildren().where(fileFilter).toList();
   }
 
   bool tryToClearFolder() {
@@ -209,8 +218,8 @@ abstract class AbstractRedFile extends File {
       File nextfile = filesQueue.removeAt(0);
       if (nextfile.isFolder()) {
         Iterable<File> files = nextfile.listDirectChildren();
-        for (int i = 0; i < files.size(); i++) {
-          File child = files.getElementAt(i);
+        for (int i = 0; i < files.length; i++) {
+          File child = files.elementAt(i);
           result.add(child);
           if (directFlag == ALL_CHILDREN) {
             if (child.isFolder()) {
@@ -223,4 +232,16 @@ abstract class AbstractRedFile extends File {
       }
     }
   }
+
+  @override
+  void writeBytes({List<int> bytes, bool append}) {
+    Err.throwNotImplementedYet();
+  }
+
+  @override
+  List<int> readBytes() {
+    Err.throwNotImplementedYet();
+  }
+
+
 }

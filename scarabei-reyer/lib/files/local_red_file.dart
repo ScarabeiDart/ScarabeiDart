@@ -68,15 +68,6 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
     return this.getFileSystem().newFile(this.getAbsoluteFilePath().child(child_name));
   }
 
-  String nameWithoutExtension() {
-    dart.File file = this.toJavaFile();
-    String name = file.getName();
-    int dotIndex = name.lastIndexOf('.'.codeUnitAt(0));
-    if (dotIndex == (-1)) {
-      return name;
-    }
-    return name.substring(0, dotIndex);
-  }
 
   File parent() {
     if (!this.getAbsoluteFilePath().isRoot()) {
