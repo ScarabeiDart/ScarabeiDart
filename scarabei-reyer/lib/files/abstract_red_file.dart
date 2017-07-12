@@ -4,26 +4,22 @@ import 'package:scarabei_api/debug/debug.dart';
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/files/file.dart';
 import 'package:scarabei_api/files/file_hash.dart';
-import 'package:scarabei_api/files/file_input_stream.dart';
-import 'package:scarabei_api/files/file_output_stream.dart';
 import 'package:scarabei_api/files/file_system.dart';
-import 'package:scarabei_api/files/files_list.dart';
+import 'package:scarabei_api/io/io_exception.dart';
 import 'package:scarabei_api/log/logger.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/relative_path.dart';
 import 'package:scarabei_api/strings/strings.dart';
-import 'package:scarabei_api/utils/byte_array.dart';
 import 'package:scarabei_reyer/files/abstract_file_system.dart';
-import 'package:scarabei_reyer/files/red_files_list.dart';
 
 
 abstract class AbstractRedFile extends File {
 
   void clearFolder() {
     if (this.isFolder()) {
-      FilesList children = this.listDirectChildren();
-      for (int i = 0; i < children.size(); i++) {
-        File child = children.getElementAt(i);
+      Iterable<File> children = this.listDirectChildren();
+      for (int i = 0; i < children.length; i++) {
+        File child = children.elementAt(i);
         child.delete();
       }
     } else {
@@ -59,21 +55,17 @@ abstract class AbstractRedFile extends File {
 
   void checkExists() {
     if (!this.exists()) {
-      throw new IOException(this + " does not exist.");
+      throw new IOException(this.toString() + " does not exist.");
     }
   }
 
   void checkIsFile() {
     this.checkExists();
     if (!this.isFile()) {
-      throw new IOException(this + " does not exist.");
+      throw new IOException(this.toString() + " does not exist.");
     }
   }
 
-  void writeData(Object object) {
-    ByteArray data = IO.serialize(object);
-    this.writeBytes(data);
-  }
 
   File proceed(RelativePath relativePath) {
     AbsolutePath<FileSystem> file_path = this.getAbsoluteFilePath().proceed(relativePath);
@@ -86,9 +78,9 @@ abstract class AbstractRedFile extends File {
     return result;
   }
 
-  FilesList listSubFolders() {
-    RedFilesList listFiles = new RedFilesList();
-    FilesList children = this.listDirectChildren();
+  List<File> listSubFolders() {
+    List<File> listFiles = [];
+    Iterable<File> children = this.listDirectChildren();
     for (File file in children) {
       if (file.isFolder()) {
         listFiles.add(file);
@@ -117,7 +109,7 @@ abstract class AbstractRedFile extends File {
   }
 
 
-  void writeBytes({ByteArray array, List<int> bytes, bool append}) {
+  void writeBytes({List<int> bytes, bool append}) {
     FileOutputStream os = this.getFileSystem().newFileOutputStream(this, append: append);
     os.open();
     try {
@@ -183,11 +175,11 @@ abstract class AbstractRedFile extends File {
     return outputFile;
   }
 
-  FilesList listDirectChildren({bool fileFilter(File file)}) {
+  Iterable<File> listDirectChildren({bool fileFilter(File file)}) {
     return this.listDirectChildren().filter(fileFilter);
   }
 
-  FilesList listAllChildren({bool fileFilter(File file)}) {
+  Iterable<File> listAllChildren({bool fileFilter(File file)}) {
     return this.listAllChildren().filter(fileFilter);
   }
 
@@ -212,11 +204,11 @@ abstract class AbstractRedFile extends File {
   static bool DIRECT_CHILDREN = true;
   static bool ALL_CHILDREN = (!DIRECT_CHILDREN);
 
-  static void collectChildren(List<File> filesQueue, RedFilesList result, bool directFlag) {
+  static void collectChildren(List<File> filesQueue, List<File> result, bool directFlag) {
     while (filesQueue.length > 0) {
       File nextfile = filesQueue.removeAt(0);
       if (nextfile.isFolder()) {
-        FilesList files = nextfile.listDirectChildren();
+        Iterable<File> files = nextfile.listDirectChildren();
         for (int i = 0; i < files.size(); i++) {
           File child = files.getElementAt(i);
           result.add(child);

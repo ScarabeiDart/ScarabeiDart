@@ -1,10 +1,9 @@
-import 'dart:io';
+import 'package:scarabei_api/io/io_exception.dart';
 
 class FileNotFoundException extends IOException {
-  final String _message;
 
-  FileNotFoundException(this._message);
+  FileNotFoundException(String message) : super(message);
 
   @override
-  String toString() => 'FileNotFoundException{: $_message}';
+  String toString() => 'FileNotFoundException{: $message}';
 }

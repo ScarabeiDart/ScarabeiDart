@@ -5,18 +5,16 @@ import 'dart:io' as dart;
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/files/file.dart';
 import 'package:scarabei_api/files/file_system.dart';
-import 'package:scarabei_api/files/files_list.dart';
 import 'package:scarabei_api/files/local_file.dart';
 import 'package:scarabei_api/files/local_file_system.dart';
 import 'package:scarabei_api/log/logger.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/relative_path.dart';
 import 'package:scarabei_reyer/files/abstract_red_file.dart';
-import 'package:scarabei_reyer/files/red_files_list.dart';
 
 class LocalRedFile extends AbstractRedFile implements LocalFile {
   AbsolutePath<FileSystem> absolute_path;
-  LocalFileSystem fs;
+  LocalFileSystemComponent fs;
 
   String getAbsolutePathString(File file) {
     return null;
@@ -32,12 +30,12 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
     return f;
   }
 
-  LocalRedFile(AbsolutePath<FileSystem> absolute_path, LocalFileSystem fileSystem) {
+  LocalRedFile(AbsolutePath<FileSystem> absolute_path, LocalFileSystemComponent fileSystem) {
     this.absolute_path = absolute_path;
     this.fs = fileSystem;
   }
 
-  LocalFileSystem getFileSystem() {
+  LocalFileSystemComponent getFileSystem() {
     return this.fs;
   }
 
@@ -120,23 +118,23 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
   static bool DIRECT_CHILDREN = true;
   static bool ALL_CHILDREN = (!DIRECT_CHILDREN);
 
-  FilesList listDirectChildren({bool fileFilter(File file)}) {
+  Iterable<File> listDirectChildren({bool fileFilter(File file)}) {
     List<LocalRedFile> filesQueue = [];
     filesQueue.add(this);
-    RedFilesList result = new RedFilesList();
+    List<File> result = new List<File>();
     collectChildren(filesQueue, result, DIRECT_CHILDREN);
     return result;
   }
 
-  FilesList listAllChildren({bool fileFilter(File file)}) {
+  Iterable<File> listAllChildren({bool fileFilter(File file)}) {
     List<LocalRedFile> filesQueue = [];
     filesQueue.add(this);
-    RedFilesList result = new RedFilesList();
+    List<File> result = new List<File>();
     collectChildren(filesQueue, result, ALL_CHILDREN);
     return result;
   }
 
-  static void collectChildren(List<LocalRedFile> filesQueue, RedFilesList result, bool directFlag) {
+  static void collectChildren(List<LocalRedFile> filesQueue, List<File> result, bool directFlag) {
     while (filesQueue.size() > 0) {
       LocalRedFile nextfile = filesQueue.removeElementAt(0);
       dart.File file = nextfile.toJavaFile();
@@ -163,7 +161,7 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
           } else {}
         }
       } else {
-        Err.reportError("This is not a folder: " + nextfile.absolute_path);
+        Err.reportError("This is not a folder: " + nextfile.absolute_path.toString());
       }
     }
   }

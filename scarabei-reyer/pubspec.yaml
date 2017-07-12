@@ -11,6 +11,7 @@ environment:
 #  path: ^1.4.1
 dependencies:
 #  scarabei_api: "^0.0.2"
+  crypto: "^2.0.1"
   scarabei_api:
     path: ../scarabei-api
 

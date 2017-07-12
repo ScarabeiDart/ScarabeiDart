@@ -53,7 +53,7 @@ abstract class DebugComponent {
 
   void checkTrue(bool value, [String name]);
 
-  void checkEmpty(String string, [String name]);
+  String checkEmpty(String string, [String name]);
 
   StateSwitcher<T> newStateSwitcher<T>(T default_state);
 

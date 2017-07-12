@@ -2,10 +2,7 @@ import "dart:io" as dart;
 
 import 'package:scarabei_api/component_installer.dart';
 import 'package:scarabei_api/files/file.dart';
-import 'package:scarabei_api/files/file_input_stream.dart';
-import 'package:scarabei_api/files/file_output_stream.dart';
 import 'package:scarabei_api/files/file_system.dart';
-import 'package:scarabei_api/files/files_list.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 
 
@@ -35,9 +32,9 @@ class LocalFileSystem {
     return invoke().newFile(file_path);
   }
 
-  static FileInputStream newFileInputStream(File newFile) {
-    return invoke().newFileInputStream(newFile);
-  }
+//  static FileInputStream newFileInputStream(File newFile) {
+//    return invoke().newFileInputStream(newFile);
+//  }
 
   static void copyFolderContentsToFolder(File input_folder, File output_folder) {
     invoke().copyFolderContentsToFolder(input_folder, output_folder);
@@ -51,21 +48,22 @@ class LocalFileSystem {
     return invoke().newLocalFile(dartFile: dartFile, dart_file_path: dart_file_path);
   }
 
-  static void copyFilesTo(FilesList children_list, File to_folder) {
+  static void copyFilesTo(Iterable<File> children_list, File to_folder) {
     invoke().copyFilesTo(children_list, to_folder);
   }
 
-  static String readFileToString(AbsolutePath<FileSystem> file_path) {
-    return invoke().readFileToString(file_path);
-  }
+//  static String readFileToString(AbsolutePath<FileSystem> file_path) {
+//    return invoke().readFileToString(file_path);
+//  }
 
-  static FileOutputStream newFileOutputStream(File file) {
-    return invoke().newFileOutputStream(file);
-  }
+//
+//  static FileOutputStream newFileOutputStream(File file) {
+//    return invoke().newFileOutputStream(file);
+//  }
 
-  static void writeStringToFile(String string_data, AbsolutePath<FileSystem> file_path) {
-    invoke().writeStringToFile(string_data, file_path);
-  }
+//  static void writeStringToFile(String string_data, AbsolutePath<FileSystem> file_path) {
+//    invoke().writeStringToFile(string_data, file_path);
+//  }
 
   static void copyFileToFolder(File file, File to_folder) {
     invoke().copyFileToFolder(file, to_folder);

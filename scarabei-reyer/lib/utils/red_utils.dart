@@ -2,10 +2,8 @@ import 'package:scarabei_api/debug/debug.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/mount_point.dart';
 import 'package:scarabei_api/path/relative_path.dart';
-import 'package:scarabei_api/utils/byte_array.dart';
 import 'package:scarabei_api/utils/jutils.dart';
 import 'package:scarabei_reyer/utils/red_absolute_path.dart';
-import 'package:scarabei_reyer/utils/red_byte_array.dart';
 import 'package:scarabei_reyer/utils/red_relative_path.dart';
 
 class RedUtils extends UtilsComponent {
@@ -47,11 +45,6 @@ class RedUtils extends UtilsComponent {
       return false;
     }
     return a == b;
-  }
-
-
-  ByteArray newByteArray({List<int> bytes, int size}) {
-    return new RedByteArray(bytes: bytes, size: size);
   }
 
 

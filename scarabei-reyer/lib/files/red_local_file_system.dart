@@ -1,27 +1,29 @@
 import 'dart:io' as dart;
 
 import 'package:scarabei_api/debug/debug.dart';
+import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/files/file.dart';
-import 'package:scarabei_api/files/file_output_stream.dart';
 import "package:scarabei_api/files/file_system.dart";
 import 'package:scarabei_api/files/local_file_system.dart';
+import 'package:scarabei_api/log/logger.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/relative_path.dart';
 import 'package:scarabei_api/utils/jutils.dart';
 import 'package:scarabei_reyer/files/abstract_file_system.dart';
+import 'package:scarabei_reyer/files/local_red_file.dart';
 
 class RedLocalFileSystem extends AbstractFileSystem
     implements LocalFileSystemComponent {
 
 
-  FileOutputStream newFileOutputStream(File output_file, {bool append = false}) {
-    Debug.checkNull(output_file, "File");
-    Debug.checkTrue(output_file.getFileSystem() == this, "File belongs to this filesystem?");
-    return new JavaFileOutputStream(output_file.toJavaFile(), append);
-  }
+//  FileOutputStream newFileOutputStream(File output_file, {bool append = false}) {
+//    Debug.checkNull(output_file, "File");
+//    Debug.checkTrue(output_file.getFileSystem() == this, "File belongs to this filesystem?");
+//    return new JavaFileOutputStream(output_file.toJavaFile(), append);
+//  }
 
   AbsolutePath<FileSystem> resolve(dart.File file) {
-    Debug.checkNull("file", file);
+    Debug.checkNull(file, "file");
     file = file.getAbsoluteFile();
     RelativePath relative = this.pathToRelative(file.toPath());
     AbsolutePath<FileSystem> path = Utils.newAbsolutePath(this, relative);
@@ -37,14 +39,12 @@ class RedLocalFileSystem extends AbstractFileSystem
     return relative;
   }
 
-  LocalRedFile newFile(AbsolutePath<FileSystem> file_path) {
-    if (file_path == null) {
-      Err.reportError("Filepath is null.");
-    }
+  File newFile(AbsolutePath<FileSystem> file_path) {
+    Debug.checkNull(file_path, "file_path");
     if (file_path.getMountPoint() != this) {
       L.e("file_path", file_path);
       L.e("FileSystem", file_path.getMountPoint());
-      Err.reportError("Path does not belong to this filesystem: " + this);
+      Err.reportError("Path does not belong to this filesystem: " + this.toString());
     }
     return new LocalRedFile(file_path, this);
   }

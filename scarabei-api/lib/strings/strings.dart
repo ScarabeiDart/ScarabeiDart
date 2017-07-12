@@ -1,6 +1,5 @@
 import 'package:scarabei_api/collections/sequence.dart';
 import 'package:scarabei_api/component_installer.dart';
-import 'package:scarabei_api/utils/byte_array.dart';
 
 class Strings {
 
@@ -25,8 +24,8 @@ class Strings {
     return _componentInstaller.getComponent();
   }
 
-  static String newString({List<int> bytes, ByteArray byteArray, String encoding = "utf8"}) {
-    return invoke().newString(bytes: bytes, byteArray: byteArray, encoding: encoding);
+  static String newString({List<int> bytes, String encoding = "utf8"}) {
+    return invoke().newString(bytes: bytes, encoding: encoding);
   }
 
 
@@ -49,7 +48,7 @@ class Strings {
 
 abstract class StringsComponent {
 
-  String newString({List<int> bytes, ByteArray byteArray, String encoding});
+  String newString({List<int> bytes, String encoding});
 
   String replaceAll(String input, Map<String, String> termsMapping);
 
