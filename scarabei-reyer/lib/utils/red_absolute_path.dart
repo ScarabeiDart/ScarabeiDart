@@ -12,11 +12,11 @@ class RedAbsolutePath<T extends MountPoint> extends AbsolutePath<T> {
   RedAbsolutePath(T mount_point, [RelativePath relative]) {
     this.mount_point = mount_point;
     this.relative = relative;
-    if (mount_point == null) {
+    if (this.mount_point == null) {
       Err.reportError("MountPoint == null");
     }
-    if (relative == null) {
-      Err.reportError("RelativePath == null");
+    if (this.relative == null) {
+      this.relative = Utils.newRelativePath();
     }
   }
 
@@ -67,4 +67,18 @@ class RedAbsolutePath<T extends MountPoint> extends AbsolutePath<T> {
     }
     return this.relative.beginsWith(other.getRelativePath());
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is RedAbsolutePath &&
+              runtimeType == other.runtimeType &&
+              mount_point == other.mount_point &&
+              relative == other.relative;
+
+  @override
+  int get hashCode =>
+      relative.hashCode;
+
+
 }

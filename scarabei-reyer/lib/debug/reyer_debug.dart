@@ -5,9 +5,9 @@ import 'package:scarabei_reyer/debug/red_state_switcher.dart';
 
 class ReyerDebug extends DebugComponent {
   @override
-  void checkNull(Object obj, [String name]) {
+  T checkNull<T>(T obj, [String name]) {
     if (obj != null) {
-      return;
+      return obj;
     }
     if (name == null) {
       Err.reportError("Parameter is null");
@@ -31,5 +31,17 @@ class ReyerDebug extends DebugComponent {
   @override
   StateSwitcher<T> newStateSwitcher<T>(T default_state) {
     return new RedStateSwitcher<T>(default_state);
+  }
+
+  @override
+  String checkEmpty(String string, [String name]) {
+    if (string != "") {
+      return string;
+    }
+    if (name == null) {
+      Err.reportError("String is empty");
+    } else {
+      Err.reportError("String <$name> is empty");
+    }
   }
 }

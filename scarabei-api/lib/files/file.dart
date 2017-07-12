@@ -1,17 +1,13 @@
 import "dart:io" as dart;
 
 import 'package:scarabei_api/files/file_hash.dart';
-import 'package:scarabei_api/files/file_input_stream.dart';
-import 'package:scarabei_api/files/file_output_stream.dart';
 import 'package:scarabei_api/files/file_system.dart';
-import 'package:scarabei_api/files/files_list.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/relative_path.dart';
-import 'package:scarabei_api/utils/byte_array.dart';
 
 abstract class File {
 
-  dart.File toJavaFile();
+  dart.FileSystemEntity toDartFile();
 
   AbsolutePath<FileSystem> getAbsoluteFilePath();
 
@@ -25,9 +21,9 @@ abstract class File {
 
   FileHash calculateHash();
 
-  FilesList listDirectChildren({bool fileFilter(File file)});
+  Iterable<File> listDirectChildren({bool fileFilter(File file)});
 
-  FilesList listAllChildren({bool fileFilter(File file)});
+  Iterable<File> listAllChildren({bool fileFilter(File file)});
 
   File child(String child_name);
 
@@ -47,25 +43,22 @@ abstract class File {
 
   String nameWithoutExtension();
 
-  FileInputStream newInputStream();
-
-  FileOutputStream newOutputStream({bool append});
+//  FileInputStream newInputStream();
+//
+//  FileOutputStream newOutputStream({bool append});
 
 
   String readToString({String encoding});
 
-  ByteArray readBytes();
+  void writeString(String string, {bool append});
 
+  List<int> readBytes();
 
-  void writeBytes({ByteArray array, List<int> bytes, bool append});
-
+  void writeBytes({List<int> bytes, bool append});
 
   int getSize();
 
   File parent();
-
-
-  void writeString(String string, {bool append});
 
   int lastModified();
 
@@ -77,9 +70,7 @@ abstract class File {
 
   File proceed(RelativePath relative);
 
-  FilesList listSubFolders();
-
-  void writeData(Object object);
+  Iterable<File> listSubFolders();
 
   File copyTo(String newFileName);
 

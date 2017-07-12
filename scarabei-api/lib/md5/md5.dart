@@ -1,5 +1,4 @@
 import 'package:scarabei_api/component_installer.dart';
-import 'package:scarabei_api/io/input_stream.dart';
 import 'package:scarabei_api/md5/md5_string.dart';
 
 class MD5 {
@@ -24,18 +23,26 @@ class MD5 {
     return _componentInstaller.getComponent();
   }
 
-  static MD5String md5Stream(InputStream java_input_stream) {
-    return invoke().md5Stream(java_input_stream);
+
+  static MD5String md5String({String md5String}) {
+    return invoke().md5String(md5String: md5String);
   }
 
-  static MD5String md5String(String password) {
-    return invoke().md5String(password);
+  static MD5String hashString({String stringToHash}) {
+    return invoke().hashString(stringToHash: stringToHash);
+  }
+
+  static MD5String hashBytes({List<int> bytes}) {
+    return invoke().hashBytes(bytes: bytes);
   }
 }
 
 abstract class MD5Component {
 
-  MD5String md5String(String password);
+  MD5String md5String({String md5String});
 
-  MD5String md5Stream(InputStream input_stream);
+  MD5String hashString({String stringToHash});
+
+  MD5String hashBytes({List<int> bytes});
+
 }

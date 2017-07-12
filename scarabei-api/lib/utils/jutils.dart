@@ -2,7 +2,6 @@ import 'package:scarabei_api/component_installer.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/mount_point.dart';
 import 'package:scarabei_api/path/relative_path.dart';
-import 'package:scarabei_api/utils/byte_array.dart';
 
 
 class Utils {
@@ -48,9 +47,6 @@ class Utils {
     return invoke().equalObjects(a, b);
   }
 
-  static ByteArray newByteArray(List<int> bytes) {
-    return invoke().newByteArray(bytes: bytes);
-  }
 
   static bool beginsWith(Iterable listA, Iterable listB) {
     return invoke().beginsWith(listA, listB);
@@ -71,8 +67,6 @@ abstract class UtilsComponent {
 //  String truncated(String data, int begin_char, int end_char);
 
   bool equalObjects(Object a, Object b);
-
-  ByteArray newByteArray({List<int> bytes, int size});
 
   bool beginsWith(Iterable listA, Iterable listB);
 

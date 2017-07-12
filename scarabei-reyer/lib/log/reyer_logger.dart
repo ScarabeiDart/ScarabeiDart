@@ -54,7 +54,7 @@ class ReyerLogger extends LoggerComponent {
     for (int i = 0; i < list.length; i++) {
       String index = "[$i]";
       String space = spaces(pf.length - index.length);
-      _out(mode, space + index + " " + list.elementAt(i));
+      _out(mode, space + index + " " + list.elementAt(i).toString());
     }
   }
 

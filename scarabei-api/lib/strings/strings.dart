@@ -1,6 +1,4 @@
-import 'package:scarabei_api/collections/sequence.dart';
 import 'package:scarabei_api/component_installer.dart';
-import 'package:scarabei_api/utils/byte_array.dart';
 
 class Strings {
 
@@ -25,8 +23,8 @@ class Strings {
     return _componentInstaller.getComponent();
   }
 
-  static String newString({List<int> bytes, ByteArray byteArray, String encoding = "utf8"}) {
-    return invoke().newString(bytes: bytes, byteArray: byteArray, encoding: encoding);
+  static String newString({List<int> bytes, String encoding = "utf8"}) {
+    return invoke().newString(bytes: bytes, encoding: encoding);
   }
 
 
@@ -35,8 +33,8 @@ class Strings {
   }
 
 
-  static String wrapSequence(Sequence<String> seq, int size, String bracketLeft, String bracketRight, String separator) {
-    return invoke().wrapSequence(seq, size, bracketLeft, bracketRight, separator);
+  static String wrapSequence(Iterable<String> seq, String bracketLeft, String bracketRight, String separator) {
+    return invoke().wrapSequence(seq, bracketLeft, bracketRight, separator);
   }
 
   static List<int> toBytes(String string_data) {
@@ -49,11 +47,11 @@ class Strings {
 
 abstract class StringsComponent {
 
-  String newString({List<int> bytes, ByteArray byteArray, String encoding});
+  String newString({List<int> bytes, String encoding});
 
   String replaceAll(String input, Map<String, String> termsMapping);
 
-  String wrapSequence(Sequence<String> seq, int size, String bracketLeft, String bracketRight, String separator);
+  String wrapSequence(Iterable<String> seq, String bracketLeft, String bracketRight, String separator);
 
   List<int> toBytes(String string_data) {}
 }

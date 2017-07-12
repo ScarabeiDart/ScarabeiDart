@@ -1,25 +1,18 @@
 import 'package:scarabei_api/debug/debug.dart';
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/files/file.dart';
-import 'package:scarabei_api/files/file_input_stream.dart';
-import 'package:scarabei_api/files/file_output_stream.dart';
 import "package:scarabei_api/files/file_system.dart";
-import 'package:scarabei_api/files/files_list.dart';
 import 'package:scarabei_api/io/file_not_found_exception.dart';
-import 'package:scarabei_api/io/input_stream.dart';
 import 'package:scarabei_api/log/logger.dart';
 import 'package:scarabei_api/md5/md5.dart';
 import 'package:scarabei_api/md5/md5_string.dart';
-import 'package:scarabei_api/path/absolute_path.dart';
-import 'package:scarabei_api/strings/strings.dart';
-import 'package:scarabei_api/utils/byte_array.dart';
 import 'package:scarabei_api/utils/jutils.dart';
 
 abstract class AbstractFileSystem implements FileSystem {
   File _ROOT;
 
   File ROOT() {
-    if (this.ROOT == null) {
+    if (this._ROOT == null) {
       this._ROOT = this.newFile(Utils.newAbsolutePath(this));
     }
     return this._ROOT;
@@ -32,13 +25,13 @@ abstract class AbstractFileSystem implements FileSystem {
   }
 
   MD5String md5Hex(File file) {
-    InputStream input_stream = this.newFileInputStream(file);
-    input_stream.open();
-    MD5String checksum = MD5.md5Stream(input_stream);
-    input_stream.close();
-    return checksum;
+    List<int> data = file.readBytes();
+    return MD5.hashBytes(bytes: data);
   }
 
+  AbstractFileSystem() {
+    this.ROOT();
+  }
 
   void copyFileToFolder(File file_to_copy, File to_folder, {bool overwrite(File fileToCopy, File existing)}) {
     Debug.checkTrue(file_to_copy.exists(), "The file or folder does not exist: " + file_to_copy.toString());
@@ -67,7 +60,7 @@ abstract class AbstractFileSystem implements FileSystem {
     Debug.checkTrue(input_folder.exists(), "The folder does not exist: " + input_folder.toString());
     Debug.checkTrue(input_folder.exists(), "This is not a folder: " + input_folder.toString());
     ouput_folder.makeFolder();
-    FilesList children = input_folder.listDirectChildren();
+    List<File> children = input_folder.listDirectChildren();
     for (int i = 0; i < children.length; i++) {
       File file_to_copy = children.elementAt(i);
       this.copyFileToFolder(file_to_copy, ouput_folder, overwrite: overwrite);
@@ -82,25 +75,25 @@ abstract class AbstractFileSystem implements FileSystem {
     }
   }
 
-  String readFileToString(AbsolutePath<FileSystem> file_path) {
-    File file = this.newFile(file_path);
-    FileInputStream is_ = this.newFileInputStream(file);
-    ByteArray data = is_.readAll();
-    is_.close();
-    return Strings.newString(byteArray: data);
-  }
-
-  void writeDataToFile(AbsolutePath<FileSystem> file_path, ByteArray bytes) {
-    File file = this.newFile(file_path);
-    FileOutputStream fos = this.newFileOutputStream(file);
-    fos.write(array: bytes);
-    fos.flush();
-    fos.close();
-  }
-
-  void writeStringToFile(String string_data, AbsolutePath<FileSystem> file_path) {
-    this.writeDataToFile(file_path, Utils.newByteArray(Strings.toBytes(string_data)));
-  }
+//  String readFileToString(AbsolutePath<FileSystem> file_path) {
+//    File file = this.newFile(file_path);
+//    FileInputStream is_ = this.newFileInputStream(file);
+//    ByteArray data = is_.readAll();
+//    is_.close();
+//    return Strings.newString(byteArray: data);
+//  }
+//
+//  void writeDataToFile(AbsolutePath<FileSystem> file_path, List<int> bytes) {
+//    File file = this.newFile(file_path);
+//    FileOutputStream fos = this.newFileOutputStream(file);
+//    fos.write(array: bytes);
+//    fos.flush();
+//    fos.close();
+//  }
+//
+//  void writeStringToFile(String string_data, AbsolutePath<FileSystem> file_path) {
+//    this.writeDataToFile(file_path, (Strings.toBytes(string_data)));
+//  }
 
 
   void copyFileToFile(File input_file, File output_file, {bool overwrite(File fileToCopy, File existing)}) {
@@ -115,8 +108,8 @@ abstract class AbstractFileSystem implements FileSystem {
       if ((!output_file.exists()) || overwrite(input_file, output_file)) {
         L.d("copying file", input_file);
         L.d("          to", output_file.getAbsoluteFilePath());
-        ByteArray data = input_file.readBytes();
-        output_file.writeBytes(array: data);
+        List<int> data = input_file.readBytes();
+        output_file.writeBytes(bytes: data);
       } else {}
       return;
     }
