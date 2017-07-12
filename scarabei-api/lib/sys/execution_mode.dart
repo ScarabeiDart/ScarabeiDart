@@ -1,16 +1,22 @@
 class ExecutionMode {
-  static const EARLY_DEVELOPMENT = const ExecutionMode._(3000);
-  static const TESTING = const ExecutionMode._(2000);
-  static const RELEASE_CANDIDATE = const ExecutionMode._(1000);
-  static const DEMO = const ExecutionMode._(500);
-  static const PUBLIC_RELEASE = const ExecutionMode._(0);
+  static const EARLY_DEVELOPMENT = const ExecutionMode._(3000, "EARLY_DEVELOPMENT");
+  static const TESTING = const ExecutionMode._(2000, "TESTING");
+  static const RELEASE_CANDIDATE = const ExecutionMode._(1000, "RELEASE_CANDIDATE");
+  static const DEMO = const ExecutionMode._(500, "DEMO");
+  static const PUBLIC_RELEASE = const ExecutionMode._(0, "PUBLIC_RELEASE");
 
+
+  @override
+  String toString() {
+    return name;
+  }
 
   static get values => [EARLY_DEVELOPMENT, TESTING, RELEASE_CANDIDATE, DEMO, PUBLIC_RELEASE];
 
   final int value;
+  final String name;
 
-  const ExecutionMode._(this.value);
+  const ExecutionMode._(this.value, this.name);
 
   bool covers(ExecutionMode targetMode) => this.value >= targetMode.value;
 }

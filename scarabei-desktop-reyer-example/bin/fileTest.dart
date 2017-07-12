@@ -8,6 +8,7 @@ import 'package:scarabei_api/files/file.dart';
 import 'package:scarabei_api/files/local_file_system.dart';
 import 'package:scarabei_api/log/logger.dart';
 import 'package:scarabei_api/strings/strings.dart';
+import 'package:scarabei_api/sys/settings/system_settings.dart';
 import 'package:scarabei_api/sys/sys.dart';
 import 'package:scarabei_api/utils/jutils.dart';
 import 'package:scarabei_desktop_reyer/sys/desktop_system.dart';
@@ -17,6 +18,7 @@ import 'package:scarabei_reyer/error/reyer_error.dart';
 import 'package:scarabei_reyer/files/win/win_file_system.dart';
 import 'package:scarabei_reyer/log/reyer_logger.dart';
 import 'package:scarabei_reyer/strings/red_strings.dart';
+import 'package:scarabei_reyer/sys/red_system_settings.dart';
 import 'package:scarabei_reyer/utils/red_utils.dart';
 
 main() {
@@ -29,6 +31,7 @@ main() {
   LocalFileSystem.installComponent(new WinFileSystem());
   Strings.installComponent(new RedStrings());
   Sys.installComponent(new DesktopSystem());
+  SystemSettings.installComponent(new RedSystemSettings());
   path.basename("");
 
   var file = new dart.File("");
@@ -67,7 +70,7 @@ main() {
   L.d("root", LocalFileSystem.ROOT().listAllChildren(fileFilter: filter));
 //
 
-
+  L.d("sys", SystemSettings.listAllSettings());
 //  L.d("home", LocalFileSystem.ApplicationHome().listAllChildren());
 
 //  path.separator
