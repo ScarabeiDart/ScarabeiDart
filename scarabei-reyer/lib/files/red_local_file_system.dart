@@ -1,5 +1,6 @@
 import 'dart:io' as dart;
 
+import 'package:path/path.dart' as path;
 import 'package:scarabei_api/debug/debug.dart';
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/files/file.dart';
@@ -22,22 +23,22 @@ class RedLocalFileSystem extends AbstractFileSystem
 //    return new JavaFileOutputStream(output_file.toJavaFile(), append);
 //  }
 
-  AbsolutePath<FileSystem> resolve(dart.File file) {
-    Debug.checkNull(file, "file");
-    file = file.getAbsoluteFile();
-    RelativePath relative = this.pathToRelative(file.toPath());
-    AbsolutePath<FileSystem> path = Utils.newAbsolutePath(this, relative);
-    return path;
-  }
+//  AbsolutePath<FileSystem> resolve(dart.File file) {
+//    Debug.checkNull(file, "file");
+//    file = file.absolute;
+//    RelativePath relative = this.pathToRelative(file.toPath());
+//    AbsolutePath<FileSystem> path = Utils.newAbsolutePath(this, relative);
+//    return path;
+//  }
 
-  RelativePath pathToRelative(java_nio_file_Path path) {
-    List<String> steps = new List();
-    for (java_nio_file_Path p in path) {
-      steps.add(p.toFile().getName());
-    }
-    RelativePath relative = Utils.newRelativePath(steps);
-    return relative;
-  }
+//  RelativePath pathToRelative(java_nio_file_Path path) {
+//    List<String> steps = new List();
+//    for (java_nio_file_Path p in path) {
+//      steps.add(p.toFile().getName());
+//    }
+//    RelativePath relative = Utils.newRelativePath(steps);
+//    return relative;
+//  }
 
   File newFile(AbsolutePath<FileSystem> file_path) {
     Debug.checkNull(file_path, "file_path");
@@ -51,10 +52,11 @@ class RedLocalFileSystem extends AbstractFileSystem
 
   File newLocalFile({dart.File dartFile, String dart_file_path}) {
     if (dartFile != null) {
-      return this.newFile(this.resolve(dartFile));
+      dart_file_path = dartFile.absolute.path;
     }
-    Debug.checkNull("java_file_path", dart_file_path);
-    String splitRegex = Pattern.quote(System.getProperty("file.separator"));
+    Debug.checkNull("dart_file_path", dart_file_path);
+//    String splitRegex = Pattern.quote(System.getProperty("file.separator"));
+    Pattern splitRegex = path.separator;
     RelativePath splittedFileName = Utils.newRelativePath(path_steps: (dart_file_path.split(splitRegex)));
     File file = this.ROOT().proceed(splittedFileName);
     return file;
@@ -62,8 +64,9 @@ class RedLocalFileSystem extends AbstractFileSystem
 
 
   File ApplicationHome() {
-    return this.newFile(this.application_home_path_string);
+    path.basename("");
+    return this.newLocalFile(dart_file_path: application_home_path_string);
   }
 
-  String application_home_path_string = System.getProperty("user.dir");
+  final String application_home_path_string = new dart.File("").absolute.path;
 }

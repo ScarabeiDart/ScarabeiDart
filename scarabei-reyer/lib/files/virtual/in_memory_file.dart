@@ -118,4 +118,9 @@ class InMemoryFile extends AbstractRedFile
     InMemoryFileSystemContent content = this.virtualFileSystem.getContent();
     return content.lastModified(this.absolute_path.getRelativePath());
   }
+
+  @override
+  dart.FileSystemEntity toDartFile() {
+    Err.reportError("Operation is not supported");
+  }
 }

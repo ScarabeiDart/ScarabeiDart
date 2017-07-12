@@ -7,7 +7,7 @@ import 'package:scarabei_api/path/relative_path.dart';
 
 abstract class File {
 
-  dart.File toJavaFile();
+  dart.FileSystemEntity toDartFile();
 
   AbsolutePath<FileSystem> getAbsoluteFilePath();
 
