@@ -196,11 +196,11 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
 //      dart.File file = nextfile.toJavaFile();
       if (!nextfile.exists()) {
         if (nextfile.getAbsoluteFilePath().isRoot()) {
-          L.e("Seems like you are calling root in Windows OS and this functionallity is not yet implemented.");
+          L.e("Seems like you are calling the root in Windows OS and this functionallity is not yet implemented.");
           String rootPrefix = path.rootPrefix(new dart.File("").absolute.path);
           nextfile = nextfile.fs.newLocalFile(new dart.File(rootPrefix));
           L.e("to save you for now redirecting root to", nextfile);
-          L.e("Drive safe next time.");
+          L.e("It is just a warning but you better be careful next time.");
         } else {
           Err.reportError("File does not exist: " + nextfile.toString() + " " + nextfile.dartFilePath());
         }
