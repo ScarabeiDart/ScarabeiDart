@@ -41,9 +41,6 @@ class Sys {
     invoke().exit();
   }
 
-  static bool sleep(int period) {
-    return invoke().sleep(period);
-  }
 
   static bool isWindows() {
     return invoke().isWindows();
@@ -61,13 +58,6 @@ class Sys {
     return invoke().getSystemInfo();
   }
 
-  static void yeld() {
-    invoke().yeld();
-  }
-
-  static void wait(Object lock) {
-    invoke().wait(lock);
-  }
 
   static void addOnExitListener(OnExitListener listener) {
     invoke().addOnExitListener(listener);
