@@ -30,7 +30,7 @@ main() {
   // RelativePath is just a list of Strings with some useful operations like: child(), parent(), beginsWith() and so on.
   // We can reverse it, split or join. Anything you like.
 
-//  L.d(""); this is how we print logs here to a local console or to a remote log server;
+//  L.d(""); this is how we print the logs here to a local console or to a remote log server;
   L.d("relative", relative); //prints the path to console > folderA/foo/bar/1.txt
 
   /*Now we can mount this relative path.
@@ -42,10 +42,10 @@ main() {
 */
 
   //Let's try it.
-  //First we need a mount point. Let it bee a local file system.
+  //First we need a mount point. Let it be a local file system.
   FileSystem fileSystem = LocalFileSystem.invoke();
 
-  //AbsolutePath simply is a composition of a mount point and a relative path. Let's compose it:
+  //AbsolutePath is simply a composition of a mount point and a relative path. Let's compose it:
   AbsolutePath<FileSystem> pathAtFileSystem = Utils.newAbsolutePath(fileSystem, relative); // mount_point + relative = [filesystem]+path
   L.d("pathAtFileSystem", pathAtFileSystem);
   //AbsolutePath is not necessary a file-path as it was said above. It can be AbsolutePath<ZipArchiveFileSystem> or anything else.
@@ -106,7 +106,7 @@ main() {
   File tmp = home.child("tmp");
   fileSystem.copyFolderContentsToFolder(root, tmp);
 
-  //tmp contains a copy of the 1.txt, let's find it;
+  //tmp contains a copy of the 1.txt file, let's find it;
   File txtFileCopy = tmp.proceed(relative);
   String message = txtFileCopy.readString();
   L.d("message", message); //"Hello txt file!" Hello, fella!
@@ -118,7 +118,7 @@ main() {
 
   // Now actually if you look carefully you'll see that our code depends on an abstract file API and doesn't care about what is behind it.
   // Everything happening after the safety pig doesn't know anything about the filesystem of each file.
-  // It can be content of Amazon S3-bucket, Android  APK file, or a bridge duplicating all IO operations on two hard drives.
+  // It can be a content of Amazon S3-bucket, an Android  APK file, or a bridge duplicating all IO operations on two hard drives.
   //
   // Actually I wrote some massive code to pack game-assets for my games. And my code uses similar approach in Java. (Because java.io.File sucks a lot).
   // So the assets packer reads some files, places them in temp directories and deploys all the stuff at the S3 bucket. Tha bucket is published via web server.
@@ -143,13 +143,13 @@ void deployScarabeiComponents() {
   Debug.installComponent(new RedDebug()); // asserts for debug and testing
   Utils.installComponent(new RedUtils()); //utils including the path-factory
 
-  //here we install a windows file-system
+  //here we install a Windows file-system
   LocalFileSystem.installComponent(new WinFileSystem());
-  //no wait windows is POSIX now too
+  //no wait Windows is POSIX now too
   LocalFileSystem.deInstallCurrentComponent();
   LocalFileSystem.installComponent(new PosixFileSystem());
   //This was the last line where we cared about the filesystem type (PISIX/Windows)
-  //From this moment the path works in a generic way.
+  //From this moment onwards, the path works in a generic way.
 
 
   Strings.installComponent(new RedStrings()); // some utils for strings
