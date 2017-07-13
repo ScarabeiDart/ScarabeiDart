@@ -47,7 +47,7 @@ main() {
 
   //AbsolutePath simply is a composition of a mount point and a relative path. Let's compose it:
   AbsolutePath<FileSystem> pathAtFileSystem = Utils.newAbsolutePath(fileSystem, relative); // mount_point + relative = [filesystem]+path
-  L.d("pathAtFileSystem", pathAtFileSystem); // parent > @[PosixFileSystem] folderA/foo/bar
+  L.d("pathAtFileSystem", pathAtFileSystem); 
   //AbsolutePath is not necessary a file-path as it was said above. It can be AbsolutePath<ZipArchiveFileSystem> or anything else.
 
   //Good. Now we can create files;
