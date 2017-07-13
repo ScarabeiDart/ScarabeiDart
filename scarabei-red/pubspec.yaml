@@ -10,11 +10,11 @@ environment:
 #dependencies:
 
 dependencies:
-  scarabei_api: "^0.0.4"
   crypto: "^2.0.1"
   path: ^1.4.2
-#  scarabei_api:
-#    path: ../scarabei-api
+  scarabei_api:
+    path: ../scarabei-api
+#  scarabei_api: "^0.0.4"
 
 
 dev_dependencies:
