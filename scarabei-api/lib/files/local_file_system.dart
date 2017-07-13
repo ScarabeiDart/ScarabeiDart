@@ -76,6 +76,10 @@ class LocalFileSystem {
   static void copyFileToFile(File inputFile, File outputFile, {bool overwrite(File fileToCopy, File existing)}) {
     invoke().copyFileToFile(inputFile, outputFile);
   }
+
+  static void setDeleteSwitch({bool deleteSwitchSafePosition}) {
+    invoke().setDeleteSwitch(deleteSwitchSafePosition: deleteSwitchSafePosition);
+  }
 }
 
 abstract class LocalFileSystemComponent implements FileSystem {

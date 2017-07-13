@@ -168,10 +168,8 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
   static bool DIRECT_CHILDREN = true;
   static bool ALL_CHILDREN = (!DIRECT_CHILDREN);
 
-  Iterable<File> listDirectChildren({bool fileFilter(File file)}) {
-    if (fileFilter == null) {
-      fileFilter = (x) => true;
-    }
+  Iterable<File> listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
+    fileFilter ??= ACCEPT_ALL_FILES;
     List<LocalRedFile> filesQueue = [];
     filesQueue.add(this);
     List<File> result = new List<File>();
@@ -179,10 +177,8 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
     return result;
   }
 
-  Iterable<File> listAllChildren({bool fileFilter(File file)}) {
-    if (fileFilter == null) {
-      fileFilter = (x) => true;
-    }
+  Iterable<File> listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
+    fileFilter ??= ACCEPT_ALL_FILES;
     List<LocalRedFile> filesQueue = [];
     filesQueue.add(this);
     List<File> result = new List<File>();
@@ -191,6 +187,7 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
   }
 
   static void collectChildren(List<LocalRedFile> filesQueue, List<File> result, bool directFlag, bool fileFilter(File file)) {
+    fileFilter ??= ACCEPT_ALL_FILES;
     while (filesQueue.length > 0) {
       LocalRedFile nextfile = filesQueue.removeAt(0);
 //      dart.File file = nextfile.toJavaFile();
@@ -206,23 +203,7 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
         }
 //        Err.reportError("File does not exist: " + nextfile.toString() + " " + nextfile.dartFilePath() + " Seems like you are calling root in Windows OS and this functionallity is not yet implemented.");
       }
-//      if (nextfile.absolute_path.isRoot()) {
-////        sdfd
-//      } else
       if (nextfile.isFolder()) {
-//        for (var fileOrDir in contents) {
-//          if (fileOrDir is dart.File) {
-//            print(fileOrDir.name);
-//          } else if (fileOrDir is Directory) {
-//            print(fileOrDir.path);
-//          }
-//        }
-//
-//        List<String> list = file.list();
-//        if (list == null) {
-//          L.e("list() is null", file);
-//          continue;
-//        }
         var dir = new dart.Directory(nextfile.dartFilePath());
         List<dart.FileSystemEntity> contents = dir.listSync();
         for (int i = 0; i < contents.length; i++) {
@@ -257,7 +238,7 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
   }
 
   @override
-  void writeBytes({List<int> bytes, bool append}) {
+  void writeBytes({List<int> bytes, bool append = false}) {
     dart.File file = new dart.File(dartFilePath());
     if (append) {
       file.writeAsBytesSync(bytes, mode: dart.FileMode.WRITE_ONLY_APPEND, flush: true);
@@ -269,7 +250,7 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
   }
 
   @override
-  void writeString(String string, {bool append}) {
+  void writeString(String string, {bool append = false}) {
     dart.File file = new dart.File(dartFilePath());
 
     if (append) {

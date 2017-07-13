@@ -19,7 +19,7 @@ abstract class AbstractFileSystem implements FileSystem {
   }
 
   void setDeleteSwitch({bool deleteSwitchSafePosition}) {
-    _deleteSwitchIsInSafePosition;
+    _deleteSwitchIsInSafePosition = deleteSwitchSafePosition;
   }
 
   bool _deleteSwitchIsInSafePosition = false;
@@ -39,6 +39,9 @@ abstract class AbstractFileSystem implements FileSystem {
 
   void copyFileToFolder(File file_to_copy, File to_folder, {bool overwrite(File fileToCopy, File existing)}) {
     Debug.checkTrue(file_to_copy.exists(), "The file or folder does not exist: " + file_to_copy.toString());
+    if (overwrite == null) {
+      overwrite = (x, y) => true;
+    }
     if (file_to_copy.isFolder()) {
       String shortName = file_to_copy.getName();
       File target_folder = to_folder.child(shortName);
@@ -64,7 +67,7 @@ abstract class AbstractFileSystem implements FileSystem {
     Debug.checkTrue(input_folder.exists(), "The folder does not exist: " + input_folder.toString());
     Debug.checkTrue(input_folder.exists(), "This is not a folder: " + input_folder.toString());
     ouput_folder.makeFolder();
-    List<File> children = input_folder.listDirectChildren();
+    List<File> children = input_folder.listDirectChildren().toList();
     for (int i = 0; i < children.length; i++) {
       File file_to_copy = children.elementAt(i);
       this.copyFileToFolder(file_to_copy, ouput_folder, overwrite: overwrite);
@@ -113,6 +116,7 @@ abstract class AbstractFileSystem implements FileSystem {
         L.d("copying file", input_file);
         L.d("          to", output_file.getAbsoluteFilePath());
         List<int> data = input_file.readBytes();
+        output_file.parent().makeFolder();
         output_file.writeBytes(bytes: data);
       } else {}
       return;

@@ -3,7 +3,7 @@ import 'package:scarabei_api/sys/sys.dart';
 class ContentLeaf {
   int last_edit = Sys.currentTime();
 
-  List<int> data;
+  List<int> data = [];
 
   List<int> getData() {
     return data;

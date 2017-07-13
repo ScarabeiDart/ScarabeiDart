@@ -13,7 +13,7 @@ class ReyerLogger extends LoggerComponent {
   @override
   d(Object tag, [Object msg = NO_ARGUMENT]) {
     if (msg != NO_ARGUMENT) {
-      if (msg is List) {
+      if (msg is Iterable) {
         printList(OUT_MODE.DEBUG, tag, msg);
       } else if (msg is Map) {
         printMap(OUT_MODE.DEBUG, tag, msg);
@@ -47,7 +47,7 @@ class ReyerLogger extends LoggerComponent {
     }
   }
 
-  void printList(OUT_MODE mode, String name, List list) {
+  void printList(OUT_MODE mode, String name, Iterable list) {
     String pf = "---[$name";
     _out(mode, pf + "](" + list.length.toString() + ")---");
 

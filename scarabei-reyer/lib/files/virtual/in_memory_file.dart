@@ -5,8 +5,11 @@ import "dart:io" as dart;
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/files/file.dart';
 import 'package:scarabei_api/files/file_system.dart';
+import 'package:scarabei_api/io/io_exception.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/relative_path.dart';
+import 'package:scarabei_api/strings/strings.dart';
+import 'package:scarabei_api/sys/sys.dart';
 import 'package:scarabei_reyer/files/abstract_red_file.dart';
 import 'package:scarabei_reyer/files/virtual/content_leaf.dart';
 import 'package:scarabei_reyer/files/virtual/in_memory_file_system.dart';
@@ -17,6 +20,7 @@ class InMemoryFile extends AbstractRedFile
   InMemoryFileSystem virtualFileSystem;
   AbsolutePath<FileSystem> absolute_path;
   RelativePath relativePath;
+
 
   InMemoryFile(InMemoryFileSystem virtualFileSystem, AbsolutePath<FileSystem> file_path) {
     this.virtualFileSystem = virtualFileSystem;
@@ -105,10 +109,6 @@ class InMemoryFile extends AbstractRedFile
     }
   }
 
-  dart.File toJavaFile() {
-    Err.reportError("The method is not supported");
-    return null;
-  }
 
   File parent() {
     return new InMemoryFile(this.virtualFileSystem, this.absolute_path.parent());
@@ -123,4 +123,77 @@ class InMemoryFile extends AbstractRedFile
   dart.FileSystemEntity toDartFile() {
     Err.reportError("Operation is not supported");
   }
+
+  @override
+  List<int> readBytes() {
+    ContentLeaf contentLeaf = this.getContent();
+    if (contentLeaf == null) {
+      throw new IOException("File not found " + this.toString());
+    }
+    return contentLeaf.data.toList();
+  }
+
+  @override
+  String readString({String encoding}) {
+    return Strings.newString(bytes: this.readBytes());
+  }
+
+  @override
+  void writeBytes({List<int> bytes, bool append = false}) {
+    var leaf = this.getContent();
+    if (leaf == null) {
+      leaf = createFile();
+      if (leaf == null) {
+        throw new IOException("Unable to write to the file: " + this.toString());
+      }
+    }
+    if (append) {
+      leaf.data = bytes.toList();
+    } else {
+      leaf.data.addAll(bytes);
+    }
+    leaf.last_edit = Sys.currentTime();
+  }
+
+  @override
+  void writeString(String string, {bool append}) {
+    this.writeBytes(bytes: Strings.toBytes(string), append: append);
+  }
+
+//
+//  bool _default(int value) {
+//    return true;
+//  }
+//
+//  num myFunc({someTest: _default}) {
+//    return 15;
+//  }
+
+
+  @override
+  Iterable<File> listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
+    fileFilter ??= ACCEPT_ALL_FILES;
+    InMemoryFileSystemContent content = this.virtualFileSystem.getContent();
+    if (!content.exists(this.relativePath)) {
+      Err.reportError("File does not exist: " + this.absolute_path.toString());
+    }
+    if (content.isFolder(this.relativePath)) {
+      List<String> files = content.listChildren(this.relativePath);
+      Set<File> listFiles = new Set<File>();
+      for (int i = 0; i < files.length; i++) {
+        String file_i = files.elementAt(i);
+        AbsolutePath<FileSystem> absolute_file = this.absolute_path.child(file_i);
+        File f = absolute_file.getMountPoint().newFile(absolute_file);
+        if (fileFilter(f)) {
+          listFiles.add(f);
+        }
+      }
+      return listFiles;
+    } else {
+      Err.reportError("This is not a folder: " + this.absolute_path.toString());
+    }
+    return null;
+  }
+
+
 }

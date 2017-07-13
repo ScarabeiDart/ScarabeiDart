@@ -15,6 +15,7 @@ import 'package:scarabei_desktop_reyer/sys/desktop_system.dart';
 import 'package:scarabei_reyer/collections/reyer_collections.dart';
 import 'package:scarabei_reyer/debug/reyer_debug.dart';
 import 'package:scarabei_reyer/error/reyer_error.dart';
+import 'package:scarabei_reyer/files/virtual/in_memory_file_system.dart';
 import 'package:scarabei_reyer/files/win/win_file_system.dart';
 import 'package:scarabei_reyer/log/reyer_logger.dart';
 import 'package:scarabei_reyer/strings/red_strings.dart';
@@ -42,12 +43,42 @@ main() {
   String stringData = licenseFile.readString();
   L.d("stringData", stringData);
 
-  LocalFileSystem.invoke().setDeleteSwitch(deleteSwitchSafePosition: true);
+  LocalFileSystem.setDeleteSwitch(deleteSwitchSafePosition: false);
   File out = home.child("tmp").child("tmp1").child("tmp2");
   home.child("tmp").child("tmp1").child("tmp2").makeFolder();
   L.d("home", home.listAllChildren());
 
   LocalFileSystem.copyFileToFolder(licenseFile, out);
+  File tmp = home.child("tmp");
+  tmp.delete();
+
+  InMemoryFileSystem fs = new InMemoryFileSystem();
+
+  fs.ROOT();
+  FileFilter x = null;
+  fs.copyFilesTo(home.listAllChildren(fileFilter: x), fs.ROOT());
+
+  L.d("in memory", fs.ROOT().listAllChildren());
+  var data = fs.ROOT().child("LICENSE").readString();
+  L.d("data", data);
+
+  FileFilter g = (file) {
+    return true;
+  };
+  FileFilter filter;
+  filter = (file) {
+    String name = file.getName();
+    bool start = name.startsWith(".");
+    return !start;
+  };
+  var root = fs.ROOT();
+  var toCopy = root.listAllChildren(fileFilter: filter);
+//  L.d("toCopy", toCopy);
+
+  fs.copyFilesTo(toCopy, tmp);
+
+  L.d("tmp", tmp.listAllChildren());
+  tmp.delete();
 }
 //void writeAsBytesSync(List<int> bytes,
 //    {FileMode mode: FileMode.WRITE, bool flush: false}) {

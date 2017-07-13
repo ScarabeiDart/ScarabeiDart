@@ -21,9 +21,9 @@ abstract class File {
 
   FileHash calculateHash();
 
-  Iterable<File> listDirectChildren({bool fileFilter(File file)});
+  Iterable<File> listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES});
 
-  Iterable<File> listAllChildren({bool fileFilter(File file)});
+  Iterable<File> listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES});
 
   File child(String child_name);
 
@@ -75,5 +75,14 @@ abstract class File {
 
   bool tryToClearFolder();
 
+
 //
 }
+
+bool ACCEPT_ALL_FILES(File file) {
+  return true;
+}
+
+typedef bool FileFilter(File file);
+
+

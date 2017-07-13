@@ -257,13 +257,13 @@ abstract class AbstractRedFile implements File {
     return outputFile;
   }
 
-  Iterable<File> listDirectChildren({bool fileFilter(File file)}) {
-    return this.listDirectChildren().where(fileFilter).toList();
-  }
-
-  Iterable<File> listAllChildren({bool fileFilter(File file)}) {
-    return this.listAllChildren().where(fileFilter).toList();
-  }
+//  Iterable<File> listDirectChildren({bool fileFilter(File file)}) {
+//    return this.listDirectChildren().where(fileFilter).toList();
+//  }
+//
+//  Iterable<File> listAllChildren({bool fileFilter(File file)}) {
+//    return this.listAllChildren().where(fileFilter).toList();
+//  }
 
   bool tryToClearFolder() {
     try {
@@ -275,30 +275,33 @@ abstract class AbstractRedFile implements File {
     }
   }
 
-//  FilesList listAllChildren({bool fileFilter(File file)}) {
-//    List<File> filesQueue = [];
-//    filesQueue.add(this);
-//    RedFilesList result = new RedFilesList();
-//    collectChildren(filesQueue, result, false);
-//    return result;
-//  }
+  Iterable<File> listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
+    List<File> filesQueue = [];
+    filesQueue.add(this);
+    Set<File> result = new Set<File>();
+    collectChildren(filesQueue, result, false, fileFilter);
+    return result;
+  }
 
   static bool DIRECT_CHILDREN = true;
   static bool ALL_CHILDREN = (!DIRECT_CHILDREN);
 
-  static void collectChildren(List<File> filesQueue, List<File> result, bool directFlag) {
+  static void collectChildren(List<File> filesQueue, Set<File> result, bool directFlag, FileFilter fileFilter) {
     while (filesQueue.length > 0) {
       File nextfile = filesQueue.removeAt(0);
+
       if (nextfile.isFolder()) {
         Iterable<File> files = nextfile.listDirectChildren();
         for (int i = 0; i < files.length; i++) {
           File child = files.elementAt(i);
-          result.add(child);
-          if (directFlag == ALL_CHILDREN) {
-            if (child.isFolder()) {
-              filesQueue.add(child);
-            }
-          } else {}
+          if (fileFilter(child)) {
+            result.add(child);
+            if (directFlag == ALL_CHILDREN) {
+              if (child.isFolder()) {
+                filesQueue.add(child);
+              }
+            } else {}
+          }
         }
       } else {
         Err.reportError("This is not a folder: " + nextfile.getAbsoluteFilePath().toString());

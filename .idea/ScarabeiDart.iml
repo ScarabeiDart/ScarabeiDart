@@ -19,6 +19,11 @@
       <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer-example/bin/packages" />
       <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer-example/build" />
       <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer-example/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer-example/tmp/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer-example/tmp/bin/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer-example/tmp/build" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer-example/tmp/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer-example/tmp/test/packages" />
       <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer/build" />
       <excludeFolder url="file://$MODULE_DIR$/scarabei-desktop-reyer/example/packages" />

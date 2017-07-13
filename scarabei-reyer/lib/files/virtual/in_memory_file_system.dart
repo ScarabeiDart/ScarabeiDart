@@ -22,25 +22,6 @@ class InMemoryFileSystem extends AbstractFileSystem
     return new InMemoryFile(this, file_path);
   }
 
-//  FileOutputStream newFileOutputStream(File output_file, bool append) {
-//    if (output_file == null) {
-//      Err.reportError("Output file is null.");
-//    }
-//    if (output_file.getFileSystem() != this) {
-//      Err.reportError("Output file does not belong to this filesystem: " + output_file);
-//    }
-//    return new InMemoryFileOutputStream(output_file, append);
-//  }
-//
-//  FileInputStream newFileInputStream(File input_file) {
-//    if (input_file == null) {
-//      Err.reportError("Input file is null.");
-//    }
-//    if (input_file.getFileSystem() != this) {
-//      Err.reportError("Input file does not belong to this filesystem: " + input_file);
-//    }
-//    return new InMemoryFileInputStream(input_file);
-//  }
 
   String name = "InMemoryFileSystem";
 
