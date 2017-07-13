@@ -116,20 +116,22 @@ main() {
   File folderA = home.child(relative.getStep(0));
   folderA.delete();
 
-  // Now actually if you look carefully you'll see that out code depends on an abstract file API and doesn't care about what is behind it.
+  // Now actually if you look carefully you'll see that our code depends on an abstract file API and doesn't care about what is behind it.
   // Everything happening after the safety pig doesn't know anything about the filesystem of each file.
-  // No idea if it is Posix or windows.
-  // It can be content of Amazon S3-bucket, ZIP archive or web-directory.
+  // It can be content of Amazon S3-bucket, Android  APK file, or a bridge duplicating all IO operations on two hard drives.
   //
-  // Actually I wrote a massive code to pack game-assets for my games. And my code uses similar API in java.
-  // So the assets packer reads some files, places them in temp directories and deploys later all the stuff at the S3 bucket. Tha bucket is published via web server.
-  // Later game engine downloads assets from web-server and deploys it a a local cache.
-  // For all if these I use:
+  // Actually I wrote some massive code to pack game-assets for my games. And my code uses similar approach in Java. (Because java.io.File sucks a lot).
+  // So the assets packer reads some files, places them in temp directories and deploys all the stuff at the S3 bucket. Tha bucket is published via web server.
+  // Later game engine downloads assets from web-server and deploys it at a local cache.
+  // For all of these I use:
   // 1) InMemoryFileSystem - to store temp folders and to speed-up the packing process
   // 2) S3BucketFileSystem - to upload assets to the assets server
   // 3) HTTPFileSystem - reads files from a web server. This one is read-only.
-  // 4) And of course WindowsFileSystem is my local machine and PosixFileSystem for Android and iOS devices
-  // But code doesn't know anything about this file systems since it is working only with AbsolutePath<FileSystem> and the File as a sugar.
+  // 4) And of course WindowsFileSystem is my local machine and PosixFileSystem for Android and iOS devices.
+  //
+  // Since the assets-packer and the game engine are working only with the abstraction (AbsolutePath<FileSystem> and the File)
+  // they don't know anything about these file systems.  No idea if it is Posix or Windows or anything else.
+  //
 
   Sys.exit(); //Thank you for your time.
 
