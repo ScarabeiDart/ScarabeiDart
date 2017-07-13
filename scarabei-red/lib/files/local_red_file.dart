@@ -251,6 +251,7 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
 
   @override
   void writeString(String string, {bool append = false}) {
+    this.parent().makeFolder();
     dart.File file = new dart.File(dartFilePath());
 
     if (append) {
