@@ -1,6 +1,3 @@
-import 'dart:async';
-import 'dart:io' as dart;
-
 import 'package:scarabei_api/files/file.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/mount_point.dart';
@@ -24,7 +21,7 @@ abstract class FileSystem extends MountPoint {
 
   bool deleteSwitchIsInSafePosition();
 
-  Stream<List<int>> newInputStream(AbsolutePath<FileSystem> file_path);
-
-  dart.IOSink newOutputStream(AbsolutePath<FileSystem> file_path, {bool append});
+//  Stream<List<int>> newInputStream(AbsolutePath<FileSystem> file_path);
+//
+//  dart.IOSink newOutputStream(AbsolutePath<FileSystem> file_path, {bool append});
 }

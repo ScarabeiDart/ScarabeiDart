@@ -243,4 +243,41 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
       }
     }
   }
+
+  @override
+  List<int> readBytes() {
+    dart.File file = new dart.File(dartFilePath());
+    return file.readAsBytesSync();
+  }
+
+  @override
+  String readString({String encoding}) {
+    dart.File file = new dart.File(dartFilePath());
+    return file.readAsStringSync();
+  }
+
+  @override
+  void writeBytes({List<int> bytes, bool append}) {
+    dart.File file = new dart.File(dartFilePath());
+    if (append) {
+      file.writeAsBytesSync(bytes, mode: dart.FileMode.WRITE_ONLY_APPEND, flush: true);
+//      sink = file.openWrite(mode: dart.FileMode.WRITE_ONLY_APPEND);
+    } else {
+      file.writeAsBytesSync(bytes, mode: dart.FileMode.WRITE_ONLY, flush: true);
+//      sink = file.openWrite(mode: dart.FileMode.WRITE_ONLY);
+    }
+  }
+
+  @override
+  void writeString(String string, {bool append}) {
+    dart.File file = new dart.File(dartFilePath());
+
+    if (append) {
+//      file.writeAsBytesSync(bytes, mode: dart.FileMode.WRITE_ONLY_APPEND, flush: true);
+      file.writeAsStringSync(string, mode: dart.FileMode.WRITE_ONLY_APPEND, flush: true);
+    } else {
+//      file.writeAsBytesSync(bytes, mode: dart.FileMode.WRITE_ONLY, flush: true);
+      file.writeAsStringSync(string, mode: dart.FileMode.WRITE_ONLY, flush: true);
+    }
+  }
 }

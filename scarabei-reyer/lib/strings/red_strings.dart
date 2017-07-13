@@ -1,12 +1,18 @@
-import 'package:scarabei_api/error/err.dart';
-import 'package:scarabei_api/strings/strings.dart';
+import 'dart:convert';
 
+import 'package:scarabei_api/error/err.dart';
+import 'package:scarabei_api/log/logger.dart';
+import 'package:scarabei_api/strings/strings.dart';
 
 class RedStrings implements StringsComponent {
 
   @override
   String newString({List<int> bytes, String encoding}) {
-    Err.throwNotImplementedYet();
+    if (encoding != "utf8") {
+      L.e("unknown encoding", encoding);
+      Err.throwNotImplementedYet();
+    }
+    return UTF8.decode(bytes);
   }
 
   @override
@@ -16,7 +22,7 @@ class RedStrings implements StringsComponent {
 
   @override
   List<int> toBytes(String string_data) {
-    Err.throwNotImplementedYet();
+    return UTF8.encode(string_data);
   }
 
   @override

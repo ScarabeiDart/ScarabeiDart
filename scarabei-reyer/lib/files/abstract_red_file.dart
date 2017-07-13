@@ -1,8 +1,5 @@
 library com.jfixby.scarabei.red.filesystem;
 
-import 'dart:async';
-import 'dart:io' as dart;
-
 import 'package:scarabei_api/debug/debug.dart';
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/files/file.dart';
@@ -12,7 +9,6 @@ import 'package:scarabei_api/io/io_exception.dart';
 import 'package:scarabei_api/log/logger.dart';
 import 'package:scarabei_api/path/absolute_path.dart';
 import 'package:scarabei_api/path/relative_path.dart';
-import 'package:scarabei_api/strings/strings.dart';
 import 'package:scarabei_reyer/files/abstract_file_system.dart';
 
 
@@ -134,55 +130,86 @@ abstract class AbstractRedFile implements File {
     return name.substring(0, dotIndex);
   }
 
-  void writeString(String string, {bool append}) {
-    this.writeBytes(bytes: Strings.toBytes(string), append: append);
-  }
+//  void writeString(String string, {bool append}) {
+//    this.writeBytes(bytes: Strings.toBytes(string), append: append);
+//  }
+//
+//  String readString({String encoding = "utf8"}) {
+//    return Strings.newString(bytes: this.readBytes(), encoding: encoding);
+//  }
 
-  String readString({String encoding = "utf8"}) {
-    return Strings.newString(bytes: this.readBytes(), encoding: encoding);
-  }
+//  @override
+//  void writeBytes({List<int> bytes, bool append = false}) {
+//    dart.IOSink stream = this.newOutputStream(append: append);
+//    stream.add(bytes);
+//    stream.flush();
+//    stream.close();
+//  }
 
-  @override
-  void writeBytes({List<int> bytes, bool append = false}) {
-    dart.IOSink stream = this.newOutputStream(append: append);
-    stream.add(bytes);
-    stream.flush();
-    stream.close();
-  }
+//  @override
+//  List<int> readBytes() {
+////    Stream<List<int>> inputStream = newInputStream();
+////    List<int> result = [];
+////
+////    var onData = (List<int> event) {
+////      L.d("read", event);
+////      result.addAll(event);
+////      L.d("result add", event);
+////    };
+////
+////    Function onError = (e) {
+////      throw e;
+//////      Err.reportError("", e);
+////    };
+////
+////    var onDone = () {};
+////
+////    inputStream
+//////        .transform(UTF8.decoder) // Decode bytes to UTF8.
+//////        .transform(new LineSplitter()) // Convert stream to individual lines.
+////        .listen(onData,
+////        onError: onError,
+////        onDone: onDone, cancelOnError: true);
+////
+////    L.d("result", result);
+////    return result;
+//
+//    var completer = new Completer<List<int>>();
+//
+//    var inputStream = newInputStream();
+//    var result = <int>[];
+//
+//    var onData = (List<int> event) {
+//      result.addAll(event);
+//    };
+//
+//    Function onError = (e) {
+//      completer.completeError(e);
+//    };
+//
+//    var onDone = () {
+//      completer.complete(result);
+//    };
+//
+//    inputStream
+//        .listen(onData,
+//        onError: onError,
+//        onDone: onDone, cancelOnError: true);
+//
+//    while (!completer.isCompleted) {
+//      dart.sleep();
+//    }
+//
+//    return completer.future;
+//  }
 
-  @override
-  List<int> readBytes() {
-    Stream<List<int>> inputStream = newInputStream();
-    List<int> result = [];
-
-    var onData = (List<int> event) {
-      result.addAll(event);
-    };
-
-    Function onError = (e) {
-      throw e;
-//      Err.reportError("", e);
-    };
-
-    var onDone = () {};
-
-    inputStream
-//        .transform(UTF8.decoder) // Decode bytes to UTF8.
-//        .transform(new LineSplitter()) // Convert stream to individual lines.
-        .listen(onData,
-        onError: onError,
-        onDone: onDone, cancelOnError: true);
-
-    return result;
-  }
-
-  Stream<List<int>> newInputStream() {
-    return this.getAbsoluteFilePath().getMountPoint().newInputStream(this.getAbsoluteFilePath());
-  }
-
-  dart.IOSink newOutputStream({bool append = false}) {
-    return this.getAbsoluteFilePath().getMountPoint().newOutputStream(this.getAbsoluteFilePath());
-  }
+//  Stream<List<int>> newInputStream() {
+//    return this.getAbsoluteFilePath().getMountPoint().newInputStream(this.getAbsoluteFilePath());
+//  }
+//
+//  dart.IOSink newOutputStream({bool append = false}) {
+//    return this.getAbsoluteFilePath().getMountPoint().newOutputStream(this.getAbsoluteFilePath());
+//  }
 
 
   String toString() {
