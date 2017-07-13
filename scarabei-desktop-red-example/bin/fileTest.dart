@@ -11,7 +11,7 @@ import 'package:scarabei_api/strings/strings.dart';
 import 'package:scarabei_api/sys/settings/system_settings.dart';
 import 'package:scarabei_api/sys/sys.dart';
 import 'package:scarabei_api/utils/jutils.dart';
-import 'package:scarabei_desktop_red/sys/desktop_system.dart';
+import 'package:scarabei_desktop_red/sys/red_desktop_system.dart';
 import 'package:scarabei_red/collections/red_collections.dart';
 import 'package:scarabei_red/debug/red_debug.dart';
 import 'package:scarabei_red/error/red_error.dart';
@@ -30,7 +30,7 @@ main() {
   Utils.installComponent(new RedUtils());
   LocalFileSystem.installComponent(new WinFileSystem());
   Strings.installComponent(new RedStrings());
-  Sys.installComponent(new DesktopSystem());
+  Sys.installComponent(new RedDesktopSystem());
   SystemSettings.installComponent(new RedSystemSettings());
   path.basename("");
 

@@ -2,88 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aab33d55-71bb-4e3a-812f-eed18bfc5dc0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/.idea/modules.xml" afterPath="$PROJECT_DIR$/scarabei-red/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/.idea/saveactions_settings.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/.idea/saveactions_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/md5/red_md5.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/md5/red_md5.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/scarabei-red/.idea/libraries/Dart_Packages.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/.idea/workspace.xml" afterPath="$PROJECT_DIR$/scarabei-android-red/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/red_local_file_system.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/red_local_file_system.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/utils/red_utils.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/utils/red_utils.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/.idea/libraries/Dart_SDK.xml" afterPath="$PROJECT_DIR$/scarabei-red/.idea/libraries/Dart_SDK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/debug/red_state_switcher.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/debug/red_state_switcher.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/error/red_error.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/error/red_error.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/.gitignore" afterPath="$PROJECT_DIR$/scarabei-android-red/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ScarabeiDart.iml" afterPath="$PROJECT_DIR$/.idea/ScarabeiDart.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/lib/scarabei_desktop_red_example.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/lib/scarabei_desktop_red_example.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/misc.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/libraries/Dart_SDK.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/libraries/Dart_SDK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/.idea/libraries/Dart_SDK.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/.idea/libraries/Dart_SDK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/content_node.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/content_node.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/.idea/workspace.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/sys/red_system.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/sys/red_system.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/LICENSE" afterPath="$PROJECT_DIR$/scarabei-android-red/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/.idea/workspace.xml" afterPath="$PROJECT_DIR$/scarabei-red/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/scarabei-desktop-red-example.iml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/scarabei-desktop-red-example.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-red/pubspec.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file_system_content.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file_system_content.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/analysis_options.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/analysis_options.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/utils/red_absolute_path.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/utils/red_absolute_path.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/.gitignore" afterPath="$PROJECT_DIR$/scarabei-desktop-red/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-android-red/lib/scarabei_android_red.dart" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scarabei-desktop-red/lib/scarabei_desktop_red.dart" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/file.txt" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/file.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/scarabei-desktop-red.iml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/scarabei-desktop-red.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-android-red/pubspec.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/LICENSE" afterPath="$PROJECT_DIR$/scarabei-desktop-red/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/abstract_file_system.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/abstract_file_system.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/log/red_logger.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/log/red_logger.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/LICENSE" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/analysis_options.yaml" afterPath="$PROJECT_DIR$/scarabei-red/analysis_options.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/.gitignore" afterPath="$PROJECT_DIR$/scarabei-red/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/CHANGELOG.md" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/collections/red_collections.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/collections/red_collections.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/.idea/modules.xml" afterPath="$PROJECT_DIR$/scarabei-android-red/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/.idea/scarabei-red.iml" afterPath="$PROJECT_DIR$/scarabei-red/.idea/scarabei-red.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/lib/sys/desktop_system.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red/lib/sys/desktop_system.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/.idea/misc.xml" afterPath="$PROJECT_DIR$/scarabei-android-red/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/.idea/misc.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/workspace.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/sys/red_device_info.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/sys/red_device_info.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/local_red_file.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/local_red_file.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/debug/red_debug.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/debug/red_debug.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/md5/red_md5_string.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/md5/red_md5_string.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/CollectionsExample.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/CollectionsExample.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/.idea/vcs.xml" afterPath="$PROJECT_DIR$/scarabei-red/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/modules.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/sys/no_clock.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/sys/no_clock.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/sys/os_validator.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/sys/os_validator.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/sys/system_clock.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/sys/system_clock.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/analysis_options.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/analysis_options.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/scarabei-android-red.iml" afterPath="$PROJECT_DIR$/scarabei-android-red/scarabei-android-red.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/sys/red_system_settings.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/sys/red_system_settings.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/.idea/libraries/Dart_Packages.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/content_leaf.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/content_leaf.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/abstract_red_file.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/abstract_red_file.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/.gitignore" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/.idea/modules.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-api/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-android-api/pubspec.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-android-red/pubspec.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-api/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-api/pubspec.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-api/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-api/pubspec.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest2.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest2.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/scarabei_desktop_red_example.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/scarabei_desktop_red_example.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/.idea/libraries/Dart_Packages.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/README.md" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file_system.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file_system.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/scarabei-android-red/.idea/libraries/Dart_Packages.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/pathTest.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/bin/pathTest.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/.idea/libraries/Dart_SDK.xml" afterPath="$PROJECT_DIR$/scarabei-android-red/.idea/libraries/Dart_SDK.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/utils/red_relative_path.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/utils/red_relative_path.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/strings/red_strings.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/strings/red_strings.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/LICENSE" afterPath="$PROJECT_DIR$/scarabei-red/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-android-red/analysis_options.yaml" afterPath="$PROJECT_DIR$/scarabei-android-red/analysis_options.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/posix/posix_file_system.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/posix/posix_file_system.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/lib/files/win/win_file_system.dart" afterPath="$PROJECT_DIR$/scarabei-red/lib/files/win/win_file_system.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scarabei-red/pubspec.yaml" afterPath="$PROJECT_DIR$/scarabei-red/pubspec.yaml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/scarabei-desktop-red/lib/sys/desktop_system.dart" afterPath="$PROJECT_DIR$/scarabei-desktop-red/lib/sys/red_desktop_system.dart" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,133 +26,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.41321802">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="in_memory_file.dart" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file.dart">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="in_memory_file_system_content.dart" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file_system_content.dart">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1445">
-                  <caret line="87" column="7" lean-forward="false" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
-                  <folding>
-                    <marker date="1499953988202" expanded="true" signature="214:4338" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="267:307" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="350:497" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="545:640" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="685:773" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="825:1295" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="1347:1625" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="1668:2319" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="2362:2436" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="2479:3157" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="3217:3786" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="3843:3999" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="4053:4233" ph="{...}" />
-                    <marker date="1499953988202" expanded="true" signature="4291:4336" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="local_file_system.dart" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-api/lib/files/local_file_system.dart">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1275">
-                  <caret line="80" column="20" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="red_local_file_system.dart" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/lib/files/red_local_file_system.dart">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1428">
-                  <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                    <marker date="1499953988102" expanded="true" signature="794:3578" ph="{...}" />
-                    <marker date="1499953988102" expanded="true" signature="798:1669" ph="//..." />
-                    <marker date="1499953988102" expanded="true" signature="1722:2042" ph="{...}" />
-                    <marker date="1499953988102" expanded="true" signature="2084:2636" ph="{...}" />
-                    <marker date="1499953988102" expanded="true" signature="2204:2412" ph="//..." />
-                    <marker date="1499953988102" expanded="true" signature="2700:3188" ph="{...}" />
-                    <marker date="1499953988102" expanded="true" signature="2702:2872" ph="//..." />
-                    <marker date="1499953988102" expanded="true" signature="3068:3118" ph="//..." />
-                    <marker date="1499953988102" expanded="true" signature="3216:3279" ph="{...}" />
-                    <marker date="1499953988102" expanded="true" signature="3281:3576" ph="//..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="local_red_file.dart" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/lib/files/local_red_file.dart">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4063">
-                  <caret line="250" column="0" lean-forward="false" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#45#70#0" expanded="true" />
-                    <marker date="1499953988089" expanded="true" signature="664:8379" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="827:898" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="943:968" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="1019:1055" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="1088:1442" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="1090:1160" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="1468:1526" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="1544:1675" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="1546:1616" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="1695:1830" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="1697:1766" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="1848:2029" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="1850:1919" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="2053:2374" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="2055:2268" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="2408:2728" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="2472:2617" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="2747:2996" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="3018:3275" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="3020:3186" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="3293:3862" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="3295:3365" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="3881:4053" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="4074:4233" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="4076:4182" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="4284:4497" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="4286:4355" ph="//..." />
-                    <marker date="1499953988089" expanded="true" signature="4667:4906" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="4804:4810" ph="&lt;~&gt;" />
-                    <marker date="1499953988089" expanded="true" signature="4985:5221" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="5122:5128" ph="&lt;~&gt;" />
-                    <marker date="1499953988089" expanded="true" signature="5348:7121" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="7159:7251" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="7304:7397" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="7469:7865" ph="{...}" />
-                    <marker date="1499953988089" expanded="true" signature="7936:8377" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -229,8 +42,8 @@
           <file leaf-file-name="fileTest2.dart" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest2.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="48" column="61" lean-forward="false" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+                <state relative-caret-position="323">
+                  <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -239,75 +52,56 @@
             </entry>
           </file>
           <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/pubspec.yaml">
+            <entry file="file://$PROJECT_DIR$/scarabei-android-red/pubspec.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="LICENSE" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/LICENSE">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/.idea/modules.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="no_clock.dart" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/lib/sys/no_clock.dart">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sys.dart" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-api/lib/sys/sys.dart">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+                <state relative-caret-position="238">
+                  <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-android-red/pubspec.yaml">
+            <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+                <state relative-caret-position="187">
+                  <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
                   <folding>
-                    <marker date="1499952775383" expanded="true" signature="218:331" ph="dependencies: &lt;2 keys&gt;" />
-                    <marker date="1499952775383" expanded="true" signature="316:331" ph="../scarabei-red" />
-                    <marker date="1499952775383" expanded="true" signature="333:366" ph="dev_dependencies: &lt;1 key&gt;" />
-                    <marker date="1499952775383" expanded="true" signature="359:366" ph="^0.12.0" />
+                    <marker date="1499955815308" expanded="true" signature="323:359" ph="scarabei_…ktop_reyer: &lt;1 key&gt;" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="analysis_options.yaml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/scarabei-red/analysis_options.yaml">
+          <file leaf-file-name="fileTest.dart" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-68">
+                  <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="scarabei_android_red.dart" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/scarabei-android-red/lib/scarabei_android_red.dart">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -326,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isEmpty</find>
       <find>sort</find>
       <find>print</find>
       <find>Debug</find>
@@ -356,6 +149,7 @@
       <find>prefix</find>
       <find>dele</find>
       <find>delete</find>
+      <find>desktop</find>
     </findStrings>
     <replaceStrings>
       <replace>UtilsComponent</replace>
@@ -369,6 +163,7 @@
       <replace>NamesComponent</replace>
       <replace>SystemComponent</replace>
       <replace>[</replace>
+      <replace>android</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -382,9 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scarabei-api/lib/debug/debug.dart" />
-        <option value="$PROJECT_DIR$/scarabei-red/lib/debug/red_debug.dart" />
-        <option value="$PROJECT_DIR$/scarabei-red/lib/utils/red_utils.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/red_files_list.dart" />
         <option value="$PROJECT_DIR$/scarabei-api/lib/io/io_exception.dart" />
         <option value="$PROJECT_DIR$/scarabei-api/lib/io/file_not_found_exception.dart" />
@@ -396,8 +188,6 @@
         <option value="$PROJECT_DIR$/scarabei-api/lib/names/names_component.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/virtual/content_node.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file_system_content.dart" />
-        <option value="$PROJECT_DIR$/scarabei-red/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/scarabei-api/pubspec.yaml" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/posix/posix_file_system.dart" />
         <option value="$PROJECT_DIR$/scarabei-api/lib/files/local_file.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/win/win_file_system.dart" />
@@ -407,7 +197,6 @@
         <option value="$PROJECT_DIR$/scarabei-red/lib/sys/os_validator.dart" />
         <option value="$PROJECT_DIR$/scarabei-api/lib/sys/system_component.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/sys/red_system.dart" />
-        <option value="$PROJECT_DIR$/scarabei-desktop-red/lib/sys/desktop_system.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/utils/red_relative_path.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/utils/red_absolute_path.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/sys/red_device_info.dart" />
@@ -419,19 +208,25 @@
         <option value="$PROJECT_DIR$/scarabei-api/lib/files/local_file_system.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file_system.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/virtual/content_leaf.dart" />
-        <option value="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/log/red_logger.dart" />
         <option value="$PROJECT_DIR$/scarabei-api/lib/files/file.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/local_red_file.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/abstract_file_system.dart" />
         <option value="$PROJECT_DIR$/scarabei-red/lib/files/abstract_red_file.dart" />
-        <option value="$PROJECT_DIR$/scarabei-red/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/scarabei-android-red/pubspec.yaml" />
         <option value="$PROJECT_DIR$/scarabei-red/.idea/modules.xml" />
         <option value="$PROJECT_DIR$/scarabei-api/lib/sys/sys.dart" />
+        <option value="$PROJECT_DIR$/scarabei-api/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-red/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-red/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-desktop-api/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-android-api/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-desktop-red/lib/sys/desktop_system.dart" />
+        <option value="$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-desktop-red/lib/scarabei_desktop_red.dart" />
+        <option value="$PROJECT_DIR$/scarabei-android-red/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart" />
         <option value="$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest2.dart" />
       </list>
     </option>
@@ -460,7 +255,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -475,8 +269,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -488,19 +283,19 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-desktop-red-example\bin" />
-      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-red\lib\sys" />
-      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-red\lib\files\posix" />
-      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-red\lib\files\win" />
-      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-api\lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-red\lib" />
       <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-api\lib\io" />
       <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-api\lib" />
       <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-api" />
       <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-desktop-red-example\bin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-android-red\lib" />
+      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-desktop-red-example\bin" />
+      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-red\lib\sys" />
+      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-red\lib\files\posix" />
+      <recent name="D:\ScarabeiDart\ScarabeiDart\scarabei-red\lib\files\win" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -761,23 +556,23 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39889503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Dart Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35911602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49613258" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49613258" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3359116" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13882978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13882978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19202128" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49613258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49613258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -809,55 +604,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scarabei-red/lib/sys/red_device_info.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-api/lib/sys/system_component.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-api/lib/sys/settings/system_settings_component.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-red/lib/sys/red_system_settings.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-api/lib/sys/execution_mode.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-api/lib/sys/settings/system_settings.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-red/lib/error/red_error.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scarabei-red/lib/utils/red_absolute_path.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -955,16 +701,6 @@
           <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1499953988102" expanded="true" signature="794:3578" ph="{...}" />
-            <marker date="1499953988102" expanded="true" signature="798:1669" ph="//..." />
-            <marker date="1499953988102" expanded="true" signature="1722:2042" ph="{...}" />
-            <marker date="1499953988102" expanded="true" signature="2084:2636" ph="{...}" />
-            <marker date="1499953988102" expanded="true" signature="2204:2412" ph="//..." />
-            <marker date="1499953988102" expanded="true" signature="2700:3188" ph="{...}" />
-            <marker date="1499953988102" expanded="true" signature="2702:2872" ph="//..." />
-            <marker date="1499953988102" expanded="true" signature="3068:3118" ph="//..." />
-            <marker date="1499953988102" expanded="true" signature="3216:3279" ph="{...}" />
-            <marker date="1499953988102" expanded="true" signature="3281:3576" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -1017,22 +753,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
           <caret line="87" column="7" lean-forward="false" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
-          <folding>
-            <marker date="1499953988202" expanded="true" signature="214:4338" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="267:307" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="350:497" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="545:640" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="685:773" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="825:1295" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="1347:1625" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="1668:2319" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="2362:2436" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="2479:3157" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="3217:3786" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="3843:3999" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="4053:4233" ph="{...}" />
-            <marker date="1499953988202" expanded="true" signature="4291:4336" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,50 +785,7 @@
           <caret line="250" column="0" lean-forward="false" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
           <folding>
             <element signature="e#45#70#0" expanded="true" />
-            <marker date="1499953988089" expanded="true" signature="664:8379" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="827:898" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="943:968" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="1019:1055" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="1088:1442" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="1090:1160" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="1468:1526" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="1544:1675" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="1546:1616" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="1695:1830" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="1697:1766" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="1848:2029" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="1850:1919" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="2053:2374" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="2055:2268" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="2408:2728" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="2472:2617" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="2747:2996" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="3018:3275" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="3020:3186" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="3293:3862" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="3295:3365" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="3881:4053" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="4074:4233" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="4076:4182" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="4284:4497" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="4286:4355" ph="//..." />
-            <marker date="1499953988089" expanded="true" signature="4667:4906" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="4804:4810" ph="&lt;~&gt;" />
-            <marker date="1499953988089" expanded="true" signature="4985:5221" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="5122:5128" ph="&lt;~&gt;" />
-            <marker date="1499953988089" expanded="true" signature="5348:7121" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="7159:7251" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="7304:7397" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="7469:7865" ph="{...}" />
-            <marker date="1499953988089" expanded="true" signature="7936:8377" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="73" column="25" lean-forward="false" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1128,25 +806,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <marker date="1499952775457" expanded="true" signature="208:399" ph="dependencies: &lt;2 keys&gt;" />
-            <marker date="1499952775457" expanded="true" signature="364:399" ph="scarabei_…ktop_reyer: &lt;1 key&gt;" />
-            <marker date="1499952775457" expanded="true" signature="376:399" ph="../scarab…esktop-red" />
-            <marker date="1499952775457" expanded="true" signature="402:435" ph="dev_dependencies: &lt;1 key&gt;" />
-            <marker date="1499952775457" expanded="true" signature="428:435" ph="^0.12.0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scarabei-android-red/analysis_options.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1154,28 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-android-red/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <marker date="1499952775383" expanded="true" signature="218:331" ph="dependencies: &lt;2 keys&gt;" />
-            <marker date="1499952775383" expanded="true" signature="316:331" ph="../scarabei-red" />
-            <marker date="1499952775383" expanded="true" signature="333:366" ph="dev_dependencies: &lt;1 key&gt;" />
-            <marker date="1499952775383" expanded="true" signature="359:366" ph="^0.12.0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-red/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1211,26 +852,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scarabei-api/lib/sys/sys.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
+        <state relative-caret-position="306">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1239,16 +864,121 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-red/lib/files/virtual/in_memory_file.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-api/pubspec.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-api/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-desktop-api/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-android-api/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-red/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-desktop-red/lib/sys/red_desktop_system.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-desktop-red/lib/scarabei_desktop_red.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-desktop-red/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-android-red/lib/scarabei_android_red.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-android-red/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1499955815308" expanded="true" signature="323:359" ph="scarabei_…ktop_reyer: &lt;1 key&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/bin/fileTest2.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="48" column="61" lean-forward="false" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+        <state relative-caret-position="323">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
