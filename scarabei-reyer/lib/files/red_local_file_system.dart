@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io' as dart;
 
 import 'package:path/path.dart' as path;
@@ -88,7 +89,21 @@ class RedLocalFileSystem extends AbstractFileSystem
     return this.newLocalFile(new dart.File("").absolute);
   }
 
-//  final String application_home_path_string = new dart.File("").absolute.path;
+  @override
+  Stream<List<int>> newInputStream(AbsolutePath<FileSystem> file_path) {
+    dart.File file = new dart.File(dartFilePath(file_path));
+    return file.openRead();
+  }
 
-
+  @override
+  dart.IOSink newOutputStream(AbsolutePath<FileSystem> file_path, {bool append}) {
+    dart.File file = new dart.File(dartFilePath(file_path));
+    dart.IOSink sink = null;
+    if (append) {
+      sink = file.openWrite(mode: dart.FileMode.WRITE_ONLY_APPEND);
+    } else {
+      sink = file.openWrite(mode: dart.FileMode.WRITE_ONLY);
+    }
+    return sink;
+  }
 }

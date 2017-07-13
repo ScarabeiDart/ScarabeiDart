@@ -1,5 +1,8 @@
 library com.jfixby.scarabei.red.filesystem;
 
+import 'dart:async';
+import 'dart:io' as dart;
+
 import 'package:scarabei_api/debug/debug.dart';
 import 'package:scarabei_api/error/err.dart';
 import 'package:scarabei_api/files/file.dart';
@@ -13,7 +16,7 @@ import 'package:scarabei_api/strings/strings.dart';
 import 'package:scarabei_reyer/files/abstract_file_system.dart';
 
 
-abstract class AbstractRedFile extends File {
+abstract class AbstractRedFile implements File {
 
   void clearFolder() {
     if (this.isFolder()) {
@@ -90,10 +93,6 @@ abstract class AbstractRedFile extends File {
   }
 
 
-  String readToString({String encoding}) {
-    return Strings.newString(bytes: this.readBytes(), encoding: encoding);
-  }
-
 //  List<int> readBytes() {
 //    FileInputStream is_ = this.getFileSystem().newFileInputStream(this);
 //    ByteArray bytes;
@@ -138,6 +137,53 @@ abstract class AbstractRedFile extends File {
   void writeString(String string, {bool append}) {
     this.writeBytes(bytes: Strings.toBytes(string), append: append);
   }
+
+  String readString({String encoding = "utf8"}) {
+    return Strings.newString(bytes: this.readBytes(), encoding: encoding);
+  }
+
+  @override
+  void writeBytes({List<int> bytes, bool append = false}) {
+    dart.IOSink stream = this.newOutputStream(append: append);
+    stream.add(bytes);
+    stream.flush();
+    stream.close();
+  }
+
+  @override
+  List<int> readBytes() {
+    Stream<List<int>> inputStream = newInputStream();
+    List<int> result = [];
+
+    var onData = (List<int> event) {
+      result.addAll(event);
+    };
+
+    Function onError = (e) {
+      throw e;
+//      Err.reportError("", e);
+    };
+
+    var onDone = () {};
+
+    inputStream
+//        .transform(UTF8.decoder) // Decode bytes to UTF8.
+//        .transform(new LineSplitter()) // Convert stream to individual lines.
+        .listen(onData,
+        onError: onError,
+        onDone: onDone, cancelOnError: true);
+
+    return result;
+  }
+
+  Stream<List<int>> newInputStream() {
+    return this.getAbsoluteFilePath().getMountPoint().newInputStream(this.getAbsoluteFilePath());
+  }
+
+  dart.IOSink newOutputStream({bool append = false}) {
+    return this.getAbsoluteFilePath().getMountPoint().newOutputStream(this.getAbsoluteFilePath());
+  }
+
 
   String toString() {
     return this.getAbsoluteFilePath().toString();
@@ -231,16 +277,6 @@ abstract class AbstractRedFile extends File {
         Err.reportError("This is not a folder: " + nextfile.getAbsoluteFilePath().toString());
       }
     }
-  }
-
-  @override
-  void writeBytes({List<int> bytes, bool append}) {
-    Err.throwNotImplementedYet();
-  }
-
-  @override
-  List<int> readBytes() {
-    Err.throwNotImplementedYet();
   }
 
 

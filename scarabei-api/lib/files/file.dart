@@ -1,3 +1,4 @@
+import 'dart:async';
 import "dart:io" as dart;
 
 import 'package:scarabei_api/files/file_hash.dart';
@@ -43,12 +44,11 @@ abstract class File {
 
   String nameWithoutExtension();
 
-//  FileInputStream newInputStream();
-//
-//  FileOutputStream newOutputStream({bool append});
+  Stream<List<int>> newInputStream();
 
+  dart.IOSink newOutputStream({bool append});
 
-  String readToString({String encoding});
+  String readString({String encoding});
 
   void writeString(String string, {bool append});
 
