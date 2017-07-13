@@ -21,6 +21,8 @@ abstract class FileSystem extends MountPoint {
 
   bool deleteSwitchIsInSafePosition();
 
+  void setDeleteSwitch({bool deleteSwitchSafePosition});
+
 //  Stream<List<int>> newInputStream(AbsolutePath<FileSystem> file_path);
 //
 //  dart.IOSink newOutputStream(AbsolutePath<FileSystem> file_path, {bool append});

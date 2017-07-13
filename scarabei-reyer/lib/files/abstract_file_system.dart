@@ -18,7 +18,11 @@ abstract class AbstractFileSystem implements FileSystem {
     return this._ROOT;
   }
 
-  bool _deleteSwitchIsInSafePosition = (!true);
+  void setDeleteSwitch({bool deleteSwitchSafePosition}) {
+    _deleteSwitchIsInSafePosition;
+  }
+
+  bool _deleteSwitchIsInSafePosition = false;
 
   bool deleteSwitchIsInSafePosition() {
     return this._deleteSwitchIsInSafePosition;

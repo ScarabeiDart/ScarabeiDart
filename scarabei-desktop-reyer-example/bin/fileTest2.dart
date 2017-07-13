@@ -41,8 +41,14 @@ main() {
   L.d("licenseFile", licenseFile);
   String stringData = licenseFile.readString();
   L.d("stringData", stringData);
-}
 
+  LocalFileSystem.invoke().setDeleteSwitch(deleteSwitchSafePosition: true);
+  File out = home.child("tmp").child("tmp1").child("tmp2");
+  home.child("tmp").child("tmp1").child("tmp2").makeFolder();
+  L.d("home", home.listAllChildren());
+
+  LocalFileSystem.copyFileToFolder(licenseFile, out);
+}
 //void writeAsBytesSync(List<int> bytes,
 //    {FileMode mode: FileMode.WRITE, bool flush: false}) {
 //  dar.File f = null;
