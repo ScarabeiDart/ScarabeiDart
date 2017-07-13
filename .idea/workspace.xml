@@ -29,8 +29,8 @@
       <file leaf-file-name="scarabei_path_example.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/bin/scarabei_path_example.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+            <state relative-caret-position="306">
+              <caret line="104" column="33" lean-forward="false" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -924,8 +924,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scarabei-desktop-red-example/bin/scarabei_path_example.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+        <state relative-caret-position="306">
+          <caret line="104" column="33" lean-forward="false" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>

@@ -47,7 +47,7 @@ main() {
 
   //AbsolutePath simply is a composition of a mount point and a relative path. Let's compose it:
   AbsolutePath<FileSystem> pathAtFileSystem = Utils.newAbsolutePath(fileSystem, relative); // mount_point + relative = [filesystem]+path
-  L.d("pathAtFileSystem", pathAtFileSystem); 
+  L.d("pathAtFileSystem", pathAtFileSystem);
   //AbsolutePath is not necessary a file-path as it was said above. It can be AbsolutePath<ZipArchiveFileSystem> or anything else.
 
   //Good. Now we can create files;
@@ -102,7 +102,7 @@ main() {
   //Let's see the result;
   L.d("virtual file system content", root.listAllChildren());
 
-  //Now let's copy it to the tmp/
+  //Now let's copy it back to the hard drive
   File tmp = home.child("tmp");
   fileSystem.copyFolderContentsToFolder(root, tmp);
 
