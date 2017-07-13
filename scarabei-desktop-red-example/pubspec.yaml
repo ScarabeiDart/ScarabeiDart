@@ -8,11 +8,11 @@ environment:
   sdk: '>=1.20.1 <2.0.0'
 
 dependencies:
-   scarabei_desktop_red: "^0.0.4"
-#  scarabei_api:
-#    path: ../scarabei-api
-#  scarabei_desktop_red:
-#    path: ../scarabei-desktop-red
+#   scarabei_desktop_red: "^0.0.4"
+  scarabei_api:
+    path: ../scarabei-api
+  scarabei_desktop_red:
+    path: ../scarabei-desktop-red
 
 
 dev_dependencies:
