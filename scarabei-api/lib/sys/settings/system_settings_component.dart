@@ -20,7 +20,7 @@ abstract class SystemSettingsComponent {
 
   void printSystemParameters();
 
-  bool executionModeCovers(ExecutionMode mode);
+  bool executionModeIsAtLeast(ExecutionMode mode);
 
   ExecutionMode getExecutionMode();
 

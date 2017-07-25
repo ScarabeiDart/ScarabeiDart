@@ -18,7 +18,12 @@ class ExecutionMode {
 
   const ExecutionMode._(this.value, this.name);
 
-  bool covers(ExecutionMode targetMode) => this.value >= targetMode.value;
+  bool isAtLeast(ExecutionMode targetMode) => this.value >= targetMode.value;
+
+  bool isBelow(ExecutionMode targetMode) => this.value < targetMode.value;
+
+
+
 }
 
 //enum ExecutionMode {

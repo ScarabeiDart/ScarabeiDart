@@ -60,8 +60,8 @@ class SystemSettings {
     invoke().printSystemParameters();
   }
 
-  static bool executionModeCovers(ExecutionMode mode) {
-    return invoke().executionModeCovers(mode);
+  static bool executionModeIsAtLeast(ExecutionMode mode) {
+    return invoke().executionModeIsAtLeast(mode);
   }
 
   static ExecutionMode getExecutionMode() {
@@ -74,5 +74,9 @@ class SystemSettings {
 
   static Map<String, String> listAllSettings() {
     return invoke().listAllSettings();
+  }
+
+  static void setExecutionMode(ExecutionMode mode) {
+    invoke().setExecutionMode(mode);
   }
 }

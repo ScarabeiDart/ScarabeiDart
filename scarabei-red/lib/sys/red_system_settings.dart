@@ -90,8 +90,8 @@ class RedSystemSettings
     return value;
   }
 
-  bool executionModeCovers(ExecutionMode execution_mode) {
-    return this.execution_mode.covers(execution_mode);
+  bool executionModeIsAtLeast(ExecutionMode execution_mode) {
+    return this.execution_mode.isAtLeast(execution_mode);
   }
 
   ExecutionMode getExecutionMode() {
