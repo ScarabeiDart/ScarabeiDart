@@ -14,6 +14,7 @@ import 'package:scarabei_desktop_red/sys/red_desktop_system.dart';
 import 'package:scarabei_red/debug/red_debug.dart';
 import 'package:scarabei_red/error/red_error.dart';
 import 'package:scarabei_red/files/posix/posix_file_system.dart';
+import 'package:scarabei_red/files/posix/unix_file_system.dart';
 import 'package:scarabei_red/files/virtual/in_memory_file_system.dart';
 import 'package:scarabei_red/files/win/win_file_system.dart';
 import 'package:scarabei_red/log/red_logger.dart';
@@ -147,7 +148,7 @@ void deployScarabeiComponents() {
   LocalFileSystem.installComponent(new WinFileSystem());
   //no wait Windows is POSIX now too
   LocalFileSystem.deInstallCurrentComponent();
-  LocalFileSystem.installComponent(new PosixFileSystem());
+  LocalFileSystem.installComponent(new UnixFileSystem());
   //This was the last line where we cared about the filesystem type (PISIX/Windows)
   //From this moment onwards, the path works in a generic way.
 

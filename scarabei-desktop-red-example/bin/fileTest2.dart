@@ -16,6 +16,7 @@ import 'package:scarabei_red/collections/red_collections.dart';
 import 'package:scarabei_red/debug/red_debug.dart';
 import 'package:scarabei_red/error/red_error.dart';
 import 'package:scarabei_red/files/posix/posix_file_system.dart';
+import 'package:scarabei_red/files/posix/unix_file_system.dart';
 import 'package:scarabei_red/files/virtual/in_memory_file_system.dart';
 import 'package:scarabei_red/files/win/win_file_system.dart';
 import 'package:scarabei_red/log/red_logger.dart';
@@ -32,7 +33,7 @@ main() {
   Utils.installComponent(new RedUtils());
   LocalFileSystem.installComponent(new WinFileSystem());
   LocalFileSystem.deInstallCurrentComponent();
-  LocalFileSystem.installComponent(new PosixFileSystem());
+  LocalFileSystem.installComponent(new UnixFileSystem());
   Strings.installComponent(new RedStrings());
   Sys.installComponent(new RedDesktopSystem());
   SystemSettings.installComponent(new RedSystemSettings());
