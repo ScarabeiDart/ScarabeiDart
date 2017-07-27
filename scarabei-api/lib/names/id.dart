@@ -1,4 +1,3 @@
-library com.jfixby.scarabei.api.assets;
 
 
 abstract class ID {

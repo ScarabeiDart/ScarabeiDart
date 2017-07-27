@@ -1,4 +1,3 @@
-library com.jfixby.scarabei.api.assets;
 
 import 'package:scarabei_api/component_installer.dart';
 import 'package:scarabei_api/names/id.dart';
