@@ -1,6 +1,6 @@
 # scarabei_reyer
 
-Default implementations if the scarabei API
+Default implementations if the scarabei API https://pub.dartlang.org/packages/scarabei
 
 Installation
 ```Java
