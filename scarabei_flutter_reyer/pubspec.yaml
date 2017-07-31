@@ -8,15 +8,15 @@ environment:
   sdk: '>=1.20.1 <2.0.0'
 
 dependencies:
-#  flutter:
-#    sdk: flutter
-#  scarabei:
-#    path: ../scarabei
-#  scarabei_reyer:
-#    path: ../scarabei_reyer
-  scarabei: "^1.1.0"
-  scarabei_reyer: "^1.1.0"
-  flutter: "^0.0.20"
+  flutter:
+    sdk: flutter
+  scarabei:
+    path: ../scarabei
+  scarabei_reyer:
+    path: ../scarabei_reyer
+#  scarabei: "^1.1.0"
+#  scarabei_reyer: "^1.1.0"
+#  flutter: "^0.0.20"
 
 
 
