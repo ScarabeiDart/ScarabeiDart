@@ -6,7 +6,7 @@ Similar to the Apache Commons (https://commons.apache.org/) Scarabei library pro
 
 Originally written in Java (https://github.com/Scarabei/Scarabei/tree/master/scarabei-api/src/com/jfixby/scarabei/api) ScarabeiDart is a port to the Dart-language.
 
-Scarabei strongly relyes on the facade design pattern (https://en.wikipedia.org/wiki/Facade_pattern) shielding your code from external libraries with an abstract API. The actual implementations of the API will be determined during a runtime. The approach allows more flexibility in the development e.g. optional implementations and dependency injections (https://en.wikipedia.org/wiki/Dependency_inversion_principle) (https://en.wikipedia.org/wiki/Dependency_injection).
+Scarabei strongly relies on the facade design pattern (https://en.wikipedia.org/wiki/Facade_pattern) shielding your code from external libraries with an abstract API. The actual implementations of the API will be determined during runtime. The approach allows more flexibility in the development e.g. optional implementations and dependency injections (https://en.wikipedia.org/wiki/Dependency_inversion_principle) (https://en.wikipedia.org/wiki/Dependency_injection).
 
 > The intent behind dependency injection is to decouple objects to the extent that no client code has to be changed simply because an object it depends on needs to be changed to a different one.
 
