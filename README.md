@@ -16,14 +16,14 @@ The proposed usage scenario for the library user (client library) is the followi
  
 ## Usage examples
 ### Logger
-```
+```Dart
 L.d("Hello world");
 L.d("message", message);
 L.e("error", exception);
 ```
 
 ### File systems
-```
+```Dart
  Iterable<String> relativePathSteps = ['folderA', 'foo', 'bar', '1.txt']; //some strings
 
   RelativePath relative = Utils.newRelativePath(path_steps: relativePathSteps);
