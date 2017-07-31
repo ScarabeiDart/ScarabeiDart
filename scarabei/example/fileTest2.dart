@@ -16,14 +16,14 @@ import 'package:scarabei/red/error/red_error.dart';
 import 'package:scarabei/red/files/posix/unix_file_system.dart';
 import 'package:scarabei/red/files/virtual/in_memory_file_system.dart';
 import 'package:scarabei/red/files/win/win_file_system.dart';
-import 'package:scarabei/red/log/red_logger.dart';
+import 'package:scarabei/red/log/simple_logger.dart';
 import 'package:scarabei/red/strings/red_strings.dart';
 import 'package:scarabei/red/sys/red_system_settings.dart';
 import 'package:scarabei/red/utils/red_utils.dart';
 
 main() {
   dart.File f;
-  L.installComponent(new RedLogger());
+  L.installComponent(new SimpleLogger());
   Err.installComponent(new RedError());
   Debug.installComponent(new RedDebug());
   Utils.installComponent(new RedUtils());

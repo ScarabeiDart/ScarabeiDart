@@ -16,7 +16,7 @@ import 'package:scarabei/red/error/red_error.dart';
 import 'package:scarabei/red/files/posix/unix_file_system.dart';
 import 'package:scarabei/red/files/virtual/in_memory_file_system.dart';
 import 'package:scarabei/red/files/win/win_file_system.dart';
-import 'package:scarabei/red/log/red_logger.dart';
+import 'package:scarabei/red/log/simple_logger.dart';
 import 'package:scarabei/red/strings/red_strings.dart';
 import 'package:scarabei/red/sys/red_system_settings.dart';
 import 'package:scarabei/red/utils/red_utils.dart';
@@ -137,7 +137,7 @@ main() {
 }
 
 void deployScarabeiComponents() {
-  L.installComponent(new RedLogger()); //logger
+  L.installComponent(new SimpleLogger()); //logger
   Err.installComponent(new RedError()); //errors reporter
   Debug.installComponent(new RedDebug()); // asserts for debug and testing
   Utils.installComponent(new RedUtils()); //utils including the path-factory

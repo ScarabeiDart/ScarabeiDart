@@ -17,7 +17,7 @@ import 'package:scarabei/red-android/sys/red_android_system.dart';
 import 'package:scarabei/red/debug/red_debug.dart';
 import 'package:scarabei/red/error/red_error.dart';
 import 'package:scarabei/red/json/dart_json.dart';
-import 'package:scarabei/red/log/red_logger.dart';
+import 'package:scarabei/red/log/simple_logger.dart';
 import 'package:scarabei/red/md5/red_md5.dart';
 import 'package:scarabei/red/strings/red_strings.dart';
 import 'package:scarabei/red/sys/red_system_settings.dart';
@@ -27,7 +27,7 @@ import 'package:scarabei_flutter/red-android/sys/scarabei_android_flutter_proxy.
 class ScarabeiAndroid {
 
   static void deploy() {
-    L.installComponent(new RedLogger()); //logger
+    L.installComponent(new SimpleLogger()); //logger
     Err.installComponent(new RedError()); //errors reporter
     Debug.installComponent(new RedDebug()); // asserts for debug and testing
     Utils.installComponent(new RedUtils()); //utils including the path-factory

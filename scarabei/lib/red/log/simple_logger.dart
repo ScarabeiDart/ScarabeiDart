@@ -2,9 +2,9 @@ import 'package:scarabei/api/lang/lang.dart';
 import 'package:scarabei/api/log/logger.dart';
 
 
-class RedLogger extends LoggerComponent {
+class SimpleLogger extends LoggerComponent {
 
-  RedLogger([ConsoleOut out]) {
+  SimpleLogger([ConsoleOut out]) {
     _console_out = out;
   }
 
