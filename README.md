@@ -12,7 +12,7 @@ Scarabei strongly relies on the facade design pattern (https://en.wikipedia.org/
 
 The proposed usage scenario for the library user (client library) is the following:
  - develop and compile your library code using Scarabei API 
- - setup the actual API implementations in the runtime right after your application entry point
+ - setup the actual implementations at the runtime right after your application entry point
  
 ## Usage examples
 ### Logger
