@@ -1,0 +1,15 @@
+<code_scheme name="daanuu">
+    <option name="RIGHT_MARGIN" value="200"/>
+    <MarkdownNavigatorCodeStyleSettings>
+        <option name="RIGHT_MARGIN" value="72"/>
+    </MarkdownNavigatorCodeStyleSettings>
+    <XML>
+        <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true"/>
+    </XML>
+    <editorconfig>
+        <option name="ENABLED" value="false"/>
+    </editorconfig>
+    <codeStyleSettings language="Dart">
+        <option name="RIGHT_MARGIN" value="640"/>
+    </codeStyleSettings>
+</code_scheme>
