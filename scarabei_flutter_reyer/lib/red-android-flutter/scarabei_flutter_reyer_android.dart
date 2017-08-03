@@ -31,6 +31,7 @@ class ScarabeiAndroid {
     Err.installComponent(new RedError()); //errors reporter
     Debug.installComponent(new RedDebug()); // asserts for debug and testing
     Utils.installComponent(new RedUtils()); //utils including the path-factory
+
 //
         {
       LocalFileSystem.installComponent(new AndroidFileSystem());

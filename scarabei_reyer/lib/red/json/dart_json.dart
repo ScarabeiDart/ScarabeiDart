@@ -4,6 +4,7 @@ import 'package:scarabei/api/json/json.dart';
 import 'package:scarabei/api/json/json_string.dart';
 import 'package:scarabei/api/log/logger.dart';
 
+//import 'dart:convert';
 class DartJson implements JsonComponent {
   @override
   dynamic deserializeFromString({JsonString json, String rawString}) {

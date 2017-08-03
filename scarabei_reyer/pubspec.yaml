@@ -11,3 +11,4 @@ dependencies:
 #  scarabei: ">=1.1.1 <2.0.0"
   crypto: ">=2.0.2 <3.0.0"
   path: ">=1.4.2 <3.0.0"
+  logging: "^0.11.3+1"

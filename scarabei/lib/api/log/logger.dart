@@ -1,13 +1,8 @@
 import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/lang/lang.dart';
 
-
 class L {
-
-  static ComponentInstaller<
-      LoggerComponent> _componentInstaller = new ComponentInstaller<
-      LoggerComponent>("Logger");
-
+  static ComponentInstaller<LoggerComponent> _componentInstaller = new ComponentInstaller<LoggerComponent>("Logger");
 
   static void installComponent(LoggerComponent component_to_install) {
     _componentInstaller.installComponent(component_to_install);
@@ -32,11 +27,9 @@ class L {
   static e(Object tag, [Object msg = NO_ARGUMENT]) {
     invoke().e(tag, msg);
   }
-
 }
 
 abstract class LoggerComponent {
-
   d(Object tag, [Object msg = NO_ARGUMENT]); //debug
 
   e(Object tag, [Object msg = NO_ARGUMENT]); //error
@@ -44,10 +37,7 @@ abstract class LoggerComponent {
 }
 
 abstract class ConsoleOut {
-  void out(OUT_MODE, String msg) {}
+  void out(OUT_MODE mode, String frame, String msg);
 }
 
-enum OUT_MODE {
-  DEBUG,
-  ERROR
-}
+enum OUT_MODE { DEBUG, ERROR }
