@@ -3,6 +3,26 @@ import 'package:scarabei/api/log/logger.dart';
 
 //https://pub.dartlang.org/packages/logging
 class PubLogging implements ConsoleOut {
+  static Function loggerListener = (LogRecord record) {
+    {
+      var left = (record.level.toString() + " " + record.loggerName.toString()).padLeft(100 + 2, ' ');
+
+      List<String> list = record.message.split("\n");
+      for (int i = 0; i < list.length; i++) {
+        print(left + "| " + list[i]);
+        if (i == 0) {
+          left = "".padLeft(left.length, ' ');
+        }
+      }
+      if (record.error != null) {
+        print(record.error.toString());
+      }
+      if (record.stackTrace != null) {
+        print(record.stackTrace.toString());
+      }
+    }
+  };
+
   final Map<String, _Logger> registry = {};
   int _sizeLimit = 100;
 

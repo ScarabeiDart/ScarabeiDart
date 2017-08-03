@@ -1,7 +1,7 @@
 import 'package:scarabei/api/log/logger.dart';
 
 class SystemOut implements ConsoleOut {
-  int pad = 90;
+  int pad = 90 + 23;
   String split = "|";
 
   @override
@@ -9,10 +9,15 @@ class SystemOut implements ConsoleOut {
 //    frame = "";
 //    pad = 0;
 //    split = "";
+    String marker = "";
     if (mode == OUT_MODE.DEBUG) {
-      print((frame + split).padLeft(pad, ' ') + " " + msg);
+      marker = "";
     } else {
-      print(("WARNING: " + frame + split).padLeft(pad, ' ') + " " + msg);
+      marker = "WARNING: ";
+    }
+    List<String> list = msg.split("\n");
+    for (int i = 0; i < list.length; i++) {
+      print((marker + frame + split).padLeft(pad, ' ') + " " + list[i]);
     }
   }
 }
