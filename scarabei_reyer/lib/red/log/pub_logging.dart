@@ -3,10 +3,10 @@ import 'package:scarabei/api/log/logger.dart';
 
 //https://pub.dartlang.org/packages/logging
 class PubLogging implements ConsoleOut {
+  static int logPadding = 100 + 2;
   static Function loggerListener = (LogRecord record) {
     {
-      var left = (record.level.toString() + " " + record.loggerName.toString()).padLeft(100 + 2, ' ');
-
+      var left = (record.level.toString() + " " + record.loggerName.toString()).padLeft(logPadding, ' ');
       List<String> list = record.message.split("\n");
       for (int i = 0; i < list.length; i++) {
         print(left + "| " + list[i]);

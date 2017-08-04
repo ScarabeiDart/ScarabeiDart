@@ -1,46 +1,39 @@
-class ExecutionMode {
-  static const EARLY_DEVELOPMENT = const ExecutionMode._(3000, "EARLY_DEVELOPMENT");
-  static const TESTING = const ExecutionMode._(2000, "TESTING");
-  static const RELEASE_CANDIDATE = const ExecutionMode._(1000, "RELEASE_CANDIDATE");
-  static const DEMO = const ExecutionMode._(500, "DEMO");
-  static const PUBLIC_RELEASE = const ExecutionMode._(0, "PUBLIC_RELEASE");
+import 'package:scarabei/scarabei.dart';
 
+class ExecutionMode {
+  static const ExecutionMode EARLY_DEVELOPMENT = const ExecutionMode._(3000, "EARLY_DEVELOPMENT");
+  static const ExecutionMode TESTING = const ExecutionMode._(2000, "TESTING");
+  static const ExecutionMode RELEASE_CANDIDATE = const ExecutionMode._(1000, "RELEASE_CANDIDATE");
+  static const ExecutionMode DEMO = const ExecutionMode._(500, "DEMO");
+  static const ExecutionMode PUBLIC_RELEASE = const ExecutionMode._(0, "PUBLIC_RELEASE");
+
+  static const ExecutionMode defaultMode = ExecutionMode.PUBLIC_RELEASE;
 
   @override
   String toString() {
-    return name;
+    return _name;
   }
 
   static get values => [EARLY_DEVELOPMENT, TESTING, RELEASE_CANDIDATE, DEMO, PUBLIC_RELEASE];
 
-  final int value;
-  final String name;
+  final int _value;
+  final String _name;
 
-  const ExecutionMode._(this.value, this.name);
+  const ExecutionMode._(this._value, this._name);
 
-  bool isAtLeast(ExecutionMode targetMode) => this.value >= targetMode.value;
+  bool isAtLeast(ExecutionMode targetMode) => this._value >= targetMode._value;
 
-  bool isBelow(ExecutionMode targetMode) => this.value < targetMode.value;
+  bool isBelow(ExecutionMode targetMode) => this._value < targetMode._value;
 
+  static ExecutionMode resolve(exeString) {
+    for (ExecutionMode ex in values) {
+      if (ex.toString() == exeString) {
+        return ex;
+      }
+    }
+    L.e("Failed to resolve ExecutionMode", "[" + exeString + "]");
+    L.e("           setting default mode", defaultMode);
 
-
+    return defaultMode;
+  }
 }
-
-//enum ExecutionMode {
-//  EARLY_DEVELOPMENT(3000), //
-//TESTING(2000), //
-//RELEASE_CANDIDATE(1000), //
-//DEMO(500), //
-//PUBLIC_RELEASE(0);//
-//
-//final int level;
-//
-//ExecutionMode (int level) {
-//  this.level = level;
-//
-//}
-//
-//public final boolean covers (ExecutionMode targetMode) {
-//return this.level >= targetMode.level;
-//}
-//}

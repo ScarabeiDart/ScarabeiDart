@@ -1,15 +1,20 @@
 name: scarabei_flutter_reyer
 description: Collection of open source reusable Dart components
-version: 1.1.1
+version: 1.1.2
 homepage: https://github.com/ScarabeiDart/
 author: J Fixby <dart@jfixby.com>
+
+environment:
+  sdk: ">=1.8.0 <2.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  scarabei: ^1.1.2
+  scarabei_reyer: ^1.1.2
+
+dependency_overrides:
   scarabei:
     path: ../scarabei
   scarabei_reyer:
     path: ../scarabei_reyer
-#  scarabei: ">=1.1.1 <2.0.0"
-#  scarabei_reyer: ">=1.1.1 <2.0.0"

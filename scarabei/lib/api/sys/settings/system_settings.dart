@@ -5,16 +5,14 @@ import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
 import 'package:scarabei/api/sys/settings/system_settings_component.dart';
 
-
 class SystemSettings {
-  static ComponentInstaller<
-      SystemSettingsComponent> _componentInstaller = new ComponentInstaller<
-      SystemSettingsComponent>("SystemSettings");
+  static ComponentInstaller<SystemSettingsComponent> _componentInstaller = new ComponentInstaller<SystemSettingsComponent>("SystemSettings");
+
+  static const String EXECUTION_MODE_TAG = "com.jfixby.scarabey.system.settings.execution_mode";
 
   static void installComponent(SystemSettingsComponent component_to_install) {
     _componentInstaller.installComponent(component_to_install);
   }
-
 
   static SystemSettingsComponent deInstallCurrentComponent() {
     return _componentInstaller.deInstallComponent();
@@ -36,12 +34,12 @@ class SystemSettings {
     return invoke().getFlag(flag_name);
   }
 
-  static String getStringParameter(String parameter_name) {
-    return invoke().getStringParameter(parameter_name);
+  static String getStringParameter(String parameter_name, {String defaultValue}) {
+    return invoke().getStringParameter(parameter_name, defaultValue: defaultValue);
   }
 
-  static void setLongParameter(String parameterName, int parameterValue) {
-    invoke().setLongParameter(parameterName, parameterValue);
+  static void setIntParameter(String parameterName, int parameterValue) {
+    invoke().setIntParameter(parameterName, parameterValue);
   }
 
   static void setStringParameter(String parameter_name, String parameter_value) {
@@ -68,8 +66,8 @@ class SystemSettings {
     return invoke().getExecutionMode();
   }
 
-  static int getLongParameter(String parameterName) {
-    return invoke().getLongParameter(parameterName);
+  static int getIntParameter(String parameterName) {
+    return invoke().getIntParameter(parameterName);
   }
 
   static Map<String, String> listAllSettings() {
@@ -78,5 +76,9 @@ class SystemSettings {
 
   static void setExecutionMode(ExecutionMode mode) {
     invoke().setExecutionMode(mode);
+  }
+
+  static ExecutionMode resolveExecutionMode(exeString) {
+    return invoke().resolveExecutionMode(exeString);
   }
 }

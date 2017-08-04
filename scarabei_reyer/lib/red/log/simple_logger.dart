@@ -74,7 +74,7 @@ class SimpleLogger extends LoggerComponent {
       var v = map[k];
       String index = "[$i]";
       String space = spaces(pf.length - index.length);
-      _out(mode, frame, space + index + " " + k + " :-> " + v);
+      _out(mode, frame, space + index + " " + k.toString() + " :-> " + v.toString());
       i++;
     }
   }
