@@ -1,5 +1,11 @@
 # ScarabeiDart
 
+[![Pub Package](https://img.shields.io/pub/v/scarabei.svg)](https://pub.dartlang.org/packages/scarabei)
+[![GitHub Issues](https://img.shields.io/github/issues/ScarabeiDart/ScarabeiDart.svg)](https://github.com/ScarabeiDart/ScarabeiDart/issues)
+[![GitHub Forks](https://img.shields.io/github/forks/ScarabeiDart/ScarabeiDart.svg)](https://github.com/ScarabeiDart/ScarabeiDart/network)
+[![GitHub Stars](https://img.shields.io/github/stars/ScarabeiDart/ScarabeiDart.svg)](https://github.com/ScarabeiDart/ScarabeiDart/stargazers)
+[![GitHub License](https://img.shields.io/badge/license-Apache-blue.svg)](https://raw.githubusercontent.com/ScarabeiDart/ScarabeiDart/master/LICENSE)
+
 *Набор Dart-компонентов, чтобы катать всякое говно*
 
 Similar to the Apache Commons (https://commons.apache.org/) Scarabei library provides a collection of open-source reusable components that you are missing in the official SDK.
