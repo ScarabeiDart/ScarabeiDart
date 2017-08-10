@@ -38,8 +38,14 @@ class SimpleLogger extends LoggerComponent {
   }
 
   @override
-  e(Object tag, [Object msg = NO_ARGUMENT]) {
-    log(OUT_MODE.DEBUG, tag, msg);
+  e(Object tag, [Object msg = NO_ARGUMENT, Exception error, StackTrace stack]) {
+    log(OUT_MODE.ERROR, tag, msg);
+    if (error != null) {
+      log(OUT_MODE.ERROR, tag, error);
+    }
+    if (stack != null) {
+      log(OUT_MODE.ERROR, tag, stack);
+    }
   }
 
   void _out(OUT_MODE mode, String frame, String msg) {

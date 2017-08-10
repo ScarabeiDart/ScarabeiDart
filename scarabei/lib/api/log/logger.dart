@@ -24,15 +24,15 @@ class L {
     invoke().d(tag, msg);
   }
 
-  static e(Object tag, [Object msg = NO_ARGUMENT]) {
-    invoke().e(tag, msg);
+  static e(Object tag, [Object msg = NO_ARGUMENT, Exception error, StackTrace stack]) {
+    invoke().e(tag, msg, error, stack);
   }
 }
 
 abstract class LoggerComponent {
   d(Object tag, [Object msg = NO_ARGUMENT]); //debug
 
-  e(Object tag, [Object msg = NO_ARGUMENT]); //error
+  e(Object tag, [Object msg = NO_ARGUMENT, Exception error, StackTrace stack]); //error
 
 }
 
