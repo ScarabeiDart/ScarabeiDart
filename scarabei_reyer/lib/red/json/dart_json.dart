@@ -6,12 +6,11 @@ import 'package:scarabei/api/log/logger.dart';
 
 //import 'dart:convert';
 class DartJson implements JsonComponent {
-  @override
-  dynamic deserializeFromString({JsonString json, String rawString}) {
+  T deserializeFromString<T>({JsonString json, String rawString}) {
     if (json != null) {
       rawString = json.toString();
     }
-    dynamic result = JSON.decode(rawString);
+    T result = JSON.decode(rawString);
     return result;
   }
 

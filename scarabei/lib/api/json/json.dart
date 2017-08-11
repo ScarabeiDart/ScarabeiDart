@@ -2,12 +2,10 @@
 
 //import com.jfixby.scarabei.api.ComponentInstaller;
 
-
 import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/json/json_string.dart';
 
 class Json {
-
   static ComponentInstaller<JsonComponent> componentInstaller = new ComponentInstaller<JsonComponent>("Json");
 
   static void installComponent(JsonComponent component_to_install) {
@@ -26,10 +24,9 @@ class Json {
     return invoke().serializeToString(object);
   }
 
-  static dynamic deserializeFromString({JsonString json, String rawString}) {
+  static T deserializeFromString<T>({JsonString json, String rawString}) {
     return invoke().deserializeFromString(json: json, rawString: rawString);
   }
-
 
   static void printPretty(JsonString json_string) {
     invoke().printPretty(json_string);
@@ -41,15 +38,11 @@ class Json {
 }
 
 abstract class JsonComponent {
-
   JsonString serializeToString(Object object);
 
-  dynamic deserializeFromString({JsonString json, String rawString});
+  T deserializeFromString<T>({JsonString json, String rawString});
 
   void printPretty(JsonString json_string);
 
   JsonString newJsonString(String raw_json_string);
-
 }
-
-
