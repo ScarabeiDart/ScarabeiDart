@@ -20,7 +20,6 @@ import 'package:scarabei_reyer/red/json/dart_json.dart';
 import 'package:scarabei_reyer/red/log/simple_logger.dart';
 import 'package:scarabei_reyer/red/md5/red_md5.dart';
 import 'package:scarabei_reyer/red/strings/red_strings.dart';
-import 'package:scarabei_reyer/red/sys/red_system_settings.dart';
 import 'package:scarabei_reyer/red/utils/red_utils.dart';
 import 'package:scarabei_flutter_reyer/red-android-flutter/sys/scarabei_android_flutter_proxy.dart';
 
@@ -44,7 +43,7 @@ class ScarabeiAndroid {
     Json.installComponent(new DartJson());
     Strings.installComponent(new RedStrings()); // some utils for strings
     Sys.installComponent(new RedAndroidSystem()); //...
-    SystemSettings.installComponent(new RedSystemSettings()); //...
+//    SystemSettings.installComponent(new RedSystemSettings()); //...
     SystemSettings.setExecutionMode(ExecutionMode.EARLY_DEVELOPMENT); // activate debugging flags
 //  SystemSettings.setExecutionMode(ExecutionMode.PUBLIC_RELEASE); // deactivate production mode
 //    Application app = null;

@@ -10,7 +10,6 @@ import 'package:scarabei_reyer/red/debug/red_debug.dart';
 import 'package:scarabei_reyer/red/error/red_error.dart';
 import 'package:scarabei_reyer/red/log/pub_logging.dart';
 import 'package:scarabei_reyer/red/log/simple_logger.dart';
-import 'package:scarabei_reyer/red/sys/red_system_settings.dart';
 
 import 'again.dart';
 
@@ -34,7 +33,6 @@ main() {
   Err.installComponent(new RedError()); //errors reporter
   Debug.installComponent(new RedDebug()); // asserts for debug and testing
   Sys.installComponent(new RedAndroidSystem()); //...
-  SystemSettings.installComponent(new RedSystemSettings()); //...
   SystemSettings.setExecutionMode(ExecutionMode.EARLY_DEVELOPMENT);
 
   L.d("hello");

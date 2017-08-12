@@ -15,7 +15,6 @@ import 'package:scarabei_reyer/red/error/red_error.dart';
 import 'package:scarabei_reyer/red/files/win/win_file_system.dart';
 import 'package:scarabei_reyer/red/log/simple_logger.dart';
 import 'package:scarabei_reyer/red/strings/red_strings.dart';
-import 'package:scarabei_reyer/red/sys/red_system_settings.dart';
 import 'package:scarabei_reyer/red/utils/red_utils.dart';
 main() {
   dart.File f;
@@ -26,7 +25,6 @@ main() {
   LocalFileSystem.installComponent(new WinFileSystem());
   Strings.installComponent(new RedStrings());
   Sys.installComponent(new RedDesktopSystem());
-  SystemSettings.installComponent(new RedSystemSettings());
 
   var file = new dart.File("");
   String abs = file.absolute.path;

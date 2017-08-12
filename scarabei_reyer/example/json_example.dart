@@ -11,14 +11,12 @@ import 'package:scarabei_reyer/red/debug/red_debug.dart';
 import 'package:scarabei_reyer/red/error/red_error.dart';
 import 'package:scarabei_reyer/red/json/dart_json.dart';
 import 'package:scarabei_reyer/red/log/simple_logger.dart';
-import 'package:scarabei_reyer/red/sys/red_system_settings.dart';
 
 main() {
   L.installComponent(new SimpleLogger());
   Err.installComponent(new RedError()); //errors reporter
   Debug.installComponent(new RedDebug()); // asserts for debug and testing
   Sys.installComponent(new RedAndroidSystem()); //...
-  SystemSettings.installComponent(new RedSystemSettings()); //...
   SystemSettings.setExecutionMode(ExecutionMode.EARLY_DEVELOPMENT);
   Json.installComponent(new DartJson());
 //  Json.installComponent(new Dson());

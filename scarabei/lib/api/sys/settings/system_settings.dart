@@ -9,8 +9,6 @@ class SystemSettings {
   static ComponentInstaller<SystemSettingsComponent> _componentInstaller =
       new ComponentInstaller<SystemSettingsComponent>("SystemSettings");
 
-  static const String EXECUTION_MODE_TAG = "com.jfixby.scarabey.system.settings.execution_mode";
-
   static void installComponent(SystemSettingsComponent component_to_install) {
     _componentInstaller.installComponent(component_to_install);
   }
@@ -27,31 +25,31 @@ class SystemSettings {
     return _componentInstaller.getComponent();
   }
 
-  static void setFlag(String flag_name, bool flag_value) {
+  static void setFlag(ID flag_name, bool flag_value) {
     invoke().setFlag(flag_name, flag_value);
   }
 
-  static bool getFlag(String flag_name) {
+  static bool getFlag(ID flag_name) {
     return invoke().getFlag(flag_name);
   }
 
-  static String getStringParameter(String parameter_name, {String defaultValue}) {
+  static String getStringParameter(ID parameter_name, {String defaultValue}) {
     return invoke().getStringParameter(parameter_name, defaultValue: defaultValue);
   }
 
-  static void setIntParameter(String parameterName, int parameterValue) {
+  static void setIntParameter(ID parameterName, int parameterValue) {
     invoke().setIntParameter(parameterName, parameterValue);
   }
 
-  static void setStringParameter(String parameter_name, String parameter_value) {
+  static void setStringParameter(ID parameter_name, String parameter_value) {
     invoke().setStringParameter(parameter_name, parameter_value);
   }
 
-  static void setSystemAssetID(String parameter_name, ID parameter_value) {
+  static void setSystemAssetID(ID parameter_name, ID parameter_value) {
     invoke().setSystemAssetID(parameter_name, parameter_value);
   }
 
-  static ID getSystemAssetID(String parameter_name) {
+  static ID getSystemAssetID(ID parameter_name) {
     return invoke().getSystemAssetID(parameter_name);
   }
 
@@ -63,16 +61,15 @@ class SystemSettings {
     return invoke().getExecutionMode();
   }
 
-  static int getIntParameter(String parameterName) {
+  static int getIntParameter(ID parameterName) {
     return invoke().getIntParameter(parameterName);
   }
 
-  static Map<String, String> listAllSettings() {
+  static Map<ID, dynamic> listAllSettings() {
     return invoke().listAllSettings();
   }
 
   static void setExecutionMode(ExecutionMode mode) {
     invoke().setExecutionMode(mode);
   }
-
 }

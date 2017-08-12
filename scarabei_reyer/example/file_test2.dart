@@ -7,7 +7,6 @@ import 'package:scarabei/api/files/file.dart';
 import 'package:scarabei/api/files/local_file_system.dart';
 import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/strings/strings.dart';
-import 'package:scarabei/api/sys/settings/system_settings.dart';
 import 'package:scarabei/api/sys/sys.dart';
 import 'package:scarabei/api/utils/utils.dart';
 import 'package:scarabei_reyer/red-desktop/sys/red_desktop_system.dart';
@@ -18,7 +17,6 @@ import 'package:scarabei_reyer/red/files/virtual/in_memory_file_system.dart';
 import 'package:scarabei_reyer/red/files/win/win_file_system.dart';
 import 'package:scarabei_reyer/red/log/simple_logger.dart';
 import 'package:scarabei_reyer/red/strings/red_strings.dart';
-import 'package:scarabei_reyer/red/sys/red_system_settings.dart';
 import 'package:scarabei_reyer/red/utils/red_utils.dart';
 
 main() {
@@ -32,7 +30,6 @@ main() {
   LocalFileSystem.installComponent(new UnixFileSystem());
   Strings.installComponent(new RedStrings());
   Sys.installComponent(new RedDesktopSystem());
-  SystemSettings.installComponent(new RedSystemSettings());
   path.basename("");
 
   File home = LocalFileSystem.ApplicationHome();
