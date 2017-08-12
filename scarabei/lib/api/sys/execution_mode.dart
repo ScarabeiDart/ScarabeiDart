@@ -1,3 +1,4 @@
+import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/scarabei.dart';
 
 class ExecutionMode {
@@ -8,6 +9,8 @@ class ExecutionMode {
   static const ExecutionMode PUBLIC_RELEASE = const ExecutionMode._(0, "PUBLIC_RELEASE");
 
   static const ExecutionMode defaultMode = ExecutionMode.PUBLIC_RELEASE;
+
+  static ID ExecutionModeTAG() => Names.newID(raw_id_string: "com.jfixby.scarabei.ExecutionMode");
 
   static String TAG = "com.jfixby.scarabei.ExecutionMode";
 

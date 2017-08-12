@@ -1,30 +1,34 @@
+import 'dart:async';
+
 import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
 
 abstract class SystemSettingsComponent {
   void setExecutionMode(ExecutionMode execution_mode);
 
-  void setFlag(String flag_name, bool flag_value);
+  void setFlag(ID flag_name, bool flag_value);
 
-  bool getFlag(String flag_name);
+  bool getFlag(ID flag_name);
 
-  String getStringParameter(String parameter_name, {String defaultValue});
+  String getStringParameter(ID parameter_name, {String defaultValue});
 
-  void setStringParameter(String parameter_name, String parameter_value);
+  void setStringParameter(ID parameter_name, String parameter_value);
 
-  void setSystemAssetID(String parameter_name, ID parameter_value);
+  void setSystemAssetID(ID parameter_name, ID parameter_value);
 
-  ID getSystemAssetID(String parameter_name);
+  ID getSystemAssetID(ID parameter_name);
 
   bool executionModeIsAtLeast(ExecutionMode mode);
 
   ExecutionMode getExecutionMode();
 
-  void setIntParameter(String parameterName, int parameterValue);
+  void setIntParameter(ID parameterName, int parameterValue);
 
-  int getIntParameter(String parameterName);
+  int getIntParameter(ID parameterName);
 
-  Map<String, String> listAllSettings();
+  Map<ID, dynamic> listAllSettings();
 
-  ExecutionMode resolveExecutionMode(exeString);
+  void clearAll();
+
+  Future<bool> saveToStorage();
 }

@@ -75,7 +75,4 @@ class SystemSettings {
     invoke().setExecutionMode(mode);
   }
 
-  static ExecutionMode resolveExecutionMode(exeString) {
-    return invoke().resolveExecutionMode(exeString);
-  }
 }
