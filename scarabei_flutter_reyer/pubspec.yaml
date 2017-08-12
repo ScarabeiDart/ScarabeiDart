@@ -13,8 +13,14 @@ dependencies:
   scarabei: ^1.3.0
   scarabei_reyer: ^1.3.0
 
+dev_dependencies:
+  mockito: ^2.0.2
+  test: 0.12.21
+
 dependency_overrides:
   scarabei:
     path: ../scarabei
   scarabei_reyer:
     path: ../scarabei_reyer
+
+

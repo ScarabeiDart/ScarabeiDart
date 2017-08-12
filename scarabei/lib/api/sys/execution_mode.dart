@@ -9,6 +9,8 @@ class ExecutionMode {
 
   static const ExecutionMode defaultMode = ExecutionMode.PUBLIC_RELEASE;
 
+  static String TAG = "com.jfixby.scarabei.ExecutionMode";
+
   @override
   String toString() {
     return _name;

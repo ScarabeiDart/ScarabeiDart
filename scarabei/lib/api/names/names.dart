@@ -1,15 +1,11 @@
 import 'package:scarabei/api/component_installer.dart';
 
-
 class Names {
-  static ComponentInstaller<
-      NamesComponent> _componentInstaller = new ComponentInstaller<
-      NamesComponent>("Names");
+  static ComponentInstaller<NamesComponent> _componentInstaller = new ComponentInstaller<NamesComponent>("Names");
 
   static void installComponent(NamesComponent component_to_install) {
     _componentInstaller.installComponent(component_to_install);
   }
-
 
   static NamesComponent deInstallCurrentComponent() {
     return _componentInstaller.deInstallComponent();
@@ -23,7 +19,6 @@ class Names {
     return _componentInstaller.getComponent();
   }
 
-
   static String SEPARATOR() {
     return invoke().SEPARATOR();
   }
@@ -35,18 +30,21 @@ class Names {
   static ID newID({List<String> steps, String raw_id_string}) {
     return invoke().newID(steps: steps, raw_id_string: raw_id_string);
   }
+
+  static bool isValidString(String value) {
+    return invoke().isValidString(value);
+  }
 }
 
 abstract class NamesComponent {
-
   ID newID({List<String> steps, String raw_id_string});
 
   String SEPARATOR();
 
   ID ROOT();
 
+  bool isValidString(String value);
 }
-
 
 abstract class ID {
   static String SEPARATOR = ".";

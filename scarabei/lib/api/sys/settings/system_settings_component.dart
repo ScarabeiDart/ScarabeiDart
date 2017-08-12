@@ -16,8 +16,6 @@ abstract class SystemSettingsComponent {
 
   ID getSystemAssetID(String parameter_name);
 
-  void printSystemParameters();
-
   bool executionModeIsAtLeast(ExecutionMode mode);
 
   ExecutionMode getExecutionMode();

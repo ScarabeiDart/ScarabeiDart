@@ -6,7 +6,8 @@ import 'package:scarabei/api/sys/execution_mode.dart';
 import 'package:scarabei/api/sys/settings/system_settings_component.dart';
 
 class SystemSettings {
-  static ComponentInstaller<SystemSettingsComponent> _componentInstaller = new ComponentInstaller<SystemSettingsComponent>("SystemSettings");
+  static ComponentInstaller<SystemSettingsComponent> _componentInstaller =
+      new ComponentInstaller<SystemSettingsComponent>("SystemSettings");
 
   static const String EXECUTION_MODE_TAG = "com.jfixby.scarabey.system.settings.execution_mode";
 
@@ -52,10 +53,6 @@ class SystemSettings {
 
   static ID getSystemAssetID(String parameter_name) {
     return invoke().getSystemAssetID(parameter_name);
-  }
-
-  static void printSystemParameters() {
-    invoke().printSystemParameters();
   }
 
   static bool executionModeIsAtLeast(ExecutionMode mode) {
