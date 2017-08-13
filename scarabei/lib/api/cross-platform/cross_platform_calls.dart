@@ -3,7 +3,6 @@ library com.jfixby.scarabei.android.api;
 import 'dart:async';
 
 import 'package:scarabei/api/component_installer.dart';
-import 'package:scarabei/api/cross-platform/flutter_to_cross_language_encoder.dart';
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/names/names.dart';
 
@@ -31,8 +30,12 @@ class CrossPlatformCalls {
     return invoke().makeCall(specs);
   }
 
-  static  dynamic decode(Map<String, dynamic> encoded) {
+  static dynamic decode(Map<String, dynamic> encoded) {
     return invoke().decode(encoded);
+  }
+
+  static Map<String, dynamic> encode(Object flutterObject) {
+    return invoke().decode(flutterObject);
   }
 }
 

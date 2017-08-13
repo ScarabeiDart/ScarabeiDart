@@ -8,6 +8,7 @@ import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/json/json.dart';
 import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/names/names.dart';
+import 'package:scarabei_flutter_reyer/red-flutter/MethodEncoder.dart';
 import 'package:scarabei_flutter_reyer/red-flutter/cross_language_to_flutter_primitives_decoder.dart';
 import 'package:scarabei_flutter_reyer/red-flutter/cross_language_to_scarabei_decoder.dart';
 import 'package:scarabei_flutter_reyer/red-flutter/decoders.dart';
@@ -24,6 +25,7 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
     this.registerDecoder(new CrossLanguageToFlutterPrimitivesDecoder());
     this.registerDecoder(new CrossLanguageToScarabeiDecoder());
     this.registerEncoder(new ScarabeiToCrossLanguageEncoder());
+    this.registerEncoder(new MethodEncoder());
     this.registerEncoder(new FlutterPrimitivesToCrossLanguageEncoder());
   }
 
@@ -47,20 +49,24 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
 
   @override
   Future<CallResult> makeCall(CallSpecs specs) async {
-
     ID callID = specs.callID;
     Debug.checkNull(callID, "callID");
     if (specs.arguments == null) {
       specs.arguments = {};
     }
+    MethodCall call = new MethodCall();
+    call.methodName = callID;
+    for (String argName in specs.arguments.keys) {
+      MethodArgument arg = new MethodArgument();
+      arg.argumentName = argName;
+      arg.argumentValue = specs.arguments[argName];
+      call.callArguments.add(arg);
+    }
 
-    Map<String, dynamic> methodCall = {};
-    methodCall["methodID"] = callID;
-    methodCall["callArguments"] = specs.arguments;
-
-    Map<String, dynamic> encodedMethodCall = encode(methodCall);
-    var json = Json.serializeToString(encodedMethodCall);
-    L.d("encodedMethodCall", json);
+    Map<String, dynamic> encodedMethod = CrossPlatformCalls.encode(call);
+    L.d("encodedMethod", encodedMethod);
+    var json = Json.serializeToString(encodedMethod);
+    L.d("encodedMethodJson", json);
 
     String channelResultJson = await _channel.invokeMethod('invoke', json.toString());
 

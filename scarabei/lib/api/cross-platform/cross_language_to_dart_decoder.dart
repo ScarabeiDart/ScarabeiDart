@@ -1,4 +1,4 @@
-import 'package:scarabei/api/cross-platform/flutter_to_cross_language_encoder.dart';
+import 'package:scarabei/api/cross-platform/dart_to_cross_language_encoder.dart';
 
 
 abstract class CrossLanguageToFlutterDecoder {
