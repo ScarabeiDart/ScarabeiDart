@@ -14,7 +14,12 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
 
   Map<ID, dynamic> cache;
 
-  ScarabeiSystemSettingsFlutterProxy() {}
+  ID javaClassID;
+
+  ScarabeiSystemSettingsFlutterProxy() {
+    javaClassID =
+        Names.newID(raw_id_string: "com.jfixby.scarabei.red.flutter.plugins.android.sys.SystemSettingsWrapper");
+  }
 
   Future<dynamic> invoke(Map<String, dynamic> call) {
     L.d("invoke", Json.serializeToString(call));
@@ -24,13 +29,13 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
   @override
   void clearAll() {
     cache.clear();
-    var call = MethodCallEncoder.encodeMethod("clearAll", []);
+    var call = MethodCallEncoder.encodeMethod(javaClassID, "clearAll", []);
     invoke(call);
   }
 
   @override
   Future<bool> saveToStorage() async {
-    var call = MethodCallEncoder.encodeMethod("saveToStorage", []);
+    var call = MethodCallEncoder.encodeMethod(javaClassID,"saveToStorage", []);
     bool result = await invoke(call);
     return result;
   }
@@ -42,7 +47,7 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var arguments = [];
     MethodCallEncoder.encodeID(arguments, name: "$parameter_name", value: parameter_name);
     MethodCallEncoder.encodeString(arguments, name: "$parameter_value", value: parameter_value);
-    var call = MethodCallEncoder.encodeMethod("setStringParameter", arguments);
+    var call = MethodCallEncoder.encodeMethod(javaClassID,"setStringParameter", arguments);
 
     invoke(call);
   }
@@ -54,7 +59,7 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var arguments = [];
     MethodCallEncoder.encodeID(arguments, name: "$flag_name", value: flag_name);
     MethodCallEncoder.encodeBool(arguments, name: "$flag_value", value: flag_value);
-    var call = MethodCallEncoder.encodeMethod("setFlag", arguments);
+    var call = MethodCallEncoder.encodeMethod(javaClassID,"setFlag", arguments);
     invoke(call);
   }
 
@@ -66,7 +71,7 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var arguments = [];
     MethodCallEncoder.encodeID(arguments, name: "$flag_name", value: flag_name);
     MethodCallEncoder.encodeExecutionMode(arguments, name: "$execution_mode", value: execution_mode);
-    var call = MethodCallEncoder.encodeMethod("setExecutionMode", arguments);
+    var call = MethodCallEncoder.encodeMethod(javaClassID,"setExecutionMode", arguments);
 
     invoke(call);
   }
@@ -78,7 +83,7 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var arguments = [];
     MethodCallEncoder.encodeID(arguments, name: "$parameterName", value: parameterName);
     MethodCallEncoder.encodeInt(arguments, name: "$parameterValue", value: parameterValue);
-    var call = MethodCallEncoder.encodeMethod("setIntParameter", arguments);
+    var call = MethodCallEncoder.encodeMethod(javaClassID,"setIntParameter", arguments);
 
     invoke(call);
   }
@@ -90,7 +95,7 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var arguments = [];
     MethodCallEncoder.encodeID(arguments, name: "$parameterName", value: parameterName);
     MethodCallEncoder.encodeID(arguments, name: "$parameterValue", value: parameterValue);
-    var call = MethodCallEncoder.encodeMethod("setSystemAssetID", arguments);
+    var call = MethodCallEncoder.encodeMethod(javaClassID,"setSystemAssetID", arguments);
 
     invoke(call);
   }
@@ -103,7 +108,7 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
   }
 
   Future<ScarabeiSystemSettingsFlutterProxy> load() async {
-    var call = MethodCallEncoder.encodeMethod("listAllSettings", []);
+    var call = MethodCallEncoder.encodeMethod(javaClassID,"listAllSettings", []);
     cache = await invoke(call);
     return this;
   }

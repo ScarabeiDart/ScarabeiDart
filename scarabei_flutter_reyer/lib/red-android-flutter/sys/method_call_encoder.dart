@@ -13,8 +13,11 @@ class MethodCallEncoder {
     return arguments;
   }
 
-  static Map<String, dynamic> encodeMethod(String methodName, List<Map<String, dynamic>> arguments) {
-    Map<String, dynamic> method = <String, dynamic>{'methodName': methodName, 'arguments': arguments};
+  static Map<String, dynamic> encodeMethod(ID javaClassID, String methodName, List<Map<String, dynamic>> arguments) {
+    Map<String, dynamic> method = <String, dynamic>{
+      'methodName': (javaClassID.child(methodName).toString()),
+      'arguments': arguments
+    };
     String jsonString = Json.serializeToString(method).toString();
     Map<String, dynamic> call = <String, dynamic>{
       'jsonString': '$jsonString',
@@ -38,7 +41,8 @@ class MethodCallEncoder {
     return encodeArgument(arguments, name: name, value: value.toString(), type: "ID");
   }
 
-  static List<Map<String, dynamic>> encodeExecutionMode(List<Map<String, dynamic>> arguments, {String name, ExecutionMode value}) {
+  static List<Map<String, dynamic>> encodeExecutionMode(List<Map<String, dynamic>> arguments,
+      {String name, ExecutionMode value}) {
     return encodeArgument(arguments, name: name, value: value.toString(), type: "ExecutionMode");
   }
 }

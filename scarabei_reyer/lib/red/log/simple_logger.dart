@@ -13,7 +13,11 @@ class SimpleLogger extends LoggerComponent {
   }
 
   static String getFrame() {
-    if (SystemSettings.getExecutionMode().isBelow(ExecutionMode.TESTING)) {
+    if (SystemSettings.component() == null) {
+      return "scarabei-start";
+    } else if (SystemSettings
+        .getExecutionMode()
+        .isBelow(ExecutionMode.TESTING)) {
       return "scarabei";
     }
     StackTrace stack = StackTrace.current;
