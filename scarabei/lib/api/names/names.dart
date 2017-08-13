@@ -47,7 +47,9 @@ abstract class NamesComponent {
 }
 
 abstract class ID {
-  static String SEPARATOR = ".";
+  static const String SEPARATOR = ".";
+
+  static const String GLOBAL_TYPE_NAME_STRING = "com.jfixby.scarabei.api.names.ID";
 
   ID child(String string);
 

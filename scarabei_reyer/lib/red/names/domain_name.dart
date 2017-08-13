@@ -34,4 +34,6 @@ class DomainName implements ID {
   List<String> steps() {
     return this._steps.steps();
   }
+
+  String toString([String separator = ID.SEPARATOR]) => _steps.steps().join(separator);
 }

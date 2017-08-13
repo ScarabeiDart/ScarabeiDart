@@ -1,12 +1,9 @@
 library com.jfixby.scarabei.android.api;
 
-import 'dart:async';
-
 import 'package:scarabei/api-android/android_app_version.dart';
 import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/display/display_metrics.dart';
 import 'package:scarabei/api/files/file.dart';
-import 'package:scarabei/api/sys/system_info.dart';
 
 class Android {
   static ComponentInstaller<AndroidComponent> _componentInstaller = new ComponentInstaller<AndroidComponent>("Android");
@@ -67,7 +64,7 @@ class Android {
     return invoke().getAppVersion();
   }
 
-  static Future<SystemInfo> getSystemInfo() {
+  static Map<String, String> getSystemInfo() {
     return invoke().getSystemInfo();
   }
 }
@@ -96,7 +93,7 @@ abstract class AndroidComponent {
 
   AndroidAppVersion getAppVersion();
 
-  Future<SystemInfo> getSystemInfo();
+  Map<String, String> getSystemInfo();
 
   String getSerial();
 

@@ -1,12 +1,9 @@
-import 'dart:async';
-
 import 'package:scarabei/api/error/err.dart';
-import 'package:scarabei/api/sys/system_info.dart';
 import 'package:scarabei_reyer/red/sys/red_system.dart';
 
 class RedDesktopSystem extends RedSystem {
   @override
-  Future<SystemInfo> getSystemInfo() {
+  Map<String, String> getSystemInfo() {
     Err.throwNotImplementedYet();
     return null;
   }

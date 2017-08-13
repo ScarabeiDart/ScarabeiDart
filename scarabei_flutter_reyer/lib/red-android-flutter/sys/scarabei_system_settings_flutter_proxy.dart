@@ -1,42 +1,33 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
-import 'package:scarabei/api/json/json.dart';
-import 'package:scarabei/api/log/logger.dart';
+import 'package:scarabei/api/cross-platform/cross_platform_calls.dart';
 import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
 import 'package:scarabei/api/sys/settings/system_settings_component.dart';
-import 'package:scarabei_flutter_reyer/red-android-flutter/sys/method_call_encoder.dart';
 
 class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
-  static const MethodChannel _channel =
-      const MethodChannel("com.jfixby.scarabei.red.flutter.plugins.android.sys.SharedPreferencesPlugin");
-
   Map<ID, dynamic> cache;
 
-  ID javaClassID;
+  ID callID;
 
   ScarabeiSystemSettingsFlutterProxy() {
-    javaClassID =
-        Names.newID(raw_id_string: "com.jfixby.scarabei.red.flutter.plugins.android.sys.SystemSettingsWrapper");
-  }
-
-  Future<dynamic> invoke(Map<String, dynamic> call) {
-    L.d("invoke", Json.serializeToString(call));
-    return _channel.invokeMethod('invoke', call);
+    callID = Names.newID(raw_id_string: "com.jfixby.scarabei.red.flutter.plugins.android.sys.SystemSettingsWrapper");
   }
 
   @override
   void clearAll() {
     cache.clear();
-    var call = MethodCallEncoder.encodeMethod(javaClassID, "clearAll", []);
-    invoke(call);
+
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("clearAll");
+    Future<Null> result = CrossPlatformCalls.makeCall(specs);
   }
 
   @override
   Future<bool> saveToStorage() async {
-    var call = MethodCallEncoder.encodeMethod(javaClassID,"saveToStorage", []);
-    bool result = await invoke(call);
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("saveToStorage");
+    Future<bool> result = CrossPlatformCalls.makeCall(specs);
     return result;
   }
 
@@ -44,23 +35,26 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
   void setStringParameter(ID parameter_name, String parameter_value) {
     cache[parameter_name] = parameter_value;
 
-    var arguments = [];
-    MethodCallEncoder.encodeID(arguments, name: "$parameter_name", value: parameter_name);
-    MethodCallEncoder.encodeString(arguments, name: "$parameter_value", value: parameter_value);
-    var call = MethodCallEncoder.encodeMethod(javaClassID,"setStringParameter", arguments);
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("setStringParameter");
 
-    invoke(call);
+    specs.addIDArgument(name: "$parameter_name", value: parameter_name);
+    specs.addStringArgument(name: "$parameter_value", value: parameter_value);
+
+    Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
 
   @override
   void setFlag(ID flag_name, bool flag_value) {
     cache[flag_name] = flag_value;
 
-    var arguments = [];
-    MethodCallEncoder.encodeID(arguments, name: "$flag_name", value: flag_name);
-    MethodCallEncoder.encodeBool(arguments, name: "$flag_value", value: flag_value);
-    var call = MethodCallEncoder.encodeMethod(javaClassID,"setFlag", arguments);
-    invoke(call);
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("setFlag");
+
+    specs.addIDArgument(name: "$flag_name", value: flag_name);
+    specs.addBoolArgument(name: "$flag_value", value: flag_value);
+
+    Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
 
   @override
@@ -68,36 +62,36 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     ID flag_name = ExecutionMode.ExecutionModeTAG();
     cache[flag_name] = execution_mode;
 
-    var arguments = [];
-    MethodCallEncoder.encodeID(arguments, name: "$flag_name", value: flag_name);
-    MethodCallEncoder.encodeExecutionMode(arguments, name: "$execution_mode", value: execution_mode);
-    var call = MethodCallEncoder.encodeMethod(javaClassID,"setExecutionMode", arguments);
-
-    invoke(call);
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("setExecutionMode");
+    specs.addExecutionModeArgument(name: "$execution_mode", value: execution_mode);
+    Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
 
   @override
   void setIntParameter(ID parameterName, int parameterValue) {
     cache[parameterName] = parameterValue;
 
-    var arguments = [];
-    MethodCallEncoder.encodeID(arguments, name: "$parameterName", value: parameterName);
-    MethodCallEncoder.encodeInt(arguments, name: "$parameterValue", value: parameterValue);
-    var call = MethodCallEncoder.encodeMethod(javaClassID,"setIntParameter", arguments);
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("setFlag");
 
-    invoke(call);
+    specs.addIDArgument(name: "$parameterName", value: parameterName);
+    specs.addIntArgument(name: "$parameterValue", value: parameterValue);
+
+    Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
 
   @override
   void setSystemAssetID(ID parameterName, ID parameterValue) {
     cache[parameterName] = parameterValue;
 
-    var arguments = [];
-    MethodCallEncoder.encodeID(arguments, name: "$parameterName", value: parameterName);
-    MethodCallEncoder.encodeID(arguments, name: "$parameterValue", value: parameterValue);
-    var call = MethodCallEncoder.encodeMethod(javaClassID,"setSystemAssetID", arguments);
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("setSystemAssetID");
 
-    invoke(call);
+    specs.addIDArgument(name: "$parameterName", value: parameterName);
+    specs.addIDArgument(name: "$parameterValue", value: parameterValue);
+
+    Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
 
   @override
@@ -108,8 +102,10 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
   }
 
   Future<ScarabeiSystemSettingsFlutterProxy> load() async {
-    var call = MethodCallEncoder.encodeMethod(javaClassID,"listAllSettings", []);
-    cache = await invoke(call);
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("listAllSettings");
+    Future<Map<ID, dynamic>> result = CrossPlatformCalls.makeCall(specs);
+    cache = await result;
     return this;
   }
 

@@ -6,10 +6,7 @@ import 'package:scarabei/api-android/android_app_version.dart';
 import 'package:scarabei/api/display/display_metrics.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/files/file.dart';
-import 'package:scarabei/api/sys/system_info.dart';
 import 'package:scarabei_reyer/red-android/sys/red_android_app_version.dart';
-import 'package:scarabei_reyer/red/sys/red_system_info.dart';
-
 
 //import com.jfixby.scarabei.android.api.AndroidAppVersion;
 //import com.jfixby.scarabei.android.api.AndroidComponent;
@@ -33,29 +30,30 @@ import 'package:scarabei_reyer/red/sys/red_system_info.dart';
 //import android.view.Display;
 //import android.view.WindowManager;
 
-
 class ScarabeiAndroidFlutterProxy implements AndroidComponent {
-  static const MethodChannel _channel = const MethodChannel("com.jfixby.scarabei.red.flutter.plugins.android.ScarabeiAndroidFlutterProxy");
+  static const MethodChannel _channel =
+      const MethodChannel("com.jfixby.scarabei.red.flutter.plugins.android.ScarabeiAndroidFlutterProxy");
+  Map<String, String> _sysInfo;
 
-  Future<SystemInfo> getSystemInfo() async {
+  ScarabeiAndroidFlutterProxy() {}
+
+  Future<ScarabeiAndroidFlutterProxy> load() async {
     Map<String, String> params = await _channel.invokeMethod('getSystemInfo');
-    RedSystemInfo info = new RedSystemInfo();
-    info.putAll(params);
-    return info;
+    _sysInfo.addAll(params);
+    return this;
   }
 
-  ScarabeiAndroidFlutterProxy() {
-
-
+  Map<String, String> getSystemInfo() {
+    var result = {};
+    result.addAll(_sysInfo);
+    return result;
   }
-
 
   double densityIndependentPixels2Pixels(double dip) {
 //    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, this.context.getResources().getDisplayMetrics());
     Err.throwNotImplementedYet();
     return null;
   }
-
 
   int getRecommendedHeapSize() {
 //    ActivityManager am = (ActivityManager)
@@ -66,7 +64,6 @@ class ScarabeiAndroidFlutterProxy implements AndroidComponent {
     return null;
   }
 
-
   int getMaxHeapSize() {
 //    Runtime rt = Runtime.getRuntime();
 //    int maxMemory = rt.maxMemory() / (1024 * 1024);
@@ -76,14 +73,12 @@ class ScarabeiAndroidFlutterProxy implements AndroidComponent {
     return null;
   }
 
-
   String getApplicationPrivateDirPathString() {
 //    String java_path = this.context.getFilesDir().getAbsolutePath();
 //    return java_path;
     Err.throwNotImplementedYet();
     return null;
   }
-
 
   File getPrivateFolder() {
 //    String path = this.getApplicationPrivateDirPathString();
@@ -93,14 +88,12 @@ class ScarabeiAndroidFlutterProxy implements AndroidComponent {
     return null;
   }
 
-
   File getCacheFolder() {
 //    DartFile cache = this.app.getCacheDir();
 //    return LocalFileSystem.newFile(cache);
     Err.throwNotImplementedYet();
     return null;
   }
-
 
   DisplayMetrics getDisplayMetrics() {
     DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -147,13 +140,11 @@ class ScarabeiAndroidFlutterProxy implements AndroidComponent {
     return null;
   }
 
-
   String getBrand() {
     Err.throwNotImplementedYet();
 //    return Build.BRAND;
     return null;
   }
-
 
   String getSerial() {
     Err.throwNotImplementedYet();
@@ -161,13 +152,11 @@ class ScarabeiAndroidFlutterProxy implements AndroidComponent {
     return null;
   }
 
-
   String getModel() {
     Err.throwNotImplementedYet();
 //    return Build.MODEL;
     return null;
   }
-
 
   String getFingerPrint() {
     Err.throwNotImplementedYet();
@@ -175,13 +164,11 @@ class ScarabeiAndroidFlutterProxy implements AndroidComponent {
     return null;
   }
 
-
   String getManufacturer() {
     Err.throwNotImplementedYet();
 //    return Build.MANUFACTURER;
     return null;
   }
-
 
   String getHost() {
     Err.throwNotImplementedYet();
@@ -189,13 +176,11 @@ class ScarabeiAndroidFlutterProxy implements AndroidComponent {
     return null;
   }
 
-
   String getVersionRelease() {
     Err.throwNotImplementedYet();
 //    return Build.VERSION.RELEASE;
     return null;
   }
-
 
   AndroidAppVersion getAppVersion() {
     RedAndroidAppVersion version = new RedAndroidAppVersion();
@@ -220,7 +205,6 @@ class ScarabeiAndroidFlutterProxy implements AndroidComponent {
     Err.throwNotImplementedYet();
     return null;
   }
-
 
 //  SystemInfo getSystemInfo() {
 //    RedDeviceInfo deviceInfo = new RedDeviceInfo();

@@ -1,7 +1,6 @@
 import 'package:scarabei/api/names/names.dart';
-import 'package:scarabei/api/sys/system_info.dart';
 
-abstract class AndroidSystemInfoTags extends SystemInfo {
+abstract class AndroidSystemInfoTags {
   static ID Brand = Names.newID(raw_id_string: "android.brand");
   static ID Model = Names.newID(raw_id_string: "android.model");
   static ID Host = Names.newID(raw_id_string: "android.host");

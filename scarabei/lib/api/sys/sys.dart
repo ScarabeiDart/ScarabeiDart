@@ -2,19 +2,14 @@ import 'dart:async';
 
 import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/sys/on_exit_listener.dart';
-import 'package:scarabei/api/sys/system_info.dart';
 import 'package:scarabei/api/time/time_stream.dart';
 
-
 class Sys {
-  static ComponentInstaller<
-      SystemComponent> _componentInstaller = new ComponentInstaller<
-      SystemComponent>("Sys");
+  static ComponentInstaller<SystemComponent> _componentInstaller = new ComponentInstaller<SystemComponent>("Sys");
 
   static void installComponent(SystemComponent component_to_install) {
     _componentInstaller.installComponent(component_to_install);
   }
-
 
   static SystemComponent deInstallCurrentComponent() {
     return _componentInstaller.deInstallComponent();
@@ -40,7 +35,6 @@ class Sys {
     invoke().exit();
   }
 
-
   static bool isWindows() {
     return invoke().isWindows();
   }
@@ -53,10 +47,9 @@ class Sys {
     return invoke().isMac();
   }
 
-  static Future<SystemInfo> getSystemInfo() {
+  static Map<String, String> getSystemInfo() {
     return invoke().getSystemInfo();
   }
-
 
   static void addOnExitListener(OnExitListener listener) {
     invoke().addOnExitListener(listener);
@@ -72,13 +65,11 @@ class Sys {
 }
 
 abstract class SystemComponent {
-
   TimeStream SystemTime();
 
   TimeStream NoTime();
 
   void exit();
-
 
   bool isWindows();
 
@@ -86,8 +77,7 @@ abstract class SystemComponent {
 
   bool isMac();
 
-  Future<SystemInfo> getSystemInfo();
-
+  Map<String, String> getSystemInfo();
 
   void addOnExitListener(OnExitListener listener);
 
