@@ -38,8 +38,8 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = callID.child("setStringParameter");
 
-    specs.addIDArgument(name: "$parameter_name", value: parameter_name);
-    specs.addStringArgument(name: "$parameter_value", value: parameter_value);
+    specs.addArgument(name: "$parameter_name", value: parameter_name);
+    specs.addArgument(name: "$parameter_value", value: parameter_value);
 
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
@@ -51,8 +51,8 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = callID.child("setFlag");
 
-    specs.addIDArgument(name: "$flag_name", value: flag_name);
-    specs.addBoolArgument(name: "$flag_value", value: flag_value);
+    specs.addArgument(name: "$flag_name", value: flag_name);
+    specs.addArgument(name: "$flag_value", value: flag_value);
 
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
@@ -64,7 +64,7 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
 
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = callID.child("setExecutionMode");
-    specs.addExecutionModeArgument(name: "$execution_mode", value: execution_mode);
+    specs.addArgument(name: "$execution_mode", value: execution_mode);
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
 
@@ -75,8 +75,8 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = callID.child("setFlag");
 
-    specs.addIDArgument(name: "$parameterName", value: parameterName);
-    specs.addIntArgument(name: "$parameterValue", value: parameterValue);
+    specs.addArgument(name: "$parameterName", value: parameterName);
+    specs.addArgument(name: "$parameterValue", value: parameterValue);
 
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
@@ -88,8 +88,8 @@ class ScarabeiSystemSettingsFlutterProxy implements SystemSettingsComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = callID.child("setSystemAssetID");
 
-    specs.addIDArgument(name: "$parameterName", value: parameterName);
-    specs.addIDArgument(name: "$parameterValue", value: parameterValue);
+    specs.addArgument(name: "$parameterName", value: parameterName);
+    specs.addArgument(name: "$parameterValue", value: parameterValue);
 
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }

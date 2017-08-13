@@ -1,4 +1,5 @@
 class CrossLanguageClassNames {
+  static String NULL = "NULL";
   static String STRING = "String";
   static String BOOL = "Bool";
   static String INTEGER = "int64";

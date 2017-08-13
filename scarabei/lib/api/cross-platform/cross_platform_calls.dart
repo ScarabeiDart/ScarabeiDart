@@ -3,10 +3,9 @@ library com.jfixby.scarabei.android.api;
 import 'dart:async';
 
 import 'package:scarabei/api/component_installer.dart';
-import 'package:scarabei/api/cross-platform/cross_language_class_names.dart';
-import 'package:scarabei/api/cross-platform/scarabei_class_names.dart';
+import 'package:scarabei/api/cross-platform/flutter_to_cross_language_encoder.dart';
+import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/names/names.dart';
-import 'package:scarabei/api/sys/execution_mode.dart';
 
 class CrossPlatformCalls {
   static ComponentInstaller<CrossPlatformCallsComponent> _componentInstaller =
@@ -32,8 +31,8 @@ class CrossPlatformCalls {
     return invoke().makeCall(specs);
   }
 
-  static dynamic decode(dynamic encodedObject, Map<dynamic, String> objectTypeNames) {
-    return invoke().decode(encodedObject, objectTypeNames);
+  static  dynamic decode(Map<String, dynamic> encoded) {
+    return invoke().decode(encoded);
   }
 }
 
@@ -42,49 +41,22 @@ abstract class CrossPlatformCallsComponent {
 
   Future<CallResult> makeCall(CallSpecs specs);
 
-  dynamic decode(dynamic encodedObject, Map<dynamic, String> objectTypeNames);
+  dynamic decode(Map<String, dynamic> encoded);
 }
 
 class CallSpecs {
   ID callID;
-  List<CallArgument> arguments = [];
+  Map<String, dynamic> arguments = {};
 
-  void addArgument({String name, dynamic value, String type}) {
-    arguments.add(new CallArgument(name: name, value: value, type: type));
+  void addArgument({String name, dynamic value}) {
+    Debug.checkNull(name, "name");
+    Debug.checkEmpty(name, "name");
+    arguments[name] = value;
   }
-
-  void addStringArgument({String name, String value}) =>
-      addArgument(name: name, value: value, type: CrossLanguageClassNames.STRING);
-
-  void addBoolArgument({String name, bool value}) =>
-      addArgument(name: name, value: value, type: CrossLanguageClassNames.BOOL);
-
-  void addIntArgument({String name, int value}) =>
-      addArgument(name: name, value: value, type: CrossLanguageClassNames.INTEGER);
-
-  void addListArgument({String name, List<dynamic> value}) =>
-      addArgument(name: name, value: value, type: CrossLanguageClassNames.LIST);
-
-  void addMapArgument({String name, Map<dynamic, dynamic> value}) =>
-      addArgument(name: name, value: value, type: CrossLanguageClassNames.MAP);
-
-  void addIDArgument({String name, ID value}) =>
-      addArgument(name: name, value: value, type: ScarabeiClassNames.ID_TYPE_STRING);
-
-  void addExecutionModeArgument({String name, ExecutionMode value}) =>
-      addArgument(name: name, value: value, type: ScarabeiClassNames.ExecutionMode_TYPE_STRING);
 }
 
-class CallArgument {
-  CallArgument({String name, dynamic value, String type}) {
-    this.argumentName = name;
-    this.argumentValue = value;
-    this.argumentType = type;
-  }
-
-  String argumentName;
-  dynamic argumentValue;
-  String argumentType;
+class CallResult {
+  dynamic resultingObject;
+  String errorMessage;
+  bool success;
 }
-
-class CallResult {}

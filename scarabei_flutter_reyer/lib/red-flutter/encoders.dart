@@ -11,7 +11,7 @@ import 'package:scarabei/api/error/err.dart';
 class Encoders {
   List<FlutterToCrossLanguageEncoder> encoders = [];
 
-  Object encode(Object flutterObject) {
+  Map<String, dynamic> encode(Object flutterObject) {
     if (flutterObject == null) {
       return null;
     }
@@ -21,7 +21,7 @@ class Encoders {
       }
     }
     Err.reportError("Encoder for <" + flutterObject + "> not found");
-    return flutterObject;
+    return null;
   }
 
   void register(FlutterToCrossLanguageEncoder encoder) {

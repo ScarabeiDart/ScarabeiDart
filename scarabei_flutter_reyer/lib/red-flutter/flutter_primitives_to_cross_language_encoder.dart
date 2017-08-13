@@ -1,3 +1,4 @@
+import 'package:scarabei/api/cross-platform/cross_language_class_names.dart';
 import 'package:scarabei/api/cross-platform/flutter_to_cross_language_encoder.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/names/names.dart';
@@ -32,32 +33,39 @@ class FlutterPrimitivesToCrossLanguageEncoder implements FlutterToCrossLanguageE
     return false;
   }
 
-  Object encode(Object flutterObject) {
+  Map<String, dynamic> encodeString(String value) =>
+      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.STRING);
+
+  Map<String, dynamic> encodeBool(bool value) => EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.BOOL);
+
+  Map<String, dynamic> encodeInt(int value) => EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.INTEGER);
+
+  Map<String, dynamic> encodeIterable(Iterable<dynamic> value) =>
+      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.LIST);
+
+  Map<String, dynamic> encodeMap(Map<dynamic, dynamic> value) =>
+      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.MAP);
+
+  Map<String, dynamic> encode(Object flutterObject) {
     if (flutterObject == null) {
-      return null;
+      return EncodedObject.encodeNull();
     }
-    if (flutterObject is ExecutionMode) {
-      return flutterObject.toString();
-    }
-    if (flutterObject is ID) {
-      return flutterObject.toString();
-    }
+
     if (flutterObject is String) {
-      return flutterObject;
+      return encodeString(flutterObject);
     }
     if (flutterObject is bool) {
-      return flutterObject;
+      return encodeBool(flutterObject);
     }
     if (flutterObject is int) {
-      return flutterObject;
+      return encodeInt(flutterObject);
     }
-    if (flutterObject is Map) {
+    if (encodeMap is Map) {
       return flutterObject;
     }
     if (flutterObject is Iterable) {
-      return flutterObject;
+      return encodeIterable(flutterObject);
     }
-
     Err.reportError("Failed to encode <" + flutterObject + ">");
     return null;
   }

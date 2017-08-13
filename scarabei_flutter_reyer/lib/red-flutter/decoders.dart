@@ -1,16 +1,21 @@
 import "package:scarabei/api/cross-platform/cross_language_to_flutter_decoder.dart";
+import 'package:scarabei/api/cross-platform/flutter_to_cross_language_encoder.dart';
+import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/log/logger.dart';
 
 class Decoders {
   Map<String, CrossLanguageToFlutterDecoder> decoders = {};
 
-  Object decode(Object encodedObject, Map<Object, String> objectTypeNames) {
+  dynamic decode(Map<String, dynamic> encoded) {
+    Debug.checkNull(encoded, "encoded");
+
+    String objectTypeName = encoded[EncodedObject.TYPE];
+    Object encodedObject = encoded[EncodedObject.VALUE];
+
     if (encodedObject == null) {
       return null;
     }
-
-    String objectTypeName = objectTypeNames[encodedObject];
 
     if (objectTypeName == null) {
       Err.reportError("Missing object type for <" + encodedObject + ">");
@@ -23,12 +28,12 @@ class Decoders {
       return null;
     }
 
-    Object result = decoder.decode(encodedObject, objectTypeNames);
+    Object result = decoder.decode(encoded);
     return result;
   }
 
   void registerDecoder(CrossLanguageToFlutterDecoder flutterToScarabeiDecoder) {
-    List<String> list = flutterToScarabeiDecoder.listSupportedTypeNames();
+    Set<String> list = flutterToScarabeiDecoder.listSupportedTypeNames();
     for (String name in list) {
       CrossLanguageToFlutterDecoder prev = this.decoders[name];
       if (prev != null) {

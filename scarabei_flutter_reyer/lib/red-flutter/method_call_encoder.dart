@@ -1,3 +1,4 @@
+import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/json/json.dart';
 import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
@@ -8,6 +9,11 @@ class MethodCallEncoder {
     if (arguments == null) {
       arguments = [];
     }
+    Debug.checkNull(name, "name");
+    Debug.checkEmpty(name, "name");
+    Debug.checkNull(type, "type");
+    Debug.checkEmpty(type, "type");
+
     Map<String, dynamic> arg = <String, dynamic>{'argumentName': name, 'argumentValue': value, 'argumentType': type};
     arguments.add(arg);
     return arguments;
