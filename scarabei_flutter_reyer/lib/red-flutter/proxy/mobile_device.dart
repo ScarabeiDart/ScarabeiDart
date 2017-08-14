@@ -14,7 +14,7 @@ class MobileDeviceFlutterProxy implements MobileDeviceComponent {
   ID callID;
 
   SysSettingsFlutterProxy() {
-    callID = Names.newID(raw_id_string: "com.jfixby.scarabei.android.api.Android");
+    callID = Names.newID(string: "com.jfixby.scarabei.android.api.Android");
   }
 
   MobileDeviceFlutterProxy() {}

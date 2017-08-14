@@ -11,7 +11,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
   ID callID;
 
   SysSettingsFlutterProxy() {
-    callID = Names.newID(raw_id_string: "com.jfixby.scarabei.red.flutter.plugins.android.sys.SystemSettingsWrapper");
+    callID = Names.newID(string: "com.jfixby.scarabei.red.flutter.plugins.android.sys.SystemSettingsWrapper");
   }
 
   @override

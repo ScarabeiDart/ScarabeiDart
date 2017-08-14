@@ -10,7 +10,7 @@ class ExecutionMode {
 
   static const ExecutionMode defaultMode = ExecutionMode.PUBLIC_RELEASE;
 
-  static ID ExecutionModeTAG() => Names.newID(raw_id_string: GLOBAL_TYPE_NAME_STRING);
+  static ID ExecutionModeTAG() => Names.newID(string: GLOBAL_TYPE_NAME_STRING);
 
   static const String GLOBAL_TYPE_NAME_STRING = "com.jfixby.scarabei.api.sys.settings.ExecutionMode";
 

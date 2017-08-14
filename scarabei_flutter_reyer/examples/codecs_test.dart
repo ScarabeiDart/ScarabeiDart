@@ -14,7 +14,7 @@ import 'package:scarabei/api/strings/strings.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
 import 'package:scarabei/api/sys/sys.dart';
 import 'package:scarabei/api/utils/utils.dart';
-import 'package:scarabei_flutter_reyer/red-flutter/cross_platform_calls.dart';
+import 'package:scarabei_reyer/red/cross-platform/cross_platform_calls.dart';
 import 'package:scarabei_reyer/red-flutter/filesystem/file_system.dart';
 import 'package:scarabei_reyer/red-flutter/flutter_system.dart';
 import 'package:scarabei_reyer/red-flutter/memory/memory_manager.dart';
@@ -62,12 +62,12 @@ main() async {
   specs.addArgument("LL", [
     ['a', 's', 'd', null],
     ExecutionMode.EARLY_DEVELOPMENT,
-    Names.newID(raw_id_string: "abc.de"),
+    Names.newID(string: "abc.de"),
     "S",
     null
   ]);
-  specs.addArgument("id", Names.newID(raw_id_string: "abc.def.ghk"));
-  specs.callID = Names.newID(raw_id_string: "abc.def.ght");
+  specs.addArgument("id", Names.newID(string: "abc.def.ghk"));
+  specs.callID = Names.newID(string: "abc.def.ght");
   Future<CallResult> callResult = CrossPlatformCalls.makeCall(specs);
 
   CallResult result = await callResult;

@@ -27,8 +27,8 @@ class Names {
     return invoke().ROOT();
   }
 
-  static ID newID({List<String> steps, String raw_id_string}) {
-    return invoke().newID(steps: steps, raw_id_string: raw_id_string);
+  static ID newID({List<String> steps, String string}) {
+    return invoke().newID(steps: steps, raw_id_string: string);
   }
 
   static bool isValidString(String value) {

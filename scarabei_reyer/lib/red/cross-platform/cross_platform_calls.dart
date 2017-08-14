@@ -18,7 +18,7 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
     
   }
 
-  ID channelID = Names.newID(raw_id_string: "com.jfixby.scarabei.red.flutter.calls.FlutterJavaCallListener");
+  ID channelID = Names.newID(string: "com.jfixby.scarabei.red.flutter.calls.FlutterJavaCallListener");
 
   //-----------------------
 

@@ -39,7 +39,7 @@ class ScarabeiDecoder implements ToDartDecoder {
     }
 
     if (objectTypeName == ScarabeiClassNames.ID_TYPE_STRING) {
-      return Names.newID(raw_id_string: encodedObject.toString());
+      return Names.newID(string: encodedObject.toString());
     }
 
     if (objectTypeName == ScarabeiClassNames.ExecutionMode_TYPE_STRING) {
