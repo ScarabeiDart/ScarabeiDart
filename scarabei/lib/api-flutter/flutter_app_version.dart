@@ -6,4 +6,6 @@ class FlutterAppVersion {
   int code;
 
   ID packageName;
+
+  uiString() => "$name ($code)";
 }

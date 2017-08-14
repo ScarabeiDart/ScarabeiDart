@@ -39,7 +39,7 @@ class CallSpecs {
   ID callID;
   Map<String, dynamic> arguments = {};
 
-  void addArgument({String name, dynamic value}) {
+  void addArgument(String name, dynamic value) {
     Debug.checkNull(name, "name");
     Debug.checkEmpty(name, "name");
     arguments[name] = value;

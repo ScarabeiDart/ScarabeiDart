@@ -20,7 +20,7 @@ class Encoders {
         return e.encode(flutterObject);
       }
     }
-    Err.reportError("Encoder for <" + flutterObject + "> not found");
+    Err.reportError("Encoder for <" + flutterObject.toString() + "> not found");
     return null;
   }
 

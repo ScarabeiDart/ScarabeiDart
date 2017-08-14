@@ -1,18 +1,24 @@
 import 'dart:async';
 
-import 'package:flutter/src/services/platform_channel.dart';
+import 'package:scarabei/api/codec/codecs.dart';
 import 'package:scarabei/api/cross-platform/cross_platform_calls.dart';
 import 'package:scarabei/api/cross-platform/method_argument.dart';
 import 'package:scarabei/api/cross-platform/method_call.dart';
-import 'package:scarabei/api/codec/codecs.dart';
+import 'package:scarabei/api/cross-platform/transport.dart';
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/json/json.dart';
 import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/names/names.dart';
 
-class FlutterCrossPlatformCalls {
-  static const MethodChannel _channel =
-      const MethodChannel("com.jfixby.scarabei.red.flutter.calls.FlutterJavaCallListener");
+class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
+  Transport _transport;
+
+  FlutterCrossPlatformCalls(Transport transport) {
+    _transport = Debug.checkNull(transport,"transport");
+    
+  }
+
+  ID channelID = Names.newID(raw_id_string: "com.jfixby.scarabei.red.flutter.calls.FlutterJavaCallListener");
 
   //-----------------------
 
@@ -38,7 +44,7 @@ class FlutterCrossPlatformCalls {
     var json = Json.serializeToString(encodedMethod);
     L.d("encodedMethodJson", json);
 
-    String channelResultJson = await _channel.invokeMethod('invoke', {"json": json.toString()});
+    String channelResultJson = await _transport.invokeMethod('invoke', {"json": json.toString()});
 
     L.d("channelResultJson", channelResultJson);
 
@@ -57,7 +63,7 @@ class FlutterCrossPlatformCalls {
 
   Future<dynamic> _invoke(Map<String, dynamic> call) {
     L.d("invoke", Json.serializeToString(call));
-    return _channel.invokeMethod('invoke', call);
+    return _transport.invokeMethod('invoke', call);
   }
 
   @override
