@@ -15,6 +15,8 @@ class DartPrimitivesDecoder implements ToDartDecoder {
     result.add(CrossLanguageClassNames.LIST);
     result.add(CrossLanguageClassNames.MAP);
     result.add(CrossLanguageClassNames.Exception);
+    result.add(CrossLanguageClassNames.DOUBLE);
+    result.add(CrossLanguageClassNames.NULL);
 
     return result;
   }
@@ -43,9 +45,9 @@ class DartPrimitivesDecoder implements ToDartDecoder {
     }
 
     if (objectTypeName == CrossLanguageClassNames.LIST) {
-      List list = encodedObject as List<EncodedObject>;
+      List<Map<String, dynamic>> list = encodedObject as List<Map<String, dynamic>>;
 
-      List<EncodedObject> result = new List<EncodedObject>();
+      List<dynamic> result = new List<dynamic>();
       for (Map<String, dynamic> Ei in list) {
         dynamic Ri = Codecs.decode(Ei);
         result.add(Ri);
@@ -54,15 +56,17 @@ class DartPrimitivesDecoder implements ToDartDecoder {
     }
 
     if (objectTypeName == CrossLanguageClassNames.MAP) {
-      Map map = encodedObject as Map<dynamic, dynamic>;
-      Map<dynamic, dynamic> result = {};
-      for (Object Ki in map.keys) {
-        dynamic Vi = map[Ki];
-
-        dynamic RKi = Codecs.decode(Ki);
-        dynamic RVi = Codecs.decode(Vi);
-
-        result[RKi] = RVi;
+      List<List<Map<dynamic, dynamic>>> emap = encodedObject as List<List<Map<dynamic, dynamic>>>;
+      Map<dynamic, dynamic> result = new Map<dynamic, dynamic>();
+      for (var pair in emap) {
+        Map<dynamic, dynamic> eKey = pair[0];
+        Map<dynamic, dynamic> eVal = pair[1];
+        dynamic key = Codecs.decode(eKey);
+        dynamic val = Codecs.decode(eVal);
+        if (result.containsKey(key)) {
+          Err.reportError("Duplicate key", key);
+        }
+        result[key] = val;
       }
       return result;
     }
@@ -75,10 +79,16 @@ class DartPrimitivesDecoder implements ToDartDecoder {
       return encodedObject as int;
     }
 
+    if (objectTypeName == CrossLanguageClassNames.DOUBLE) {
+      return encodedObject as double;
+    }
+
     if (objectTypeName == CrossLanguageClassNames.BOOL) {
       return encodedObject as bool;
     }
-
+    if (objectTypeName == CrossLanguageClassNames.NULL) {
+      return null;
+    }
     if (objectTypeName == CrossLanguageClassNames.Exception) {
       return new Exception(encodedObject as String);
     }

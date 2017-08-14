@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:scarabei/api/json/json.dart';
 import 'package:scarabei/api/json/json_string.dart';
 import 'package:scarabei/api/log/logger.dart';
-
+import 'dart:convert';
 //import 'dart:convert';
 class DartJson implements JsonComponent {
   T deserializeFromString<T>({JsonString json, String rawString}) {
@@ -26,7 +26,8 @@ class DartJson implements JsonComponent {
 
   @override
   JsonString serializeToString(Object object) {
-    String raw = JSON.encode(object);
+    JsonEncoder encoder = new JsonEncoder.withIndent('  ');
+    String raw = encoder.convert(object);
     var result = newJsonString(raw);
     return result;
   }

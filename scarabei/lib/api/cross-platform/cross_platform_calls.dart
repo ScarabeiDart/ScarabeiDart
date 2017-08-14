@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:scarabei/api/component_installer.dart';
+import 'package:scarabei/api/cross-platform/method_argument.dart';
 import 'package:scarabei/api/debug/debug.dart';
+import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/names/names.dart';
 
 class CrossPlatformCalls {
@@ -37,12 +39,21 @@ abstract class CrossPlatformCallsComponent {
 
 class CallSpecs {
   ID callID;
-  Map<String, dynamic> arguments = {};
+  List<MethodArgument> arguments = [];
 
   void addArgument(String name, dynamic value) {
     Debug.checkNull(name, "name");
     Debug.checkEmpty(name, "name");
-    arguments[name] = value;
+    if (value == null) {
+      Err.reportError("Null argument is not welcome here <" + name + ">");
+    }
+    MethodArgument arg = new MethodArgument();
+    arg.argumentName = name;
+    arg.argumentValue = value;
+    if (arguments.contains(arg)) {
+      Err.reportError("Duplicate name <" + name + ">");
+    }
+    arguments.add(arg);
   }
 }
 

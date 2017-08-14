@@ -10,11 +10,10 @@ import 'package:scarabei_reyer/red/codecs/scarabei_encoder.dart';
 import 'package:scarabei_reyer/red/codecs/to_scarabei_decoder.dart';
 
 class RedCodecs implements CodecsComponent {
-  RedCodecs() {}
   Encoders encoders = new Encoders();
   Decoders decoders = new Decoders();
 
-  FlutterCrossPlatformCalls() {
+  RedCodecs() {
     this.registerDecoder(new DartPrimitivesDecoder());
     this.registerDecoder(new ScarabeiDecoder());
 

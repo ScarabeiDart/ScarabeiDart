@@ -27,17 +27,11 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
     ID callID = specs.callID;
     Debug.checkNull(callID, "callID");
     if (specs.arguments == null) {
-      specs.arguments = {};
+      specs.arguments = [];
     }
     MethodCall call = new MethodCall();
     call.methodName = callID;
-    call.callArguments = [];
-    for (String argName in specs.arguments.keys) {
-      MethodArgument arg = new MethodArgument();
-      arg.argumentName = argName;
-      arg.argumentValue = specs.arguments[argName];
-      call.callArguments.add(arg);
-    }
+    call.callArguments = specs.arguments;
 
     Map<String, dynamic> encodedMethod = Codecs.encode(call);
     L.d("encodedMethod", encodedMethod);

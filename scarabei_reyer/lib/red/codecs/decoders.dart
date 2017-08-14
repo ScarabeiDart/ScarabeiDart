@@ -13,9 +13,6 @@ class Decoders {
     String objectTypeName = encoded[EncodedObject.TYPE];
     Object encodedObject = encoded[EncodedObject.VALUE];
 
-    if (encodedObject == null) {
-      return null;
-    }
 
     if (objectTypeName == null) {
       Err.reportError("Missing object type for <" + encodedObject + ">");
@@ -24,7 +21,7 @@ class Decoders {
 
     ToDartDecoder decoder = this.decoders[objectTypeName];
     if (decoder == null) {
-      Err.reportError("Decoder not found <" + objectTypeName + "> " + encodedObject);
+      Err.reportError("Decoder not found <" + objectTypeName + "> " + encodedObject.toString());
       return null;
     }
 

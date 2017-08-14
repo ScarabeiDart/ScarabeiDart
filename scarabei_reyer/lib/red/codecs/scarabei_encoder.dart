@@ -21,7 +21,7 @@ class ScarabeiEncoder implements FromDartEncoder {
   Map<String, dynamic> encodeID(ID value) => EncodedObject.encodeObject(value: value.toString(), type: ScarabeiClassNames.ID_TYPE_STRING);
 
   Map<String, dynamic> encodeExecutionMode(ExecutionMode value) =>
-      EncodedObject.encodeObject(value: value, type: ScarabeiClassNames.ExecutionMode_TYPE_STRING);
+      EncodedObject.encodeObject(value: value.toString(), type: ScarabeiClassNames.ExecutionMode_TYPE_STRING);
 
   Map<String, dynamic> encode(Object flutterObject) {
     if (flutterObject == null) {

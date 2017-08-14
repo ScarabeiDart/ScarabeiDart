@@ -12,9 +12,7 @@ class Encoders {
   List<FromDartEncoder> encoders = [];
 
   Map<String, dynamic> encode(Object flutterObject) {
-    if (flutterObject == null) {
-      return null;
-    }
+
     for (FromDartEncoder e in this.encoders) {
       if (e.canEncode(flutterObject)) {
         return e.encode(flutterObject);

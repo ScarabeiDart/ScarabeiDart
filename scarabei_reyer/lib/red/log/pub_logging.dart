@@ -4,12 +4,31 @@ import 'package:scarabei/api/log/logger.dart';
 //https://pub.dartlang.org/packages/logging
 class PubLogging implements ConsoleOut {
   static int logPadding = 100 + 2;
-  static Function loggerListener = (LogRecord record) {
+  static Function combatDebug = (LogRecord record) {
     {
       var left = (record.level.toString() + " " + record.loggerName.toString()).padLeft(logPadding, ' ');
       List<String> list = record.message.split("\n");
       for (int i = 0; i < list.length; i++) {
         print(left + "| " + list[i]);
+        if (i == 0) {
+          left = "".padLeft(left.length, ' ');
+        }
+      }
+      if (record.error != null) {
+        print(record.error.toString());
+      }
+      if (record.stackTrace != null) {
+        print(record.stackTrace.toString());
+      }
+    }
+  };
+
+  static Function simpleOutput = (LogRecord record) {
+    {
+      var left = (record.level.toString() + " " + record.loggerName.toString()).padLeft(0, ' ');
+      List<String> list = record.message.split("\n");
+      for (int i = 0; i < list.length; i++) {
+        print(left + "" + list[i]);
         if (i == 0) {
           left = "".padLeft(left.length, ' ');
         }
