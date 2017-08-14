@@ -5,7 +5,7 @@ import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
 import 'package:scarabei/api/sys/settings/system_settings.dart';
 import 'package:scarabei/api/sys/sys.dart';
-import 'package:scarabei_reyer/red-android/sys/red_android_system.dart';
+import 'package:scarabei_reyer/red-desktop/sys/red_desktop_system.dart';
 import 'package:scarabei_reyer/red/debug/red_debug.dart';
 import 'package:scarabei_reyer/red/error/red_error.dart';
 import 'package:scarabei_reyer/red/log/pub_logging.dart';
@@ -32,7 +32,7 @@ main() {
   L.installComponent(new SimpleLogger(logging));
   Err.installComponent(new RedError()); //errors reporter
   Debug.installComponent(new RedDebug()); // asserts for debug and testing
-  Sys.installComponent(new RedAndroidSystem()); //...
+  Sys.installComponent(new DesktopSystem()); //...
   SystemSettings.setExecutionMode(ExecutionMode.EARLY_DEVELOPMENT);
 
   L.d("hello");

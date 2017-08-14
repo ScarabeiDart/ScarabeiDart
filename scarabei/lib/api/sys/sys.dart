@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:scarabei/api/component_installer.dart';
+import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/on_exit_listener.dart';
 import 'package:scarabei/api/time/time_stream.dart';
 
@@ -47,7 +48,7 @@ class Sys {
     return invoke().isMac();
   }
 
-  static Map<String, String> getSystemInfo() {
+  static Map<ID, String> getSystemInfo() {
     return invoke().getSystemInfo();
   }
 
@@ -77,7 +78,7 @@ abstract class SystemComponent {
 
   bool isMac();
 
-  Map<String, String> getSystemInfo();
+  Map<ID, String> getSystemInfo();
 
   void addOnExitListener(OnExitListener listener);
 

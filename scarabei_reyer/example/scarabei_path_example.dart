@@ -150,5 +150,5 @@ void deployScarabeiComponents() {
 
 
   Strings.installComponent(new RedStrings()); // some utils for strings
-  Sys.installComponent(new RedDesktopSystem()); //...
+  Sys.installComponent(new DesktopSystem()); //...
 }

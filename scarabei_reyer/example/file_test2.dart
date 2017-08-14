@@ -29,7 +29,7 @@ main() {
   LocalFileSystem.deInstallCurrentComponent();
   LocalFileSystem.installComponent(new UnixFileSystem());
   Strings.installComponent(new RedStrings());
-  Sys.installComponent(new RedDesktopSystem());
+  Sys.installComponent(new DesktopSystem());
   path.basename("");
 
   File home = LocalFileSystem.ApplicationHome();

@@ -24,7 +24,7 @@ main() {
   Utils.installComponent(new RedUtils());
   LocalFileSystem.installComponent(new WinFileSystem());
   Strings.installComponent(new RedStrings());
-  Sys.installComponent(new RedDesktopSystem());
+  Sys.installComponent(new DesktopSystem());
 
   var file = new dart.File("");
   String abs = file.absolute.path;

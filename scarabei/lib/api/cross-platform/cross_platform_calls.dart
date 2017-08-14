@@ -27,24 +27,12 @@ class CrossPlatformCalls {
   static Future<dynamic> makeCall(CallSpecs specs) {
     return invoke().makeCall(specs);
   }
-
-  static dynamic decode(Map<String, dynamic> encoded) {
-    return invoke().decode(encoded);
-  }
-
-  static Map<String, dynamic> encode(Object dartObject) {
-    return invoke().encode(dartObject);
-  }
 }
 
 abstract class CrossPlatformCallsComponent {
   CallSpecs newCallSpecs();
 
   Future<CallResult> makeCall(CallSpecs specs);
-
-  dynamic decode(Map<String, dynamic> encoded);
-
-  Map<String, dynamic> encode(Object dartObject);
 }
 
 class CallSpecs {
