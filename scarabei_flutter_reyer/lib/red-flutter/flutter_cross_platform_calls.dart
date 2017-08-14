@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/src/services/platform_channel.dart';
-import 'package:scarabei/api/cross-platform/cross_language_to_flutter_decoder.dart';
+import 'package:scarabei/api/cross-platform/cross_language_to_dart_decoder.dart';
 import "package:scarabei/api/cross-platform/cross_platform_calls.dart";
-import 'package:scarabei/api/cross-platform/flutter_to_cross_language_encoder.dart';
+import 'package:scarabei/api/cross-platform/dart_to_cross_language_encoder.dart';
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/json/json.dart';
 import 'package:scarabei/api/log/logger.dart';
@@ -29,11 +29,11 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
     this.registerEncoder(new FlutterPrimitivesToCrossLanguageEncoder());
   }
 
-  void registerEncoder(FlutterToCrossLanguageEncoder encoder) {
+  void registerEncoder(DartToCrossLanguageEncoder encoder) {
     this.encoders.register(encoder);
   }
 
-  void registerDecoder(CrossLanguageToFlutterDecoder decoder) {
+  void registerDecoder(CrossLanguageToDartDecoder decoder) {
     this.decoders.registerDecoder(decoder);
   }
 
@@ -56,6 +56,7 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
     }
     MethodCall call = new MethodCall();
     call.methodName = callID;
+    call.callArguments = [];
     for (String argName in specs.arguments.keys) {
       MethodArgument arg = new MethodArgument();
       arg.argumentName = argName;

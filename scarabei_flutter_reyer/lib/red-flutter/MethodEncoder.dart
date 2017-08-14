@@ -1,9 +1,9 @@
 import 'package:scarabei/api/cross-platform/cross_platform_calls.dart';
-import 'package:scarabei/api/cross-platform/flutter_to_cross_language_encoder.dart';
+import 'package:scarabei/api/cross-platform/dart_to_cross_language_encoder.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/names/names.dart';
 
-class MethodEncoder implements FlutterToCrossLanguageEncoder {
+class MethodEncoder implements DartToCrossLanguageEncoder {
   bool canEncode(Object flutterObject) {
     if (flutterObject == null) {
       return true;

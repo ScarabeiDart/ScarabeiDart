@@ -1,5 +1,5 @@
-import 'package:scarabei/api/cross-platform/cross_language_to_flutter_decoder.dart';
-import 'package:scarabei/api/cross-platform/flutter_to_cross_language_encoder.dart';
+import 'package:scarabei/api/cross-platform/cross_language_to_dart_decoder.dart';
+import 'package:scarabei/api/cross-platform/dart_to_cross_language_encoder.dart';
 import 'package:scarabei/api/cross-platform/scarabei_class_names.dart';
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/error/err.dart';
@@ -7,7 +7,7 @@ import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
 
-class CrossLanguageToScarabeiDecoder implements CrossLanguageToFlutterDecoder {
+class CrossLanguageToScarabeiDecoder implements CrossLanguageToDartDecoder {
   Set<String> listSupportedTypeNames() {
     var result = new Set<String>();
     result.add(ScarabeiClassNames.ID_TYPE_STRING);

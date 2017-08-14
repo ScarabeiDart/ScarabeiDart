@@ -2,7 +2,7 @@
 
 import 'package:scarabei/api/cross-platform/cross_language_class_names.dart';
 
-abstract class FlutterToCrossLanguageEncoder {
+abstract class DartToCrossLanguageEncoder {
   bool canEncode(Object flutterObject);
 
   Map<String, dynamic> encode(Object flutterObject);

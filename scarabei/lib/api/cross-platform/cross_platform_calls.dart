@@ -1,5 +1,3 @@
-library com.jfixby.scarabei.android.api;
-
 import 'dart:async';
 
 import 'package:scarabei/api/component_installer.dart';
@@ -34,8 +32,8 @@ class CrossPlatformCalls {
     return invoke().decode(encoded);
   }
 
-  static Map<String, dynamic> encode(Object flutterObject) {
-    return invoke().decode(flutterObject);
+  static Map<String, dynamic> encode(Object dartObject) {
+    return invoke().encode(dartObject);
   }
 }
 
@@ -45,6 +43,8 @@ abstract class CrossPlatformCallsComponent {
   Future<CallResult> makeCall(CallSpecs specs);
 
   dynamic decode(Map<String, dynamic> encoded);
+
+  Map<String, dynamic> encode(Object dartObject);
 }
 
 class CallSpecs {
