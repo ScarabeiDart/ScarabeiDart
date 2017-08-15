@@ -38,20 +38,6 @@ class DartPrimitivesEncoder implements FromDartEncoder {
     return false;
   }
 
-  Map<String, dynamic> encodeString(String value) =>
-      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.STRING);
-
-  Map<String, dynamic> encodeBool(bool value) =>
-      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.BOOL);
-
-  Map<String, dynamic> encodeInt(int value) =>
-      EncodedObject.encodeObject(value: value.toString(), type: CrossLanguageClassNames.INTEGER);
-
-  Map<String, dynamic> encodeDecimal(double value) =>
-      EncodedObject.encodeObject(value: value.toString(), type: CrossLanguageClassNames.INTEGER);
-
-  Map<String, dynamic> encodeIterable(Iterable<dynamic> value) =>
-      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.LIST);
 
 //  Map<String, dynamic> encodeMap(Map<dynamic, dynamic> value) =>
 //      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.MAP);
@@ -62,16 +48,16 @@ class DartPrimitivesEncoder implements FromDartEncoder {
     }
 
     if (flutterObject is String) {
-      return encodeString(flutterObject);
+      return EncodedObject.encodeString(flutterObject);
     }
     if (flutterObject is bool) {
-      return encodeBool(flutterObject);
+      return EncodedObject.encodeBool(flutterObject);
     }
     if (flutterObject is double) {
-      return encodeDecimal(flutterObject);
+      return EncodedObject.encodeDecimal(flutterObject);
     }
     if (flutterObject is int) {
-      return encodeInt(flutterObject);
+      return EncodedObject.encodeInt(flutterObject);
     }
 //    if (flutterObject is Map) {
 //      Map<String, dynamic> content = {};
@@ -90,7 +76,7 @@ class DartPrimitivesEncoder implements FromDartEncoder {
       for (dynamic e in flutterObject) {
         eList.add(Codecs.encode(e));
       }
-      return encodeIterable(eList);
+      return EncodedObject.encodeIterable(eList);
     }
     Err.reportError("Failed to encode <" + flutterObject + ">");
     return null;

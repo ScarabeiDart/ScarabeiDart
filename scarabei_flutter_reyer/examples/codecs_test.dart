@@ -14,11 +14,11 @@ import 'package:scarabei/api/strings/strings.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
 import 'package:scarabei/api/sys/sys.dart';
 import 'package:scarabei/api/utils/utils.dart';
-import 'package:scarabei_reyer/red/cross-platform/cross_platform_calls.dart';
 import 'package:scarabei_reyer/red-flutter/filesystem/file_system.dart';
 import 'package:scarabei_reyer/red-flutter/flutter_system.dart';
 import 'package:scarabei_reyer/red-flutter/memory/memory_manager.dart';
 import 'package:scarabei_reyer/red/codecs/red_codecs.dart';
+import 'package:scarabei_reyer/red/cross-platform/cross_platform_calls.dart';
 import 'package:scarabei_reyer/red/debug/red_debug.dart';
 import 'package:scarabei_reyer/red/error/red_error.dart';
 import 'package:scarabei_reyer/red/json/dart_json.dart';
@@ -66,8 +66,12 @@ main() async {
     "S",
     null
   ]);
+
+
   specs.addArgument("id", Names.newID(string: "abc.def.ghk"));
-  specs.callID = Names.newID(string: "abc.def.ght");
+
+  specs = CrossPlatformCalls.newCallSpecs();
+  specs.callID = Names.newID(string: "com.jfixby.scarabei.api.sys.Sys.getSystemInfo");
   Future<CallResult> callResult = CrossPlatformCalls.makeCall(specs);
 
   CallResult result = await callResult;
@@ -78,10 +82,12 @@ main() async {
 
 class FakeTransport implements Transport {
   @override
-  Future<dynamic> invokeMethod(String name, Map<String, dynamic> arguments) async{
+  Future<dynamic> invokeMethod(String name, Map<String, dynamic> arguments) async {
     L.d("call", name);
     L.d("arguments", arguments);
     return testString;
   }
-  static String testString = '{  "type": "Map",  "value": [    [      {        "type": "com.jfixby.scarabei.api.names.ID",        "value": "desktop.screen.width"      },      {        "type": "String",        "value": "1920.0"      }    ],    [      {        "type": "com.jfixby.scarabei.api.names.ID",        "value": "desktop.screen.height"      },      {        "type": "String",        "value": "1080.0"      }    ],    [      {        "type": "com.jfixby.scarabei.api.names.ID",        "value": "os.name"      },      {        "type": "String",        "value": "Windows 8.1"      }    ],    [      {        "type": "com.jfixby.scarabei.api.names.ID",        "value": "java.version"      },      {        "type": "String",        "value": "1.8.0_131"      }    ],    [      {        "type": "com.jfixby.scarabei.api.names.ID",        "value": "app.version.package_name"      },      {        "type": "String",        "value": ""      }    ],    [      {        "type": "com.jfixby.scarabei.api.names.ID",        "value": "app.version.code"      },      {        "type": "String",        "value": ""      }    ],    [      {        "type": "com.jfixby.scarabei.api.names.ID",        "value": "app.version.name"      },      {        "type": "String",        "value": ""      }    ],    [      {        "type": "String",        "value": "ki"      },      {        "type": "int64",        "value": 5      }    ],    [      {        "type": "String",        "value": "kf"      },      {        "type": "double",        "value": 6.0      }    ],    [      {        "type": "String",        "value": "ks"      },      {        "type": "String",        "value": "asdasd"      }    ],    [      {        "type": "String",        "value": "kID"      },      {        "type": "com.jfixby.scarabei.api.names.ID",        "value": "asdasd.adasd"      }    ],    [      {        "type": "String",        "value": "Null"      },      {        "type": "Null"      }    ],    [      {        "type": "String",        "value": "L"      },      {        "type": "List",        "value": [          {            "type": "int64",            "value": 1          },          {            "type": "int64",            "value": 2          },          {            "type": "com.jfixby.scarabei.api.sys.settings.ExecutionMode",            "value": "DEMO"          },          {            "type": "Null"          },          {            "type": "String",            "value": "asd"          }        ]      }    ]  ]}';
+
+  static String testString ='';
+
 }

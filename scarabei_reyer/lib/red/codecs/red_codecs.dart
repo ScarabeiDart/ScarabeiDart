@@ -5,6 +5,7 @@ import 'package:scarabei_reyer/red/codecs/dart_primitives_decoder.dart';
 import 'package:scarabei_reyer/red/codecs/dart_primitives_encoder.dart';
 import 'package:scarabei_reyer/red/codecs/decoders.dart';
 import 'package:scarabei_reyer/red/codecs/encoders.dart';
+import 'package:scarabei_reyer/red/codecs/method_decoder.dart';
 import 'package:scarabei_reyer/red/codecs/method_encoder.dart';
 import 'package:scarabei_reyer/red/codecs/scarabei_encoder.dart';
 import 'package:scarabei_reyer/red/codecs/to_scarabei_decoder.dart';
@@ -16,6 +17,9 @@ class RedCodecs implements CodecsComponent {
   RedCodecs() {
     this.registerDecoder(new DartPrimitivesDecoder());
     this.registerDecoder(new ScarabeiDecoder());
+    this.registerDecoder(new MethodDecoder());
+
+
 
     this.registerEncoder(new ScarabeiEncoder());
     this.registerEncoder(new MethodEncoder());

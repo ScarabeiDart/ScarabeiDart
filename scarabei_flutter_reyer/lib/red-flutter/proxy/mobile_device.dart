@@ -6,6 +6,7 @@ import 'package:scarabei/api/cross-platform/cross_platform_calls.dart';
 import 'package:scarabei/api/display/display_metrics.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/files/file.dart';
+import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/names/names.dart';
 
 class MobileDeviceFlutterProxy implements MobileDeviceComponent {
@@ -23,6 +24,7 @@ class MobileDeviceFlutterProxy implements MobileDeviceComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = callID.child("getSystemInfo");
     _sysInfo = await CrossPlatformCalls.makeCall(specs);
+    L.d("MobileDeviceFlutterProxy", _sysInfo);
     return this;
   }
 

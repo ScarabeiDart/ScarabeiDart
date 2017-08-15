@@ -15,7 +15,7 @@ class Decoders {
 
 
     if (objectTypeName == null) {
-      Err.reportError("Missing object type for <" + encodedObject + ">");
+      Err.reportError("Missing object type for <" + encodedObject.toString() + ">");
       return null;
     }
 

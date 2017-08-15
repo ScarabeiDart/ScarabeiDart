@@ -1,5 +1,6 @@
 import 'package:scarabei/api/codec/codecs.dart';
 import 'package:scarabei/api/codec/from_dart_encoder.dart';
+import 'package:scarabei/api/cross-platform/class_names.dart';
 import 'package:scarabei/api/cross-platform/method_argument.dart';
 import 'package:scarabei/api/cross-platform/method_call.dart';
 import 'package:scarabei/api/error/err.dart';
@@ -28,14 +29,14 @@ class MethodEncoder implements FromDartEncoder {
       Map<String, dynamic> map = {};
       map[MethodArgument.METHOD_ARGUMENT_NAME] = Codecs.encode(flutterObject.argumentName);
       map[MethodArgument.METHOD_ARGUMENT_VALUE] = Codecs.encode(flutterObject.argumentValue);
-      return map;
+      return EncodedObject.encodeObject(value: map, type: CrossLanguageClassNames.MethodCallArgument);
     }
 
     if (flutterObject is MethodCall) {
-      Map<String, dynamic> map = {};
-      map[MethodCall.METHOD_NAME] = Codecs.encode(flutterObject.methodName);
-      map[MethodCall.METHOD_ARGUMENTS] = Codecs.encode(flutterObject.callArguments);
-      return map;
+      Map<String, dynamic> mE = {};
+      mE[MethodCall.METHOD_NAME] = Codecs.encode(flutterObject.methodName);
+      mE[MethodCall.METHOD_ARGUMENTS] = Codecs.encode(flutterObject.callArguments);
+      return EncodedObject.encodeObject(value: mE, type: CrossLanguageClassNames.MethodCall);
     }
 
     Err.reportError("Failed to encode <" + flutterObject + ">");
