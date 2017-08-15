@@ -8,10 +8,10 @@ import 'package:scarabei/api/sys/settings/system_settings_component.dart';
 class SysSettingsFlutterProxy implements SystemSettingsComponent {
   Map<ID, dynamic> cache;
 
-  ID callID;
+  ID methodID;
 
   SysSettingsFlutterProxy() {
-    callID = Names.newID(string: "com.jfixby.scarabei.red.flutter.plugins.android.sys.SystemSettingsWrapper");
+    methodID = Names.newID(string: "com.jfixby.scarabei.api.sys.settings.SystemSettings");
   }
 
   @override
@@ -19,14 +19,14 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     cache.clear();
 
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = callID.child("clearAll");
+    specs.callID = methodID.child("clearAll");
     Future<Null> result = CrossPlatformCalls.makeCall(specs);
   }
 
   @override
   Future<bool> saveToStorage() async {
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = callID.child("saveToStorage");
+    specs.callID = methodID.child("saveToStorage");
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
     return result;
   }
@@ -36,7 +36,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     cache[parameter_name] = parameter_value;
 
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = callID.child("setStringParameter");
+    specs.callID = methodID.child("setStringParameter");
 
     specs.addArgument("$parameter_name", parameter_name);
     specs.addArgument("$parameter_value", parameter_value);
@@ -49,7 +49,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     cache[flag_name] = flag_value;
 
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = callID.child("setFlag");
+    specs.callID = methodID.child("setFlag");
 
     specs.addArgument("$flag_name", flag_name);
     specs.addArgument("$flag_value", flag_value);
@@ -63,7 +63,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     cache[flag_name] = execution_mode;
 
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = callID.child("setExecutionMode");
+    specs.callID = methodID.child("setExecutionMode");
     specs.addArgument("$execution_mode", execution_mode);
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
@@ -73,7 +73,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     cache[parameterName] = parameterValue;
 
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = callID.child("setFlag");
+    specs.callID = methodID.child("setFlag");
 
     specs.addArgument("$parameterName", parameterName);
     specs.addArgument("$parameterValue", parameterValue);
@@ -86,7 +86,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     cache[parameterName] = parameterValue;
 
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = callID.child("setSystemAssetID");
+    specs.callID = methodID.child("setSystemAssetID");
 
     specs.addArgument("$parameterName", parameterName);
     specs.addArgument("$parameterValue", parameterValue);
@@ -103,7 +103,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
 
   Future<SysSettingsFlutterProxy> load() async {
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = callID.child("listAllSettings");
+    specs.callID = methodID.child("listAllSettings");
     Future<Map<ID, dynamic>> result = CrossPlatformCalls.makeCall(specs);
     cache = await result;
     return this;
