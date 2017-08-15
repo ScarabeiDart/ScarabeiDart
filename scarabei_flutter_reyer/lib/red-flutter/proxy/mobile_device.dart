@@ -1,24 +1,23 @@
 import 'dart:async';
 
-import 'package:scarabei/api-flutter/flutter_app_version.dart';
 import 'package:scarabei/api-flutter/mobile_device.dart';
 import 'package:scarabei/api/cross-platform/cross_platform_calls.dart';
-import 'package:scarabei/api/display/display_metrics.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/files/file.dart';
 import 'package:scarabei/api/log/logger.dart';
+import 'package:scarabei/api/mobile/mobile_app_version.dart';
+import 'package:scarabei/api/mobile/system_info_tags.dart';
 import 'package:scarabei/api/names/names.dart';
+import 'package:scarabei/api/ver/version.dart';
 
 class MobileDeviceFlutterProxy implements MobileDeviceComponent {
-  Map<ID, String> _sysInfo;
+  Map<ID, dynamic> _sysInfo;
 
   ID callID;
 
-  SysSettingsFlutterProxy() {
-    callID = Names.newID(string: "com.jfixby.scarabei.android.api.Android");
+  MobileDeviceFlutterProxy() {
+    callID = Names.newID(string: "com.jfixby.scarabei.api.mobile.MobileDevice");
   }
-
-  MobileDeviceFlutterProxy() {}
 
   Future<MobileDeviceFlutterProxy> load() async {
     var specs = CrossPlatformCalls.newCallSpecs();
@@ -28,109 +27,66 @@ class MobileDeviceFlutterProxy implements MobileDeviceComponent {
     return this;
   }
 
-  Map<ID, String> getSystemInfo() {
+  Map<ID, dynamic> getSystemInfo() {
     var result = {};
     result.addAll(_sysInfo);
     return result;
   }
 
-  double densityIndependentPixels2Pixels(double dip) {
-//    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, this.context.getResources().getDisplayMetrics());
-    Err.throwNotImplementedYet();
-    return null;
+  MobileAppVersion getAppVersion() {
+    MobileAppVersion version = new MobileAppVersion();
+
+    version.packageName = _sysInfo[MobileSystemInfoTags.App_Version_PackageName];
+    version.code = _sysInfo[MobileSystemInfoTags.App_Version_Code];
+    version.name = _sysInfo[MobileSystemInfoTags.App_Version_Name];
+
+    return version;
   }
 
   int getRecommendedHeapSize() {
-//    ActivityManager am = (ActivityManager)
-//    this.app.getSystemService(Context.ACTIVITY_SERVICE);
-//    int memoryClass = am.getMemoryClass();
-//    return memoryClass;
-    Err.throwNotImplementedYet();
-    return null;
+    return _sysInfo[Version.AppVersionName];
   }
 
   int getMaxHeapSize() {
-//    Runtime rt = Runtime.getRuntime();
-//    int maxMemory = rt.maxMemory() / (1024 * 1024);
-//    // Log.v("onCreate", "maxMemory:" + Long.toString(maxMemory));
-//    return maxMemory;
-    Err.throwNotImplementedYet();
-    return null;
+    return _sysInfo[MobileSystemInfoTags.App_Version_Name];
   }
 
+  @override
   String getApplicationPrivateDirPathString() {
-//    String java_path = this.context.getFilesDir().getAbsolutePath();
-//    return java_path;
     Err.throwNotImplementedYet();
     return null;
   }
 
-  File getPrivateFolder() {
-//    String path = this.getApplicationPrivateDirPathString();
-//    File Folder = LocalFileSystem.newFile(path);
-//    return Folder;
-    Err.throwNotImplementedYet();
-    return null;
-  }
+  @override
+  String getBrand() => _sysInfo[MobileSystemInfoTags.Brand];
 
+  @override
   File getCacheFolder() {
-//    DartFile cache = this.app.getCacheDir();
-//    return LocalFileSystem.newFile(cache);
     Err.throwNotImplementedYet();
     return null;
   }
 
-  DisplayMetrics getDisplayMetrics() {
-    DisplayMetrics displayMetrics = new DisplayMetrics();
+  @override
+  String getFingerPrint() => _sysInfo[MobileSystemInfoTags.Fingerprint];
+
+  @override
+  String getHost() => _sysInfo[MobileSystemInfoTags.Host];
+
+  @override
+  String getManufacturer() => _sysInfo[MobileSystemInfoTags.Manufacturer];
+
+  @override
+  String getModel() => _sysInfo[MobileSystemInfoTags.Model];
+
+  @override
+  File getPrivateFolder() {
     Err.throwNotImplementedYet();
     return null;
   }
 
-  String getBrand() {
-    Err.throwNotImplementedYet();
-//    return Build.BRAND;
-    return null;
-  }
+  @override
+  String getSerial() => _sysInfo[MobileSystemInfoTags.Serial];
 
-  String getSerial() {
-    Err.throwNotImplementedYet();
-//    return Build.SERIAL;
-    return null;
-  }
-
-  String getModel() {
-    Err.throwNotImplementedYet();
-//    return Build.MODEL;
-    return null;
-  }
-
-  String getFingerPrint() {
-    Err.throwNotImplementedYet();
-//    return Build.FINGERPRINT;
-    return null;
-  }
-
-  String getManufacturer() {
-    Err.throwNotImplementedYet();
-//    return Build.MANUFACTURER;
-    return null;
-  }
-
-  String getHost() {
-    Err.throwNotImplementedYet();
-//    return Build.HOST;
-    return null;
-  }
-
-  String getVersionRelease() {
-    Err.throwNotImplementedYet();
-//    return Build.VERSION.RELEASE;
-    return null;
-  }
-
-  FlutterAppVersion getAppVersion() {
-    FlutterAppVersion version = new FlutterAppVersion();
-    Err.throwNotImplementedYet();
-    return null;
-  }
+  @override
+  String getVersionRelease() => _sysInfo[MobileSystemInfoTags.Release];
 }

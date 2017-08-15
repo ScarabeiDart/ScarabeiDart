@@ -34,7 +34,7 @@ class CrossPlatformCalls {
 abstract class CrossPlatformCallsComponent {
   CallSpecs newCallSpecs();
 
-  Future<CallResult> makeCall(CallSpecs specs);
+  Future<dynamic> makeCall(CallSpecs specs);
 }
 
 class CallSpecs {
@@ -57,8 +57,3 @@ class CallSpecs {
   }
 }
 
-class CallResult {
-  dynamic resultingObject;
-  String errorMessage;
-  bool success;
-}

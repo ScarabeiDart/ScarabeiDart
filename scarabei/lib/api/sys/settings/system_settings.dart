@@ -1,5 +1,7 @@
 library com.jfixby.scarabei.api.sys.settings;
 
+import 'dart:async';
+
 import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
@@ -71,5 +73,9 @@ class SystemSettings {
 
   static void setExecutionMode(ExecutionMode mode) {
     invoke().setExecutionMode(mode);
+  }
+
+  static Future<bool> saveToStorage() {
+    return invoke().saveToStorage();
   }
 }

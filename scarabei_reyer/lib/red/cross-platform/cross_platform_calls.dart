@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:scarabei/api/codec/codecs.dart';
 import 'package:scarabei/api/cross-platform/cross_platform_calls.dart';
-import 'package:scarabei/api/cross-platform/method_argument.dart';
 import 'package:scarabei/api/cross-platform/method_call.dart';
+import 'package:scarabei/api/cross-platform/method_result.dart';
 import 'package:scarabei/api/cross-platform/transport.dart';
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/json/json.dart';
@@ -14,8 +14,7 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
   Transport _transport;
 
   FlutterCrossPlatformCalls(Transport transport) {
-    _transport = Debug.checkNull(transport,"transport");
-    
+    _transport = Debug.checkNull(transport, "transport");
   }
 
   ID channelID = Names.newID(string: "com.jfixby.scarabei.red.flutter.calls.FlutterJavaCallListener");
@@ -23,7 +22,7 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
   //-----------------------
 
   @override
-  Future<CallResult> makeCall(CallSpecs specs) async {
+  Future<dynamic> makeCall(CallSpecs specs) async {
     ID callID = specs.callID;
     Debug.checkNull(callID, "callID");
     if (specs.arguments == null) {
@@ -44,15 +43,18 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
 
     Map<String, dynamic> encodedResult = Json.deserializeFromString(rawString: channelResultJson);
 
-    Map<String, dynamic> flutterObject = Codecs.decode(encodedResult);
+    MethodResult flutterObject = Codecs.decode(encodedResult);
+
+    L.d("result.success", flutterObject.success);
+    L.d("result.errorMessage", flutterObject.error);
+    L.d("result.resultingObject", flutterObject.result);
 
     L.d("result map", flutterObject);
-
-    CallResult result = new CallResult();
-    result.resultingObject = flutterObject["result"];
-    result.errorMessage = flutterObject["errorMessage"];
-    result.success = flutterObject["success"];
-    return result;
+    if (flutterObject.success) {
+      return flutterObject.result;
+    } else {
+      throw new Exception(flutterObject.error);
+    }
   }
 
   Future<dynamic> _invoke(Map<String, dynamic> call) {

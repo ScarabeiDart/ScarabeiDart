@@ -67,17 +67,14 @@ main() async {
     null
   ]);
 
-
   specs.addArgument("id", Names.newID(string: "abc.def.ghk"));
 
   specs = CrossPlatformCalls.newCallSpecs();
   specs.callID = Names.newID(string: "com.jfixby.scarabei.api.sys.Sys.getSystemInfo");
-  Future<CallResult> callResult = CrossPlatformCalls.makeCall(specs);
+  Future<dynamic> callResult = CrossPlatformCalls.makeCall(specs);
 
-  CallResult result = await callResult;
-  L.d("result.success", result.success);
-  L.d("result.errorMessage", result.errorMessage);
-  L.d("result.resultingObject", result.resultingObject);
+  var result = await callResult;
+  L.d("result", result);
 }
 
 class FakeTransport implements Transport {
@@ -88,6 +85,6 @@ class FakeTransport implements Transport {
     return testString;
   }
 
-  static String testString ='';
-
+  static String testString =
+      '{  "type": "MethodCallResult",  "value": {    "result": {      "type": "Map",      "value": [        [          {            "type": "com.jfixby.scarabei.api.names.ID",            "value": "desktop.screen.width"          },          {            "type": "String",            "value": "1920.0"          }        ],        [          {            "type": "com.jfixby.scarabei.api.names.ID",            "value": "desktop.screen.height"          },          {            "type": "String",            "value": "1080.0"          }        ],        [          {            "type": "com.jfixby.scarabei.api.names.ID",            "value": "os.name"          },          {            "type": "String",            "value": "Windows 8.1"          }        ],        [          {            "type": "com.jfixby.scarabei.api.names.ID",            "value": "java.version"          },          {            "type": "String",            "value": "1.8.0_131"          }        ],        [          {            "type": "com.jfixby.scarabei.api.names.ID",            "value": "app.version.package_name"          },          {            "type": "String",            "value": ""          }        ],        [          {            "type": "com.jfixby.scarabei.api.names.ID",            "value": "app.version.code"          },          {            "type": "String",            "value": ""          }        ],        [          {            "type": "com.jfixby.scarabei.api.names.ID",            "value": "app.version.name"          },          {            "type": "String",            "value": ""          }        ]      ]    },    "success": {      "type": "Bool",      "value": true    },    "error": {      "type": "Null"    }  }}';
 }

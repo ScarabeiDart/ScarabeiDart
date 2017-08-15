@@ -1,11 +1,10 @@
 import 'package:scarabei/api/debug/debug.dart';
+import 'package:scarabei/api/names/names.dart';
 
 class Version {
-
-
-  static String AppVersionName = "app.version.name";
-  static String AppVersionCode = "app.version.code";
-  static String AppPackageName = "app.version.package_name";
+  static final ID AppVersionName = Names.newID(string: "app.version.name");
+  static final ID AppVersionCode = Names.newID(string: "app.version.code");
+  static final ID AppPackageName = Names.newID(string: "app.version.package_name");
 
   static String VERSION_FILE_NAME = "version.json";
 
@@ -33,5 +32,4 @@ class Version {
   String getPackageVersionString() {
     return this.packageName + "-" + this.getVersionString() + " (versionCode: " + this.versionCode.toString() + ")";
   }
-
 }

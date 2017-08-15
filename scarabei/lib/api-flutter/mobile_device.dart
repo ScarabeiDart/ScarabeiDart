@@ -1,7 +1,6 @@
-import 'package:scarabei/api-flutter/flutter_app_version.dart';
 import 'package:scarabei/api/component_installer.dart';
-import 'package:scarabei/api/display/display_metrics.dart';
 import 'package:scarabei/api/files/file.dart';
+import 'package:scarabei/api/mobile/mobile_app_version.dart';
 import 'package:scarabei/api/names/names.dart';
 
 class MobileDevice {
@@ -40,10 +39,6 @@ class MobileDevice {
     return invoke().getCacheFolder();
   }
 
-  static DisplayMetrics getDisplayMetrics() {
-    return invoke().getDisplayMetrics();
-  }
-
   static String getBrand() {
     return invoke().getBrand();
   }
@@ -60,11 +55,11 @@ class MobileDevice {
     return invoke().getVersionRelease();
   }
 
-  static FlutterAppVersion getAppVersion() {
+  static MobileAppVersion getAppVersion() {
     return invoke().getAppVersion();
   }
 
-  static Map<ID, String> getSystemInfo() {
+  static Map<ID, dynamic> getSystemInfo() {
     return invoke().getSystemInfo();
   }
 }
@@ -80,8 +75,6 @@ abstract class MobileDeviceComponent {
 
   File getCacheFolder();
 
-  DisplayMetrics getDisplayMetrics();
-
   String getBrand();
 
   String getModel();
@@ -90,15 +83,13 @@ abstract class MobileDeviceComponent {
 
   String getVersionRelease();
 
-  FlutterAppVersion getAppVersion();
+  MobileAppVersion getAppVersion();
 
-  Map<ID, String> getSystemInfo();
+  Map<ID, Object> getSystemInfo();
 
   String getSerial();
 
   String getFingerPrint();
 
   String getManufacturer();
-
-  double densityIndependentPixels2Pixels(double dip);
 }
