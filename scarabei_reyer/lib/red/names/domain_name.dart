@@ -15,6 +15,16 @@ class DomainName implements ID {
   }
 
   @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is DomainName &&
+              runtimeType == other.runtimeType &&
+              _steps == other._steps;
+
+  @override
+  int get hashCode => _steps.hashCode;
+
+  @override
   ID child(String string) => new DomainName(steps: this._steps.child(string).steps());
 
   @override
