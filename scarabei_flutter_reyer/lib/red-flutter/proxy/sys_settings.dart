@@ -38,8 +38,8 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = methodID.child("setStringParameter");
 
-    specs.addArgument("$parameter_name", parameter_name);
-    specs.addArgument("$parameter_value", parameter_value);
+    specs.addArgument("parameter_name", parameter_name);
+    specs.addArgument("parameter_value", parameter_value);
 
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
@@ -51,8 +51,8 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = methodID.child("setFlag");
 
-    specs.addArgument("$flag_name", flag_name);
-    specs.addArgument("$flag_value", flag_value);
+    specs.addArgument("flag_name", flag_name);
+    specs.addArgument("flag_value", flag_value);
 
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
@@ -64,7 +64,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
 
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = methodID.child("setExecutionMode");
-    specs.addArgument("$execution_mode", execution_mode);
+    specs.addArgument("execution_mode", execution_mode);
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
 
@@ -75,8 +75,8 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = methodID.child("setFlag");
 
-    specs.addArgument("$parameterName", parameterName);
-    specs.addArgument("$parameterValue", parameterValue);
+    specs.addArgument("parameterName", parameterName);
+    specs.addArgument("parameterValue", parameterValue);
 
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
@@ -88,8 +88,8 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = methodID.child("setSystemAssetID");
 
-    specs.addArgument("$parameterName", parameterName);
-    specs.addArgument("$parameterValue", parameterValue);
+    specs.addArgument("parameterName", parameterName);
+    specs.addArgument("parameterValue", parameterValue);
 
     Future<bool> result = CrossPlatformCalls.makeCall(specs);
   }
