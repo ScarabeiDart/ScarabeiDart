@@ -14,7 +14,7 @@ class FlutterTransport implements Transport {
 
   @override
   Future<dynamic> invokeMethod(String callName, Map<String, dynamic> arguments) {
-    L.d("senfing call[" + callName + "] " + _channel.toString(), arguments);
+//    L.d("senfing call[" + callName + "] " + _channel.toString(), arguments);
     return _channel.invokeMethod(callName, arguments);
   }
 }
