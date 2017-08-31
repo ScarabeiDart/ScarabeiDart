@@ -99,10 +99,10 @@ class SimpleLogger extends LoggerComponent {
       } else if (msg is Map) {
         printMap(mode, frame, tag, msg);
       } else {
-        _out(mode, frame, ": $tag > $msg");
+        _out(mode, frame, "$tag > $msg");
       }
     } else {
-      _out(mode, frame, ": $tag");
+      _out(mode, frame, "$tag");
     }
   }
 }

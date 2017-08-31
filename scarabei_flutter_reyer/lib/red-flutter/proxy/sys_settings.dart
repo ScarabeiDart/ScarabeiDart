@@ -128,7 +128,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     if (cache.containsKey(flag_name)) {
       return cache[flag_name];
     } else {
-      return null;
+      return false;
     }
   }
 
