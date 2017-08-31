@@ -45,6 +45,7 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
 
     MethodResult flutterObject = Codecs.decode(encodedResult);
 
+//    L.d("result.methodName", flutterObject.methodName);
 //    L.d("result.success", flutterObject.success);
 //    L.d("result.errorMessage", flutterObject.error);
 //    L.d("result.resultingObject", flutterObject.result);
@@ -58,7 +59,7 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
   }
 
   Future<dynamic> _invoke(Map<String, dynamic> call) {
-    L.d("invoke", Json.serializeToString(call));
+//    L.d("invoke", Json.serializeToString(call));
     return _transport.invokeMethod('invoke', call);
   }
 

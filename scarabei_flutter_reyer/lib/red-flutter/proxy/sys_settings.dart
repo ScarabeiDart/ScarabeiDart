@@ -73,7 +73,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     cache[parameterName] = parameterValue;
 
     var specs = CrossPlatformCalls.newCallSpecs();
-    specs.callID = methodID.child("setFlag");
+    specs.callID = methodID.child("setIntParameter");
 
     specs.addArgument("parameterName", parameterName);
     specs.addArgument("parameterValue", parameterValue);

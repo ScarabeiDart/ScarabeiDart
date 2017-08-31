@@ -1,5 +1,5 @@
-import "package:scarabei/api/codec/to_dart_decoder.dart";
 import 'package:scarabei/api/codec/from_dart_encoder.dart';
+import "package:scarabei/api/codec/to_dart_decoder.dart";
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/log/logger.dart';
@@ -12,7 +12,6 @@ class Decoders {
 
     String objectTypeName = encoded[EncodedObject.TYPE];
     Object encodedObject = encoded[EncodedObject.VALUE];
-
 
     if (objectTypeName == null) {
       Err.reportError("Missing object type for <" + encodedObject.toString() + ">");
@@ -40,7 +39,7 @@ class Decoders {
       }
 
       this.decoders[name] = flutterToScarabeiDecoder;
-      L.d("Registered CrossLanguageToFlutterDecoder[" + name + "]", flutterToScarabeiDecoder);
+      //      L.d("Registered CrossLanguageToFlutterDecoder[" + name + "]", flutterToScarabeiDecoder);
     }
   }
 }

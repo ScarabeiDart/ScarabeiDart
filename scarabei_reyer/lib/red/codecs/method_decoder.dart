@@ -40,6 +40,7 @@ class MethodDecoder implements ToDartDecoder {
     if (objectTypeName == CrossLanguageClassNames.MethodCallResult) {
       var emap = encodedObject as Map<dynamic, dynamic>;
       MethodResult result = new MethodResult();
+      result.methodName = Codecs.decode(emap[MethodResult.RESULT_NAME]);
       result.success = Codecs.decode(emap[MethodResult.RESULT_SUCCESS_FLAG]);
       result.error = Codecs.decode(emap[MethodResult.RESULT_ERROR]);
       result.result = Codecs.decode(emap[MethodResult.RESULT_OBJECT]);

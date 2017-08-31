@@ -23,7 +23,7 @@ class MobileDeviceFlutterProxy implements MobileDeviceComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = callID.child("getSystemInfo");
     _sysInfo = await CrossPlatformCalls.makeCall(specs);
-    L.d("MobileDeviceFlutterProxy", _sysInfo);
+//    L.d("MobileDeviceFlutterProxy", _sysInfo);
     return this;
   }
 
