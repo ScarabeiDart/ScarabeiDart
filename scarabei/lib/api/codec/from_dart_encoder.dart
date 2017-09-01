@@ -20,16 +20,15 @@ class EncodedObject {
   static Map<String, dynamic> encodeBool(bool value) =>
       EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.BOOL);
 
-  static Map<String, dynamic> encodeMethod(bool value) =>
-      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.BOOL);
-
   static Map<String, dynamic> encodeInt(int value) =>
       EncodedObject.encodeObject(value: value.toString(), type: CrossLanguageClassNames.INTEGER);
 
   static Map<String, dynamic> encodeDecimal(double value) =>
-      EncodedObject.encodeObject(value: value.toString(), type: CrossLanguageClassNames.INTEGER);
+      EncodedObject.encodeObject(value: value.toString(), type: CrossLanguageClassNames.DOUBLE);
 
   static Map<String, dynamic> encodeIterable(Iterable<dynamic> value) =>
       EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.LIST);
 
+  static Map<String, dynamic> encodeMap(List<List<Map<String, dynamic>>> pairsList) =>
+      EncodedObject.encodeObject(value: pairsList, type: CrossLanguageClassNames.MAP);
 }

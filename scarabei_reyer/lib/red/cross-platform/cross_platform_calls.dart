@@ -35,7 +35,7 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
     Map<String, dynamic> encodedMethod = Codecs.encode(call);
 //    L.d("encodedMethod", encodedMethod);
     var json = Json.serializeToString(encodedMethod);
-//    L.d("encodedMethodJson", json);
+    L.d("encodedMethodJson", json);
 
     String channelResultJson = await _transport.invokeMethod('invoke', {"json": json.toString()});
 
@@ -54,6 +54,8 @@ class FlutterCrossPlatformCalls implements CrossPlatformCallsComponent {
     if (flutterObject.success) {
       return flutterObject.result;
     } else {
+      L.e(" request", json);
+      L.e("response", channelResultJson);
       throw new Exception(flutterObject.error);
     }
   }

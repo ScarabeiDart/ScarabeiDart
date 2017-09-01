@@ -1,6 +1,5 @@
 import 'package:scarabei/api/codec/codecs.dart';
 import 'package:scarabei/api/codec/from_dart_encoder.dart';
-import 'package:scarabei/api/cross-platform/class_names.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
@@ -26,9 +25,9 @@ class DartPrimitivesEncoder implements FromDartEncoder {
     if (flutterObject is int) {
       return true;
     }
-//    if (flutterObject is Map) {
-//      return true;
-//    }
+    if (flutterObject is Map) {
+      return true;
+    }
     if (flutterObject is Iterable) {
       return true;
     }
@@ -37,7 +36,6 @@ class DartPrimitivesEncoder implements FromDartEncoder {
     }
     return false;
   }
-
 
 //  Map<String, dynamic> encodeMap(Map<dynamic, dynamic> value) =>
 //      EncodedObject.encodeObject(value: value, type: CrossLanguageClassNames.MAP);
@@ -59,18 +57,20 @@ class DartPrimitivesEncoder implements FromDartEncoder {
     if (flutterObject is int) {
       return EncodedObject.encodeInt(flutterObject);
     }
-//    if (flutterObject is Map) {
-//      Map<String, dynamic> content = {};
-//      List<Map<String, dynamic>> ePairs = [];
-//      for (dynamic key in flutterObject.keys) {
-//        dynamic val = flutterObject[key];
-//        Map<String, dynamic> eK = Codecs.encode(key);
-//        eKeys.add(eK);
-//        Map<String, dynamic> eV = Codecs.encode(val);
-//        content[eK] = eV;
-//      }
-//      return flutterObject;
-//    }
+    if (flutterObject is Map) {
+      Map map = flutterObject;
+      final List<List<Map<String, dynamic>>> pairsList = new List<List<Map<String, dynamic>>>();
+      for (final Object k in map.keys) {
+        final Object v = map[k];
+        final Map<String, dynamic> encodedKey = Codecs.encode(k);
+        final Map<String, dynamic> encodedVal = Codecs.encode(v);
+        final List<Map<String, dynamic>> ePair = new List<Map<String, dynamic>>();
+        ePair.add(encodedKey);
+        ePair.add(encodedVal);
+        pairsList.add(ePair);
+      }
+      return EncodedObject.encodeMap(pairsList);
+    }
     if (flutterObject is Iterable) {
       List<Map<String, dynamic>> eList = [];
       for (dynamic e in flutterObject) {

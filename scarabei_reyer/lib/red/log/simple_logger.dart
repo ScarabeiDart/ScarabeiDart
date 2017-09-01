@@ -18,7 +18,7 @@ class SimpleLogger extends LoggerComponent {
     } else if (SystemSettings
         .getExecutionMode()
         .isBelow(ExecutionMode.TESTING)) {
-      return "scarabei";
+      return "";
     }
     StackTrace stack = StackTrace.current;
     String str = stack.toString();
