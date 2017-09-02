@@ -6,17 +6,18 @@ import 'package:path/path.dart' as path;
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/files/file.dart';
 import 'package:scarabei/api/files/file_system.dart';
+import 'package:scarabei/api/files/files_list.dart';
 import 'package:scarabei/api/files/local_file.dart';
 import 'package:scarabei/api/files/local_file_system.dart';
 import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/path/absolute_path.dart';
 import 'package:scarabei_reyer/red/files/abstract_red_file.dart';
 import 'package:scarabei_reyer/red/files/red_local_file_system.dart';
+import 'package:scarabei_reyer/red/files/reyer_files_list.dart';
 
 class LocalRedFile extends AbstractRedFile implements LocalFile {
   AbsolutePath<FileSystem> absolute_path;
   RedLocalFileSystem fs;
-
 
   LocalRedFile(AbsolutePath<FileSystem> absolute_path, LocalFileSystemComponent fileSystem) {
     this.absolute_path = absolute_path;
@@ -39,9 +40,7 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
 
     File newFile = this.parent().child(new_name);
 
-    String newDartPath = newFile
-        .toDartFile()
-        .path;
+    String newDartPath = newFile.toDartFile().path;
 
     e.renameSync(newDartPath);
 
@@ -75,16 +74,13 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
     return new dart.File(dartFilePath()).existsSync() || new dart.Directory(dartFilePath()).existsSync();
   }
 
-
   int lastModified() {
 //    if (this.absolute_path.isRoot()) {
 //      return 0;
 //    }
 //    return new dart.File(dartFilePath()).existsSync() || new dart.Directory(dartFilePath()).existsSync();
 //    dart.File f = this.toJavaFile();
-    return new dart.File(dartFilePath())
-        .lastModifiedSync()
-        .millisecondsSinceEpoch;
+    return new dart.File(dartFilePath()).lastModifiedSync().millisecondsSinceEpoch;
   }
 
   File child(String child_name) {
@@ -95,7 +91,6 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
     AbsolutePath<FileSystem> child = me.child(child_name);
     return this.getFileSystem().newFile(child);
   }
-
 
   File parent() {
     if (!this.getAbsoluteFilePath().isRoot()) {
@@ -137,7 +132,6 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
     return true;
   }
 
-
   int getSize() {
     if (this.isFolder()) {
 //      dart.FileSystemException e;
@@ -170,25 +164,26 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
   static bool DIRECT_CHILDREN = true;
   static bool ALL_CHILDREN = (!DIRECT_CHILDREN);
 
-  Iterable<File> listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
+  FilesList listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
     fileFilter ??= ACCEPT_ALL_FILES;
     List<LocalRedFile> filesQueue = [];
     filesQueue.add(this);
     List<File> result = new List<File>();
     collectChildren(filesQueue, result, DIRECT_CHILDREN, fileFilter);
-    return result;
+    return new ReyerFilesList(result);
   }
 
-  Iterable<File> listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
+  FilesList listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
     fileFilter ??= ACCEPT_ALL_FILES;
     List<LocalRedFile> filesQueue = [];
     filesQueue.add(this);
     List<File> result = new List<File>();
     collectChildren(filesQueue, result, ALL_CHILDREN, fileFilter);
-    return result;
+    return new ReyerFilesList(result);
   }
 
-  static void collectChildren(List<LocalRedFile> filesQueue, List<File> result, bool directFlag, bool fileFilter(File file)) {
+  static void collectChildren(
+      List<LocalRedFile> filesQueue, List<File> result, bool directFlag, bool fileFilter(File file)) {
     fileFilter ??= ACCEPT_ALL_FILES;
     while (filesQueue.length > 0) {
       LocalRedFile nextfile = filesQueue.removeAt(0);

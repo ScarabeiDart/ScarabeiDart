@@ -53,7 +53,7 @@ main() {
 
   fs.ROOT();
   FileFilter x = null;
-  fs.copyFilesTo(home.listAllChildren(fileFilter: x), fs.ROOT());
+  fs.copyFilesTo(home.listAllChildren(fileFilter: x).toList(), fs.ROOT());
 
   L.d("in memory", fs.ROOT().listAllChildren());
   var data = fs.ROOT().child("LICENSE").readString();
@@ -72,7 +72,7 @@ main() {
   var toCopy = root.listAllChildren(fileFilter: filter);
 //  L.d("toCopy", toCopy);
 
-  fs.copyFilesTo(toCopy, tmp);
+  fs.copyFilesTo(toCopy.toList(), tmp);
 
   L.d("tmp", tmp.listAllChildren());
   tmp.delete();

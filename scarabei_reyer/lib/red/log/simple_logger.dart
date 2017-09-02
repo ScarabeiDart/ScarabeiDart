@@ -1,3 +1,4 @@
+import 'package:scarabei/api/files/files_list.dart';
 import 'package:scarabei/api/lang/lang.dart';
 import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/sys/execution_mode.dart';
@@ -15,9 +16,7 @@ class SimpleLogger extends LoggerComponent {
   static String getFrame() {
     if (SystemSettings.component() == null) {
       return "scarabei-start";
-    } else if (SystemSettings
-        .getExecutionMode()
-        .isBelow(ExecutionMode.TESTING)) {
+    } else if (SystemSettings.getExecutionMode().isBelow(ExecutionMode.TESTING)) {
       return "";
     }
     StackTrace stack = StackTrace.current;
@@ -96,6 +95,8 @@ class SimpleLogger extends LoggerComponent {
     if (msg != NO_ARGUMENT) {
       if (msg is Iterable) {
         printList(mode, frame, tag, msg);
+      } else if (msg is FilesList) {
+        printList(mode, frame, tag, msg.toList());
       } else if (msg is Map) {
         printMap(mode, frame, tag, msg);
       } else {

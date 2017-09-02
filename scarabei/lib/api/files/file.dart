@@ -2,11 +2,11 @@ import "dart:io" as dart;
 
 import 'package:scarabei/api/files/file_hash.dart';
 import 'package:scarabei/api/files/file_system.dart';
+import 'package:scarabei/api/files/files_list.dart';
 import 'package:scarabei/api/path/absolute_path.dart';
 import 'package:scarabei/api/path/relative_path.dart';
 
 abstract class File {
-
   dart.FileSystemEntity toDartFile();
 
   AbsolutePath<FileSystem> getAbsoluteFilePath();
@@ -21,9 +21,9 @@ abstract class File {
 
   FileHash calculateHash();
 
-  Iterable<File> listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES});
+  FilesList listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES});
 
-  Iterable<File> listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES});
+  FilesList listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES});
 
   File child(String child_name);
 
@@ -75,7 +75,6 @@ abstract class File {
 
   bool tryToClearFolder();
 
-
 //
 }
 
@@ -84,5 +83,3 @@ bool ACCEPT_ALL_FILES(File file) {
 }
 
 typedef bool FileFilter(File file);
-
-

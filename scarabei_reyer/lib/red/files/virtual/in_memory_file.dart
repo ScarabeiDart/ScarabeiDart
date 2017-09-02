@@ -5,22 +5,22 @@ import "dart:io" as dart;
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/files/file.dart';
 import 'package:scarabei/api/files/file_system.dart';
+import 'package:scarabei/api/files/files_list.dart';
 import 'package:scarabei/api/io/io_exception.dart';
 import 'package:scarabei/api/path/absolute_path.dart';
 import 'package:scarabei/api/path/relative_path.dart';
 import 'package:scarabei/api/strings/strings.dart';
 import 'package:scarabei/api/sys/sys.dart';
 import 'package:scarabei_reyer/red/files/abstract_red_file.dart';
+import 'package:scarabei_reyer/red/files/reyer_files_list.dart';
 import 'package:scarabei_reyer/red/files/virtual/content_leaf.dart';
 import 'package:scarabei_reyer/red/files/virtual/in_memory_file_system.dart';
 import 'package:scarabei_reyer/red/files/virtual/in_memory_file_system_content.dart';
 
-class InMemoryFile extends AbstractRedFile
-    implements File {
+class InMemoryFile extends AbstractRedFile implements File {
   InMemoryFileSystem virtualFileSystem;
   AbsolutePath<FileSystem> absolute_path;
   RelativePath relativePath;
-
 
   InMemoryFile(InMemoryFileSystem virtualFileSystem, AbsolutePath<FileSystem> file_path) {
     this.virtualFileSystem = virtualFileSystem;
@@ -49,7 +49,6 @@ class InMemoryFile extends AbstractRedFile
     InMemoryFileSystemContent content = this.virtualFileSystem.getContent();
     return content.isFile(this.absolute_path.getRelativePath());
   }
-
 
   File child(String child_name) {
     return new InMemoryFile(this.getFileSystem(), this.absolute_path.child(child_name));
@@ -84,7 +83,6 @@ class InMemoryFile extends AbstractRedFile
     return this.virtualFileSystem;
   }
 
-
   ContentLeaf createFile() {
     if (this.relativePath.isRoot()) {
       return null;
@@ -108,7 +106,6 @@ class InMemoryFile extends AbstractRedFile
       return 0;
     }
   }
-
 
   File parent() {
     return new InMemoryFile(this.virtualFileSystem, this.absolute_path.parent());
@@ -170,9 +167,8 @@ class InMemoryFile extends AbstractRedFile
 //    return 15;
 //  }
 
-
   @override
-  Iterable<File> listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
+  FilesList listDirectChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
     fileFilter ??= ACCEPT_ALL_FILES;
     InMemoryFileSystemContent content = this.virtualFileSystem.getContent();
     if (!content.exists(this.relativePath)) {
@@ -189,12 +185,10 @@ class InMemoryFile extends AbstractRedFile
           listFiles.add(f);
         }
       }
-      return listFiles;
+      return new ReyerFilesList(listFiles);
     } else {
       Err.reportError("This is not a folder: " + this.absolute_path.toString());
     }
     return null;
   }
-
-
 }

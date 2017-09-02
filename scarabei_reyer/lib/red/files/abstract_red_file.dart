@@ -5,18 +5,18 @@ import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/files/file.dart';
 import 'package:scarabei/api/files/file_hash.dart';
 import 'package:scarabei/api/files/file_system.dart';
+import 'package:scarabei/api/files/files_list.dart';
 import 'package:scarabei/api/io/io_exception.dart';
 import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/path/absolute_path.dart';
 import 'package:scarabei/api/path/relative_path.dart';
 import 'package:scarabei_reyer/red/files/abstract_file_system.dart';
-
+import 'package:scarabei_reyer/red/files/reyer_files_list.dart';
 
 abstract class AbstractRedFile implements File {
-
   void clearFolder() {
     if (this.isFolder()) {
-      Iterable<File> children = this.listDirectChildren();
+      Iterable<File> children = this.listDirectChildren().toList();
       for (int i = 0; i < children.length; i++) {
         File child = children.elementAt(i);
         child.delete();
@@ -65,7 +65,6 @@ abstract class AbstractRedFile implements File {
     }
   }
 
-
   File proceed(RelativePath relativePath) {
     AbsolutePath<FileSystem> file_path = this.getAbsoluteFilePath().proceed(relativePath);
     return this.getFileSystem().newFile(file_path);
@@ -79,7 +78,7 @@ abstract class AbstractRedFile implements File {
 
   List<File> listSubFolders() {
     List<File> listFiles = [];
-    Iterable<File> children = this.listDirectChildren();
+    Iterable<File> children = this.listDirectChildren().toList();
     for (File file in children) {
       if (file.isFolder()) {
         listFiles.add(file);
@@ -87,7 +86,6 @@ abstract class AbstractRedFile implements File {
     }
     return listFiles;
   }
-
 
 //  List<int> readBytes() {
 //    FileInputStream is_ = this.getFileSystem().newFileInputStream(this);
@@ -119,7 +117,6 @@ abstract class AbstractRedFile implements File {
 //      os.close();
 //    }
 //  }
-
 
   String nameWithoutExtension() {
     String name = this.getName();
@@ -211,7 +208,6 @@ abstract class AbstractRedFile implements File {
 //    return this.getAbsoluteFilePath().getMountPoint().newOutputStream(this.getAbsoluteFilePath());
 //  }
 
-
   String toString() {
     return this.getAbsoluteFilePath().toString();
   }
@@ -275,12 +271,12 @@ abstract class AbstractRedFile implements File {
     }
   }
 
-  Iterable<File> listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
+  FilesList listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
     List<File> filesQueue = [];
     filesQueue.add(this);
     Set<File> result = new Set<File>();
     collectChildren(filesQueue, result, false, fileFilter);
-    return result;
+    return new ReyerFilesList(result);
   }
 
   static bool DIRECT_CHILDREN = true;
@@ -291,7 +287,7 @@ abstract class AbstractRedFile implements File {
       File nextfile = filesQueue.removeAt(0);
 
       if (nextfile.isFolder()) {
-        Iterable<File> files = nextfile.listDirectChildren();
+        Iterable<File> files = nextfile.listDirectChildren().toList();
         for (int i = 0; i < files.length; i++) {
           File child = files.elementAt(i);
           if (fileFilter(child)) {
@@ -309,16 +305,13 @@ abstract class AbstractRedFile implements File {
     }
   }
 
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is AbstractRedFile &&
-              runtimeType == other.runtimeType &&
-              this.getAbsoluteFilePath() == other.getAbsoluteFilePath();
+      other is AbstractRedFile &&
+          runtimeType == other.runtimeType &&
+          this.getAbsoluteFilePath() == other.getAbsoluteFilePath();
 
   @override
   int get hashCode => getAbsoluteFilePath().hashCode;
-
-
 }
