@@ -68,18 +68,11 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
   }
 
   bool exists() {
-//    if (this.absolute_path.isRoot()) {
-//      return true;
-//    }
-    return new dart.File(dartFilePath()).existsSync() || new dart.Directory(dartFilePath()).existsSync();
+    var path = dartFilePath();
+    return new dart.File(path).existsSync() || new dart.Directory(path).existsSync();
   }
 
   int lastModified() {
-//    if (this.absolute_path.isRoot()) {
-//      return 0;
-//    }
-//    return new dart.File(dartFilePath()).existsSync() || new dart.Directory(dartFilePath()).existsSync();
-//    dart.File f = this.toJavaFile();
     return new dart.File(dartFilePath()).lastModifiedSync().millisecondsSinceEpoch;
   }
 

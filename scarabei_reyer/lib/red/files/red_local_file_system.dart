@@ -9,15 +9,12 @@ import 'package:scarabei/api/files/local_file_system.dart';
 import 'package:scarabei/api/log/logger.dart';
 import 'package:scarabei/api/path/absolute_path.dart';
 import 'package:scarabei/api/path/relative_path.dart';
-import 'package:scarabei/api/strings/strings.dart';
+import 'package:scarabei/api/sys/sys.dart';
 import 'package:scarabei/api/utils/utils.dart';
 import 'package:scarabei_reyer/red/files/abstract_file_system.dart';
 import 'package:scarabei_reyer/red/files/local_red_file.dart';
 
-class RedLocalFileSystem extends AbstractFileSystem
-    implements LocalFileSystemComponent {
-
-
+class RedLocalFileSystem extends AbstractFileSystem implements LocalFileSystemComponent {
 //  FileOutputStream newFileOutputStream(File output_file, {bool append = false}) {
 //    Debug.checkNull(output_file, "File");
 //    Debug.checkTrue(output_file.getFileSystem() == this, "File belongs to this filesystem?");
@@ -70,19 +67,17 @@ class RedLocalFileSystem extends AbstractFileSystem
   }
 
   String dartFilePath(AbsolutePath<FileSystem> absolute_path) {
-//    if (absolute_path.isRoot()) {
-//      String dartPath = path.rootPrefix(application_home_path_string);
-//      return new dart.File(dartPath).absolute.path;
-//    }
     RelativePath relative = absolute_path.getRelativePath();
     Pattern splitRegex = path.separator;
-    String dartPath = Strings.wrapSequence(relative.steps(), "", "", splitRegex.toString());
-//    L.d("dartPath", dartPath);
-//    Sys.exit();
+    String dartPath;
+    if (Sys.isWindows()) {
+      dartPath = relative.steps().join(splitRegex.toString());
+    } else {
+      dartPath = splitRegex.toString() + relative.steps().join(splitRegex.toString());
+    }
     var result = new dart.File(dartPath).path;
     return result;
   }
-
 
   File ApplicationHome() {
     return this.newLocalFile(new dart.File("").absolute);

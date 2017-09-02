@@ -1,6 +1,6 @@
 name: scarabei_reyer
 description: Collection of open source reusable Dart components
-version: 1.4.1
+version: 1.4.2
 homepage: https://github.com/ScarabeiDart/
 author: J Fixby <dart@jfixby.com>
 
@@ -14,6 +14,6 @@ dependencies:
   logging: ^0.11.3+1
 
 dependency_overrides:
-#  scarabei:
-#    path: ../scarabei
+  scarabei:
+    path: ../scarabei
 
