@@ -39,7 +39,7 @@ main() {
 //  L.d("home", c.toString());
 //  L.d("dart", c.toDartFile());
 
-  File d = LocalFileSystem.invoke().newLocalFile(new dart.File("D:/"));
+  File d = LocalFileSystem.invoke().newLocalFile("D:/");
 
   var filter = (f) => f.getAbsoluteFilePath().getRelativePath().size() <= 2;
   var list = d.listAllChildren(fileFilter: filter);

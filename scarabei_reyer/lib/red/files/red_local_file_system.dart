@@ -48,9 +48,9 @@ class RedLocalFileSystem extends AbstractFileSystem implements LocalFileSystemCo
     return new LocalRedFile(file_path, this);
   }
 
-  File newLocalFile(dart.File dartFile) {
-    Debug.checkNull(dartFile, "dartFile");
-
+  File newLocalFile(String dartFileString) {
+    Debug.checkNull(dartFileString, "dartFile");
+    dart.File dartFile = new dart.File(dartFileString);
     if (!dartFile.isAbsolute) {
       dartFile = dartFile.absolute;
     }
@@ -80,7 +80,7 @@ class RedLocalFileSystem extends AbstractFileSystem implements LocalFileSystemCo
   }
 
   File ApplicationHome() {
-    return this.newLocalFile(new dart.File("").absolute);
+    return this.newLocalFile(new dart.File("").absolute.path);
   }
 
 //  @override

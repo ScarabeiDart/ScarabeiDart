@@ -9,6 +9,7 @@ import 'package:scarabei/api/time/time_stream.dart';
 import 'package:scarabei_reyer/red/sys/no_clock.dart';
 import 'package:scarabei_reyer/red/sys/os_validator.dart';
 import 'package:scarabei_reyer/red/sys/system_clock.dart';
+import 'dart:io' as huio;
 
 abstract class RedSystem implements SystemComponent {
 
@@ -61,6 +62,11 @@ abstract class RedSystem implements SystemComponent {
   @override
   int currentTime() {
     return system_clock.currentTimeMillis();
+  }
+
+  @override
+  sleep(int ms) {
+    huio.sleep(new Duration(milliseconds:ms));
   }
 
 

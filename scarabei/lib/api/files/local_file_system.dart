@@ -1,4 +1,3 @@
-import "dart:io" as dart;
 
 import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/files/file.dart';
@@ -44,7 +43,7 @@ class LocalFileSystem {
     return invoke().ApplicationHome();
   }
 
-  static File newLocalFile(dart.File dartFile) {
+  static File newLocalFile(String dartFile) {
     return invoke().newLocalFile(dartFile);
   }
 
@@ -84,7 +83,7 @@ class LocalFileSystem {
 
 abstract class LocalFileSystemComponent implements FileSystem {
 
-  File newLocalFile(dart.File dartFile);
+  File newLocalFile(String dartFile);
 
   File ApplicationHome();
 

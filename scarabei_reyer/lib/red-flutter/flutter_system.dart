@@ -6,4 +6,8 @@ class FlutterSystem extends RedSystem {
   Map<ID, String> getSystemInfo() {
     return MobileDevice.getSystemInfo();
   }
+  @override
+  sleep(int ms) {
+    // TODO: implement sleep
+  }
 }

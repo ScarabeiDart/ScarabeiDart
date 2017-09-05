@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/sys/on_exit_listener.dart';
@@ -63,6 +61,8 @@ class Sys {
   static int currentTime() {
     return invoke().currentTime();
   }
+
+  static void sleep(int ms) => invoke().sleep(ms);
 }
 
 abstract class SystemComponent {
@@ -85,4 +85,6 @@ abstract class SystemComponent {
   bool isIOS();
 
   int currentTime();
+
+  sleep(int ms);
 }
