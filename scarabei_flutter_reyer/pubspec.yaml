@@ -18,9 +18,9 @@ dev_dependencies:
   test: 0.12.21
 
 dependency_overrides:
-#  scarabei:
-#    path: ../scarabei
-#  scarabei_reyer:
-#    path: ../scarabei_reyer
+  scarabei:
+    path: ../scarabei
+  scarabei_reyer:
+    path: ../scarabei_reyer
 
 
