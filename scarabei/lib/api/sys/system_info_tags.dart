@@ -1,4 +1,3 @@
-library com.jfixby.scarabei.api.sys;
 
 import 'package:scarabei/api/names/names.dart';
 

@@ -1,4 +1,3 @@
-library com.jfixby.scarabei.red.util;
 
 import 'package:scarabei/api/debug/state_switcher.dart';
 import 'package:scarabei/api/error/err.dart';

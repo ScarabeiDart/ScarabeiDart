@@ -1,4 +1,3 @@
-library com.jfixby.scarabei.red.sys;
 
 import 'dart:io' as dart;
 

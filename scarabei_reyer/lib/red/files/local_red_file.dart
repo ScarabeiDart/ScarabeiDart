@@ -1,4 +1,3 @@
-library com.jfixby.scarabei.red.filesystem;
 
 import 'dart:io' as dart;
 
@@ -162,8 +161,8 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
     List<LocalRedFile> filesQueue = [];
     filesQueue.add(this);
     List<File> result = new List<File>();
-    collectChildren(filesQueue, result, DIRECT_CHILDREN, fileFilter);
-    return new ReyerFilesList(result);
+    collectChildren(filesQueue, result, DIRECT_CHILDREN);
+    return new ReyerFilesList(result).filter(fileFilter);
   }
 
   FilesList listAllChildren({FileFilter fileFilter = ACCEPT_ALL_FILES}) {
@@ -171,15 +170,13 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
     List<LocalRedFile> filesQueue = [];
     filesQueue.add(this);
     List<File> result = new List<File>();
-    collectChildren(filesQueue, result, ALL_CHILDREN, fileFilter);
-    return new ReyerFilesList(result);
+    collectChildren(filesQueue, result, ALL_CHILDREN);
+    return new ReyerFilesList(result).filter(fileFilter);
   }
 
-  static void collectChildren(
-      List<LocalRedFile> filesQueue, List<File> result, bool directFlag, bool fileFilter(File file)) {
-    fileFilter ??= ACCEPT_ALL_FILES;
+  static void collectChildren(List<LocalRedFile> filesQueue, List<File> result, bool directFlag) {
     while (filesQueue.length > 0) {
-      LocalRedFile nextfile = filesQueue.removeAt(0);
+      LocalRedFile nextfile = filesQueue.removeLast();
 //      dart.File file = nextfile.toJavaFile();
       if (!nextfile.exists()) {
         if (nextfile.getAbsoluteFilePath().isRoot()) {
@@ -200,7 +197,7 @@ class LocalRedFile extends AbstractRedFile implements LocalFile {
           dart.FileSystemEntity entry = contents[i];
           String file_i = path.basename(entry.absolute.path);
           LocalRedFile child = nextfile.child(file_i);
-          if (fileFilter(child)) {
+          if (true) {
             result.add(child);
             if (directFlag == ALL_CHILDREN) {
               if (child.isFolder()) {

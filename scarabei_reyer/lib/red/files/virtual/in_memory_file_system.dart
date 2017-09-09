@@ -1,4 +1,3 @@
-library com.jfixby.scarabei.red.filesystem.virtual;
 
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/files/file_system.dart';
