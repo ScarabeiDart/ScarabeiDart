@@ -1,4 +1,5 @@
 export 'package:scarabei_reyer/red-flutter/flutter_system.dart';
+export 'package:scarabei_reyer/red-flutter/mobile_device_stub.dart';
 export 'package:scarabei_reyer/red-flutter/memory/memory_manager.dart';
 export 'package:scarabei_reyer/red-flutter/filesystem/file_system.dart';
 export 'package:scarabei_reyer/red-flutter/display/display.dart';
