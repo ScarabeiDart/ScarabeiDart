@@ -1,0 +1,20 @@
+name: scarabei_assembler
+description: Scarabei building tools
+version: 1.0.0
+homepage: https://github.com/ScarabeiDart/
+author: J Fixby <dart@jfixby.com>
+
+environment:
+  sdk: '>=1.20.1 <2.0.0'
+
+#dependencies:
+#  path: ^1.4.1
+
+dev_dependencies:
+  export_files_generator: ^1.0.3
+  test: ^0.12.0
+
+dependency_overrides:
+  export_files_generator:
+    path: ../../export_files_generator
+
