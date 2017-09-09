@@ -1,73 +1,76 @@
 import 'package:scarabei/scarabei.dart';
 
 class MobileDeviceStub implements MobileDeviceComponent {
+  final MobileAppVersion version = new MobileAppVersion();
+  static String demoFolderName = "mobile-device-stub";
+
   @override
   MobileAppVersion getAppVersion() {
-    // TODO: implement getAppVersion
+    return version;
   }
 
   @override
   String getApplicationPrivateDirPathString() {
-    // TODO: implement getApplicationPrivateDirPathString
+    return LocalFileSystem.ApplicationHome().child(demoFolderName).child("private").toDartFile().path;
   }
 
   @override
   String getBrand() {
-    // TODO: implement getBrand
+    return "stub-brand";
   }
 
   @override
   File getCacheFolder() {
-    // TODO: implement getCacheFolder
-  }
-
-  @override
-  String getFingerPrint() {
-    // TODO: implement getFingerPrint
-  }
-
-  @override
-  String getHost() {
-    // TODO: implement getHost
-  }
-
-  @override
-  String getManufacturer() {
-    // TODO: implement getManufacturer
-  }
-
-  @override
-  int getMaxHeapSize() {
-    // TODO: implement getMaxHeapSize
-  }
-
-  @override
-  String getModel() {
-    // TODO: implement getModel
+    return LocalFileSystem.ApplicationHome().child(demoFolderName).child("cache");
   }
 
   @override
   File getPrivateFolder() {
-    // TODO: implement getPrivateFolder
+    return LocalFileSystem.ApplicationHome().child(demoFolderName).child("private");
+  }
+
+  @override
+  String getFingerPrint() {
+    return "stub-fingerprint";
+  }
+
+  @override
+  String getHost() {
+    return "stub-host";
+  }
+
+  @override
+  String getManufacturer() {
+    return "stub-manufacturer";
+  }
+
+  @override
+  int getMaxHeapSize() {
+    return MemoryManager.getMaxHeapSize();
+  }
+
+  @override
+  String getModel() {
+    return "stub-model";
   }
 
   @override
   int getRecommendedHeapSize() {
-    // TODO: implement getRecommendedHeapSize
+    return MemoryManager.getRecommendedHeapSize();
   }
 
   @override
   String getSerial() {
-    // TODO: implement getSerial
+    return "stub-serial";
   }
 
   @override
   Map<ID, Object> getSystemInfo() {
-    // TODO: implement getSystemInfo
+    return Sys.getSystemInfo();
   }
 
   @override
   String getVersionRelease() {
-    // TODO: implement getVersionRelease
+    return "stub-release";
   }
 }
