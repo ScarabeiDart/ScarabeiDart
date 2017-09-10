@@ -14,9 +14,9 @@ class RedSystemSettings implements SystemSettingsComponent {
 
   @override
   Map<ID, dynamic> listAllSettings() {
-    final Map<ID, Object> params = {};
-    Err.throwNotImplementedYet();
-    return params;
+    Map<ID, dynamic> result = new Map<ID, dynamic>();
+    result.addAll(storage);
+    return result;
   }
 
   @override
@@ -89,9 +89,10 @@ class RedSystemSettings implements SystemSettingsComponent {
   }
 
   @override
-  Future<bool> saveToStorage() {
+  Future<bool> saveToStorage() async {
     // TODO: implement saveToStorage
-    Err.throwNotImplementedYet();
-    return null;
+    L.e("RedSystemSettings.saveToStorage() is not implemented yet!");
+//    Err.throwNotImplementedYet();
+    return false;
   }
 }
