@@ -45,5 +45,6 @@ class GenerateExportFiles {
     L.d("root", root);
 
     ExportFilesGenerator.generate(root, dryRun: dryRun);
+    return true;
   }
 }

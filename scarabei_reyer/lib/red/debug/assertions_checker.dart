@@ -1,6 +1,8 @@
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/debug/state_switcher.dart';
+import 'package:scarabei/scarabei.dart';
 import 'package:scarabei_reyer/red/debug/red_state_switcher.dart';
+import 'package:scarabei_reyer/scarabei_reyer.dart';
 
 class AssertionsChecker implements DebugComponent {
   @override
@@ -23,5 +25,16 @@ class AssertionsChecker implements DebugComponent {
   String checkEmpty(String string, [String name]) {
     assert("" != string);
     return string;
+  }
+
+  @override
+  void printStackTrace() {
+    StackTrace stack = StackTrace.current;
+    L.d(stack);
+  }
+
+  @override
+  DebugTimer newDebugTimer() {
+    return new RedDebugTimer();
   }
 }

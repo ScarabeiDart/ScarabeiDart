@@ -1,6 +1,7 @@
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/debug/state_switcher.dart';
 import 'package:scarabei/api/error/err.dart';
+import 'package:scarabei/scarabei.dart';
 import 'package:scarabei_reyer/red/debug/red_state_switcher.dart';
 
 class RedDebug extends DebugComponent {
@@ -45,5 +46,37 @@ class RedDebug extends DebugComponent {
       Err.reportError("String <$name> is empty");
     }
     return null;
+  }
+
+  @override
+  void printStackTrace() {
+    StackTrace stack = StackTrace.current;
+    L.d(stack);
+  }
+
+  @override
+  DebugTimer newDebugTimer() {
+    return new RedDebugTimer();
+  }
+}
+
+class RedDebugTimer implements DebugTimer {
+  int last;
+
+  RedDebugTimer() {
+    reset();
+  }
+
+  @override
+  void reset() {
+    this.last = Sys.currentTime();
+  }
+
+  @override
+  void timestamp(String tag, [int threshold = -1]) {
+    int delta = Sys.currentTime() - last;
+    if (delta > threshold) {
+      L.d("DebugTimer: " + tag, delta);
+    }
   }
 }
