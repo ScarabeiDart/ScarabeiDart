@@ -73,10 +73,29 @@ class RedDebugTimer implements DebugTimer {
   }
 
   @override
-  void timestamp(String tag, [int threshold = -1]) {
+  DebugTimerTimestamp timestamp(String tag, [int threshold = -1]) {
     int delta = Sys.currentTime() - last;
+    RedDebugTimerTimestamp timestamp = new RedDebugTimerTimestamp();
+    timestamp.delta = delta;
+    timestamp.tag = tag;
+    timestamp.threshold = threshold;
+
+    return timestamp;
+  }
+}
+
+class RedDebugTimerTimestamp implements DebugTimerTimestamp {
+  int delta;
+
+  String tag;
+
+  int threshold;
+
+  @override
+  String toString() {
     if (delta > threshold) {
-      L.d("DebugTimer: " + tag, delta);
+      return "DebugTimer: $tag > $delta";
     }
+    return "DebugTimer: $tag";
   }
 }

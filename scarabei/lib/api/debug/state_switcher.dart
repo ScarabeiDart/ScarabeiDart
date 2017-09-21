@@ -6,7 +6,7 @@ abstract class StateSwitcher<T> {
 
   void doesNotExpectState(T unexpected_state);
 
-  void switchState(T next_state);
+  String switchState(T next_state);
 
   T currentState();
 

@@ -1,8 +1,7 @@
-
 import 'package:scarabei/api/debug/state_switcher.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/log/logger.dart';
-
+import 'package:scarabei/scarabei.dart';
 
 class RedStateSwitcher<T> extends StateSwitcher<T> {
   T state;
@@ -13,22 +12,26 @@ class RedStateSwitcher<T> extends StateSwitcher<T> {
     this.switchState(default_state);
   }
 
-
   void expectState(T expected_state) {
     if (!(this.state == expected_state)) {
-      String message = ((("Wrong state=" + this.state.toString()) + ", expected: ") + expected_state.toString());
+      String message =
+          ((("Wrong state=" + this.state.toString()) + ", expected: ") +
+              expected_state.toString());
       Err.reportError((this.debug_name + ": ") + message);
     }
   }
 
-  void switchState(T next_state) {
+  String switchState(T next_state) {
     if (next_state == null) {
       Err.reportError((this.debug_name + ": ") + "Null state detected");
     }
+    String msg =
+        ((this.debug_name + ": ") + this.state.toString()) + " -> " + next_state.toString();
     if (this.debug) {
-      L.d(((this.debug_name + ": ") + this.state.toString()) + " -", next_state);
+      L.d(msg);
     }
     this.state = next_state;
+    return msg;
   }
 
   T currentState() {
@@ -50,7 +53,6 @@ class RedStateSwitcher<T> extends StateSwitcher<T> {
   }
 
   final bool throw_error = true;
-
 
   void doesNotExpectState(T unexpected_state) {
     if (this.state == unexpected_state) {

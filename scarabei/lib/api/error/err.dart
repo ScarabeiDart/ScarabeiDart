@@ -26,9 +26,9 @@ class Err {
     invoke().reportNotImplementedYet();
   }
 
-  static void reportError(String message, [Error e]) {
+  static void reportError(Object message, [Error e]) {
     if (component() == null) {
-      throw new StateError(message + " error: $e");
+      throw new StateError(message.toString() + " error: $e");
     }
     invoke().reportError(message, e);
   }
@@ -36,7 +36,7 @@ class Err {
 
 //reports errors to a local console or to a health-observer system
 abstract class ErrorComponent {
-  void reportError(String message, [Error e]);
+  void reportError(Object message, [Error e]);
 
   void reportNotImplementedYet();
 }

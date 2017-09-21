@@ -4,12 +4,12 @@ import 'package:scarabei/scarabei.dart';
 
 class RedError extends ErrorComponent {
   @override
-  void reportError(String message, [Error e]) {
+  void reportError(Object message, [Error e]) {
     String err_message;
     if (e != null) {
-      err_message = (message + " exception: $e");
+      err_message = (message.toString() + " exception: $e");
     } else {
-      err_message = (message);
+      err_message = (message.toString());
     }
 
     if (SystemSettings.executionModeIsAtLeast(ExecutionMode.TESTING)) {

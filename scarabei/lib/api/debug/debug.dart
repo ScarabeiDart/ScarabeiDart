@@ -61,5 +61,7 @@ abstract class DebugComponent {
 abstract class DebugTimer {
   void reset();
 
-  void timestamp(String tag, [int threshold]);
+  DebugTimerTimestamp timestamp(String tag, [int threshold]);
 }
+
+abstract class DebugTimerTimestamp {}
