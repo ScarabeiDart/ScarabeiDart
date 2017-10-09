@@ -78,4 +78,8 @@ class SystemSettings {
   static Future<bool> saveToStorage() {
     return invoke().saveToStorage();
   }
+
+  static Future<SystemSettingsComponent> reloadFromStorage() {
+    return invoke().reloadFromStorage();
+  }
 }

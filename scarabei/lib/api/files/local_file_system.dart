@@ -3,6 +3,7 @@ import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/files/file.dart';
 import 'package:scarabei/api/files/file_system.dart';
 import 'package:scarabei/api/path/absolute_path.dart';
+import 'package:scarabei/scarabei.dart';
 
 
 class LocalFileSystem {
@@ -39,11 +40,11 @@ class LocalFileSystem {
     invoke().copyFolderContentsToFolder(input_folder, output_folder);
   }
 
-  static File ApplicationHome() {
+  static LocalFile ApplicationHome() {
     return invoke().ApplicationHome();
   }
 
-  static File newLocalFile(String dartFile) {
+  static LocalFile newLocalFile(String dartFile) {
     return invoke().newLocalFile(dartFile);
   }
 
@@ -68,7 +69,7 @@ class LocalFileSystem {
     invoke().copyFileToFolder(file, to_folder);
   }
 
-  static File ROOT() {
+  static LocalFile ROOT() {
     return invoke().ROOT();
   }
 
@@ -83,9 +84,9 @@ class LocalFileSystem {
 
 abstract class LocalFileSystemComponent implements FileSystem {
 
-  File newLocalFile(String dartFile);
+  LocalFile newLocalFile(String dartFile);
 
-  File ApplicationHome();
+  LocalFile ApplicationHome();
 
 
 }

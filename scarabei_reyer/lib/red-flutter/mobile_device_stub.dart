@@ -20,12 +20,12 @@ class MobileDeviceStub implements MobileDeviceComponent {
   }
 
   @override
-  File getCacheFolder() {
+  LocalFile getCacheFolder() {
     return LocalFileSystem.ApplicationHome().child(demoFolderName).child("cache");
   }
 
   @override
-  File getPrivateFolder() {
+  LocalFile getPrivateFolder() {
     return LocalFileSystem.ApplicationHome().child(demoFolderName).child("private");
   }
 

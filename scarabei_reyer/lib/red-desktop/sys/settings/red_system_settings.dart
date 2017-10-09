@@ -95,4 +95,11 @@ class RedSystemSettings implements SystemSettingsComponent {
 //    Err.throwNotImplementedYet();
     return false;
   }
+
+  @override
+  Future<SystemSettingsComponent> reloadFromStorage() async {
+    // TODO: implement reloadFromStorage
+    L.e("RedSystemSettings.reloadFromStorage() is not implemented yet!");
+    return this;
+  }
 }

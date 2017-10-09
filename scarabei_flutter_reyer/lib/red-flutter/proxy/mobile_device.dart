@@ -9,11 +9,18 @@ import 'package:scarabei/api/mobile/mobile_app_version.dart';
 import 'package:scarabei/api/mobile/system_info_tags.dart';
 import 'package:scarabei/api/names/names.dart';
 import 'package:scarabei/api/ver/version.dart';
+import 'package:scarabei/scarabei.dart';
 
 class MobileDeviceFlutterProxy implements MobileDeviceComponent {
   Map<ID, dynamic> _sysInfo;
 
   ID callID;
+
+  LocalFile cacheFolder;
+
+  LocalFile privateFolder;
+
+  String applicationPrivatePathString;
 
   MobileDeviceFlutterProxy() {
     callID = Names.newID(string: "com.jfixby.scarabei.api.mobile.MobileDevice");
@@ -23,6 +30,11 @@ class MobileDeviceFlutterProxy implements MobileDeviceComponent {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = callID.child("getSystemInfo");
     _sysInfo = await CrossPlatformCalls.makeCall(specs);
+
+    await loadCacheFolder();
+    await loadPrivateFolder();
+    await loadApplicationPrivatePathString();
+
 //    L.d("MobileDeviceFlutterProxy", _sysInfo);
     return this;
   }
@@ -53,17 +65,15 @@ class MobileDeviceFlutterProxy implements MobileDeviceComponent {
 
   @override
   String getApplicationPrivateDirPathString() {
-    Err.throwNotImplementedYet();
-    return null;
+    return applicationPrivatePathString;
   }
 
   @override
   String getBrand() => _sysInfo[MobileSystemInfoTags.Brand];
 
   @override
-  File getCacheFolder() {
-    Err.throwNotImplementedYet();
-    return null;
+  LocalFile getCacheFolder() {
+    return cacheFolder;
   }
 
   @override
@@ -79,9 +89,8 @@ class MobileDeviceFlutterProxy implements MobileDeviceComponent {
   String getModel() => _sysInfo[MobileSystemInfoTags.Model];
 
   @override
-  File getPrivateFolder() {
-    Err.throwNotImplementedYet();
-    return null;
+  LocalFile getPrivateFolder() {
+    return privateFolder;
   }
 
   @override
@@ -89,4 +98,28 @@ class MobileDeviceFlutterProxy implements MobileDeviceComponent {
 
   @override
   String getVersionRelease() => _sysInfo[MobileSystemInfoTags.Release];
+
+  Future<File> loadCacheFolder() async {
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("getCacheFolder");
+    Future<File> result = CrossPlatformCalls.makeCall(specs);
+    cacheFolder = await result;
+    return cacheFolder;
+  }
+
+  Future<File> loadPrivateFolder() async {
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("getPrivateFolder");
+    Future<File> result = CrossPlatformCalls.makeCall(specs);
+    privateFolder = await result;
+    return privateFolder;
+  }
+
+  Future<String> loadApplicationPrivatePathString() async {
+    var specs = CrossPlatformCalls.newCallSpecs();
+    specs.callID = callID.child("getApplicationPrivateDirPathString");
+    Future<String> result = CrossPlatformCalls.makeCall(specs);
+    applicationPrivatePathString = await result;
+    return applicationPrivatePathString;
+  }
 }

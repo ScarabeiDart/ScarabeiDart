@@ -19,7 +19,13 @@ class ExecutionMode {
     return _name;
   }
 
-  static get values => [EARLY_DEVELOPMENT, TESTING, RELEASE_CANDIDATE, DEMO, PUBLIC_RELEASE];
+  static get values => [
+        EARLY_DEVELOPMENT,
+        TESTING,
+        RELEASE_CANDIDATE,
+        DEMO,
+        PUBLIC_RELEASE,
+      ];
 
   final int _value;
   final String _name;

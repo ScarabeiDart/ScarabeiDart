@@ -2,6 +2,7 @@ import 'package:scarabei/api/component_installer.dart';
 import 'package:scarabei/api/files/file.dart';
 import 'package:scarabei/api/mobile/mobile_app_version.dart';
 import 'package:scarabei/api/names/names.dart';
+import 'package:scarabei/scarabei.dart';
 
 class MobileDevice {
   static ComponentInstaller<MobileDeviceComponent> _componentInstaller =
@@ -31,11 +32,11 @@ class MobileDevice {
     return invoke().getApplicationPrivateDirPathString();
   }
 
-  static File getPrivateFolder() {
+  static LocalFile getPrivateFolder() {
     return invoke().getPrivateFolder();
   }
 
-  static File getCacheFolder() {
+  static LocalFile getCacheFolder() {
     return invoke().getCacheFolder();
   }
 
@@ -71,9 +72,9 @@ abstract class MobileDeviceComponent {
 
   String getApplicationPrivateDirPathString();
 
-  File getPrivateFolder();
+  LocalFile getPrivateFolder();
 
-  File getCacheFolder();
+  LocalFile getCacheFolder();
 
   String getBrand();
 

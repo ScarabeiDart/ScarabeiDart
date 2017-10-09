@@ -6,6 +6,11 @@ class SimpleTable implements Table {
   String tableName;
   SimpleTableSchema schema;
 
+  @override
+  String toString() {
+    return 'SimpleTable{tableName: $tableName, schema: $schema}';
+  }
+
   List<Entry> entries = [];
   File entriesFile;
 
@@ -35,7 +40,7 @@ class SimpleTable implements Table {
   Map<String, Object> srlzEntry(final Entry e) {
     final Map<String, Object> s = {};
     for (final String key in this.schema.columns) {
-      s[key] = e.getValue(key);
+      s[key] = Codecs.encode(e.getValue(key));
     }
     return s;
   }
@@ -53,7 +58,7 @@ class SimpleTable implements Table {
   Entry deSrlzEntry(final Map<String, Object> e) {
     final SimpleEntry entry = this.newEntry();
     for (final String k in e.keys) {
-      entry.set(k, e[k]);
+      entry.set(k, Codecs.decode(e[k]));
     }
     return entry;
   }

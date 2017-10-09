@@ -128,4 +128,8 @@ class SimpleDB implements DataBase {
     Err.throwNotImplementedYet();
     return null;
   }
+
+  bool hasTable(String tableName) {
+    return this.tables.containsKey(tableName);
+  }
 }

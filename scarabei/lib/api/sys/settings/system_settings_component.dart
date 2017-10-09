@@ -31,4 +31,6 @@ abstract class SystemSettingsComponent {
   void clearAll();
 
   Future<bool> saveToStorage();
+
+  Future<SystemSettingsComponent> reloadFromStorage();
 }

@@ -5,6 +5,7 @@ import 'package:scarabei/api/cross-platform/class_names.dart';
 import 'package:scarabei/api/debug/debug.dart';
 import 'package:scarabei/api/error/err.dart';
 import 'package:scarabei/api/log/logger.dart';
+import 'package:scarabei/scarabei.dart';
 
 class DartPrimitivesDecoder implements ToDartDecoder {
   Set<String> listSupportedTypeNames() {
@@ -17,6 +18,7 @@ class DartPrimitivesDecoder implements ToDartDecoder {
     result.add(CrossLanguageClassNames.Exception);
     result.add(CrossLanguageClassNames.DOUBLE);
     result.add(CrossLanguageClassNames.NULL);
+    result.add(CrossLanguageClassNames.LOCAL_FILE);
 
     return result;
   }
@@ -81,6 +83,10 @@ class DartPrimitivesDecoder implements ToDartDecoder {
 
     if (objectTypeName == CrossLanguageClassNames.DOUBLE) {
       return encodedObject as double;
+    }
+
+    if (objectTypeName == CrossLanguageClassNames.LOCAL_FILE) {
+      return LocalFileSystem.newLocalFile(encodedObject as String);
     }
 
     if (objectTypeName == CrossLanguageClassNames.BOOL) {

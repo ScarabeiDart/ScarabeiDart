@@ -10,4 +10,5 @@ class CrossLanguageClassNames {
   static const String MethodCall = "MethodCall";
   static const String MethodCallArgument = "MethodCallArgument";
   static const String MethodCallResult = "MethodCallResult";
+  static const String LOCAL_FILE = "LocalFile";
 }

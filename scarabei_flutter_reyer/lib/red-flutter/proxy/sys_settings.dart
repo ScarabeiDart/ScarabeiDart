@@ -101,7 +101,7 @@ class SysSettingsFlutterProxy implements SystemSettingsComponent {
     return result;
   }
 
-  Future<SysSettingsFlutterProxy> load() async {
+  Future<SysSettingsFlutterProxy> reloadFromStorage() async {
     var specs = CrossPlatformCalls.newCallSpecs();
     specs.callID = methodID.child("listAllSettings");
     Future<Map<ID, dynamic>> result = CrossPlatformCalls.makeCall(specs);

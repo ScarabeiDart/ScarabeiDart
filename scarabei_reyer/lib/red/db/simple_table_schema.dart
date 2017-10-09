@@ -3,6 +3,11 @@ import 'package:scarabei/scarabei.dart';
 class SimpleTableSchema implements TableSchema {
   final List<String> columns = [];
 
+  @override
+  String toString() {
+    return '$columns}';
+  }
+
   SimpleTableSchema() {}
 
   int indexOf(final String key) {

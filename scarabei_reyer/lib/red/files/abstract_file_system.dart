@@ -82,25 +82,6 @@ abstract class AbstractFileSystem implements FileSystem {
     }
   }
 
-//  String readFileToString(AbsolutePath<FileSystem> file_path) {
-//    File file = this.newFile(file_path);
-//    FileInputStream is_ = this.newFileInputStream(file);
-//    ByteArray data = is_.readAll();
-//    is_.close();
-//    return Strings.newString(byteArray: data);
-//  }
-//
-//  void writeDataToFile(AbsolutePath<FileSystem> file_path, List<int> bytes) {
-//    File file = this.newFile(file_path);
-//    FileOutputStream fos = this.newFileOutputStream(file);
-//    fos.write(array: bytes);
-//    fos.flush();
-//    fos.close();
-//  }
-//
-//  void writeStringToFile(String string_data, AbsolutePath<FileSystem> file_path) {
-//    this.writeDataToFile(file_path, (Strings.toBytes(string_data)));
-//  }
 
 
   void copyFileToFile(File input_file, File output_file, {bool overwrite(File fileToCopy, File existing)}) {
@@ -126,49 +107,5 @@ abstract class AbstractFileSystem implements FileSystem {
   bool isReadOnlyFileSystem() {
     return false;
   }
-
-//  void convertFolderToFolder(File input_folder, File ouput_folder, FolderConverter folderConverter, FileConverter fileConverter) {
-//    Debug.checkTrue("The folder does not exist: " + input_folder, input_folder.exists());
-//    Debug.checkTrue("This is not a folder: " + input_folder, input_folder.exists());
-//    ouput_folder.makeFolder();
-//    FilesList children = input_folder.listDirectChildren();
-//    for (int i = 0; i < children.size(); i++) {
-//      File file_to_copy = children.getElementAt(i);
-//      this.convertFile(file_to_copy, ouput_folder, folderConverter, fileConverter);
-//    }
-//  }
-//
-//  void convertFile(File fileToConvert, File targetFolder, FolderConverter folderConverter, FileConverter fileConverter) {
-//    Debug.checkTrue("The file or folder does not exist: " + fileToConvert, fileToConvert.exists());
-//    String shortName = fileToConvert.getName();
-//    File target = targetFolder.child(shortName);
-//    if (fileToConvert.isFolder()) {
-//      if (folderConverter != null) {
-//        bool keep_running = folderConverter.convert(fileToConvert, target);
-//        if (keep_running) {
-//          this.convertFolderToFolder(fileToConvert, target, folderConverter, fileConverter);
-//        }
-//      }
-//    } else {
-//      if (fileToConvert.isFile()) {
-//        if (fileConverter != null) {
-//          fileConverter.convert(fileToConvert, target);
-//        }
-//      } else {
-//        Err.reportError("Weirdo file: " + fileToConvert);
-//      }
-//    }
-//  }
-
-//  FileConverter COPY_FILE = new COPY_FILE();
-//  FolderConverter COPY_FOLDER = new COPY_FOLDER();
-
-//  void rebuildFolderSupportingIndexes(FolderSupportingIndexBuilderParams params) {
-//    RedFolderSupportingIndexBuilder.rebuild(params);
-//  }
-//
-//  FolderSupportingIndexBuilderParams newFolderSupportingIndexBuilderParams() {
-//    return new RedFolderSupportingIndexBuilderParams();
-//  }
 }
 

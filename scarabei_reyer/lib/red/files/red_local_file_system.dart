@@ -11,6 +11,7 @@ import 'package:scarabei/api/path/absolute_path.dart';
 import 'package:scarabei/api/path/relative_path.dart';
 import 'package:scarabei/api/sys/sys.dart';
 import 'package:scarabei/api/utils/utils.dart';
+import 'package:scarabei/scarabei.dart';
 import 'package:scarabei_reyer/red/files/abstract_file_system.dart';
 import 'package:scarabei_reyer/red/files/local_red_file.dart';
 
@@ -48,7 +49,7 @@ class RedLocalFileSystem extends AbstractFileSystem implements LocalFileSystemCo
     return new LocalRedFile(file_path, this);
   }
 
-  File newLocalFile(String dartFileString) {
+  LocalFile newLocalFile(String dartFileString) {
     Debug.checkNull(dartFileString, "dartFile");
     dart.File dartFile = new dart.File(dartFileString);
     if (!dartFile.isAbsolute) {
@@ -62,7 +63,7 @@ class RedLocalFileSystem extends AbstractFileSystem implements LocalFileSystemCo
 
     Pattern splitRegex = path.separator;
     RelativePath splittedFileName = Utils.newRelativePath(path_steps: (dartFile.path.split(splitRegex)));
-    File file = this.ROOT().proceed(splittedFileName);
+    LocalFile file = (this.ROOT().proceed(splittedFileName)) as LocalFile;
     return file;
   }
 
@@ -79,7 +80,7 @@ class RedLocalFileSystem extends AbstractFileSystem implements LocalFileSystemCo
     return result;
   }
 
-  File ApplicationHome() {
+  LocalFile ApplicationHome() {
     return this.newLocalFile(new dart.File("").absolute.path);
   }
 
