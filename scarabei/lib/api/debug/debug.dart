@@ -45,7 +45,7 @@ class Debug {
 }
 
 abstract class DebugComponent {
-  T checkNull<T>(T obj, [String name]);
+
 
   void printStackTrace();
 
@@ -54,6 +54,8 @@ abstract class DebugComponent {
   void checkTrue(bool value, [String name]);
 
   String checkEmpty(String string, [String name]);
+
+  T checkNull<T>(T obj, [String name]);
 
   StateSwitcher<T> newStateSwitcher<T>(T default_state);
 }

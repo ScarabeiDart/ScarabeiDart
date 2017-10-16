@@ -12,7 +12,7 @@ class RedError extends ErrorComponent {
       err_message = (message.toString());
     }
 
-    if (SystemSettings.executionModeIsAtLeast(ExecutionMode.TESTING)) {
+    if (SystemSettings.component() == null || SystemSettings.executionModeIsAtLeast(ExecutionMode.TESTING)) {
       throw new StateError(err_message);
     } else {
       L.e(err_message);
@@ -22,7 +22,7 @@ class RedError extends ErrorComponent {
   @override
   void reportNotImplementedYet() {
     String message = "Not implemented yet!";
-    if (SystemSettings.executionModeIsAtLeast(ExecutionMode.TESTING)) {
+    if (SystemSettings.component() == null || SystemSettings.executionModeIsAtLeast(ExecutionMode.TESTING)) {
       throw new StateError(message);
     } else {
       L.e(message);
