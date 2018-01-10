@@ -122,7 +122,7 @@ class SimpleTable implements Table {
     final List<Entry> result = [];
     for (final Entry e in this.entries) {
       final Object val = e.getValue(key);
-      if (val == (value)) {
+      if (value == "*" || val == (value)) {
         result.add(this.copyValues(e));
       }
     }
